@@ -89,6 +89,8 @@ FMOD_EVENTGROUP *generalGroup;
         hud = [[GameHUD alloc] init];
         score = [[Score alloc] init];
         
+        sharedOVNIManager = [OVNIManager sharedOVNIManager];
+        
         sharedExplosionManager = [ExplosionManager sharedExplosionManager];
         //============================================//
 	
@@ -108,7 +110,7 @@ FMOD_EVENTGROUP *generalGroup;
         createUfoTimer= 0;
         
         ufos= [[NSMutableArray alloc] initWithObjects:nil];
-        [ufos addObject:[[Ufo alloc] init]];//ajout d'un nouvel ufo dans le tableau
+        //[ufos addObject:[[Ufo alloc] init]];//ajout d'un nouvel ufo dans le tableau
         //============================================//
 
 		//=================== JOYPAD =================//
@@ -252,7 +254,7 @@ FMOD_EVENTGROUP *generalGroup;
             [ufos addObject:[[Ufo alloc] init]];//ajout d'un nouvel Ufo dans le tableau
             createUfoTimer= 0;
         }
-        createUfoTimer+= aDelta;
+        createUfoTimer+= 0;//aDelta;
         bool collision;
         
         for(Ufo *ufo in ufos)
@@ -330,6 +332,8 @@ FMOD_EVENTGROUP *generalGroup;
             }
         }
         
+        [sharedOVNIManager update:aDelta];
+        
         [sharedExplosionManager update:aDelta];
         
         [background update:aDelta];
@@ -367,6 +371,7 @@ FMOD_EVENTGROUP *generalGroup;
     for(id missile in helicopter->missiles) [missile render];
     //============================================//
 
+    [sharedOVNIManager render];
     
     [sharedExplosionManager render];
     

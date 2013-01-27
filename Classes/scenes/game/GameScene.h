@@ -10,6 +10,7 @@
 
 #import "Background.h"
 #import "ExplosionManager.h"
+#import "OVNIManager.h"
 #import "GameHUD.h"
 #import "Helicopter.h"
 #import "Tank.h"
@@ -22,6 +23,7 @@
 @class Tank;
 @class Background;
 @class ExplosionManager;
+@class OVNIManager;
 @class ImageRenderManager;
 @class SoundManager;
 @class GameController;
@@ -64,6 +66,8 @@
     GameHUD* hud;
     
     ExplosionManager* sharedExplosionManager;
+    
+    OVNIManager* sharedOVNIManager;
     //============================================//
 
     //================ Classe TANK ===============//
