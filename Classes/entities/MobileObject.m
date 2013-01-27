@@ -23,6 +23,7 @@
 
 - (void) die//explosion de l'engin (animation) et suppression de l'instance
 {
+    //[animation release];
     [self dealloc];
 }
 

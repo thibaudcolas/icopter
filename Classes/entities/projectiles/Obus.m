@@ -16,6 +16,7 @@ extern FMOD_EVENTGROUP *tankGroup;
 - (id) init:(float)x yCoord:(float)y targetX:(float)targetX targetY:(float)targetY aDelta:(float)aDelta
 {
 	self = [super init];
+    [skin release];
 	speed= 1;
 	delta= aDelta;
 	xCoord= x;
@@ -42,6 +43,8 @@ extern FMOD_EVENTGROUP *tankGroup;
         
         [animation addFrameWithImage:tmpImage delay:animationDelay];
     }
+    [tmpImage release];
+    [spriteSheet release]; 
 
     // create an instance of the FMOD event
     FMOD_EventGroup_GetEvent(tankGroup, "tank_shoot_sound", FMOD_EVENT_DEFAULT, &obusEvent);
@@ -82,7 +85,7 @@ extern FMOD_EVENTGROUP *tankGroup;
 
 - (void) die
 {
-    //FMOD_Event_Stop(obusEvent, false);
-    [self dealloc];
+    //FMOD_Event_Stop(obusEvent, false); 
+    [super die];
 }
 @end

@@ -50,21 +50,23 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ExplosionManager);
         [tmp update:delta];
         if ([tmp isOver]) {
             [explosions removeObjectAtIndex:i];
-            [tmp dealloc];
+            [tmp autorelease];
         }
     }
 }
 
 
 - (void)render {
-    for (int i = 0; i < [explosions count]; i++) {
-        [[explosions objectAtIndex:i] render];
+    for (Explosion* e in explosions) {
+        [e render];
     }
 }
 
 
 // Libère la mémoire utilisée.
 - (void)dealloc {
+    [tankDestroyed release];
+    [helicoAirDestroyed release];
     [explosions release];
     NSLog(@"INFO - ExplosionManager: Removed successfully");
     [super dealloc];

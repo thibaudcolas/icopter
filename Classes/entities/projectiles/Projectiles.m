@@ -20,7 +20,7 @@
 -(void)move{}
 -(void)die
 {
-    [self dealloc];
+    [super die];
 }
 
 @end
