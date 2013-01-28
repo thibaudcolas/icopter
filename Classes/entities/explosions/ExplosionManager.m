@@ -3,6 +3,7 @@
 //
 
 #import "SynthesizeSingleton.h"
+#import "PackedSpriteSheet.h"
 #import "ExplosionManager.h"
 #import "Explosion.h"
 
@@ -18,9 +19,13 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ExplosionManager);
 
         explosions = [[NSMutableArray alloc] init];
         
-        rocketLauncherDestroyed = [[Animation alloc] createFromImageNamed:@"explosion-big-ground.png" frameSize:CGSizeMake(82, 87) spacing:0 margin:0 delay:0.05f state:kAnimationState_Stopped type:kAnimationType_Once columns:6 rows:4];
-        helicoAirDestroyed = [[Animation alloc] createFromImageNamed:@"explosion-big-air.png" frameSize:CGSizeMake(60, 63) spacing:0 margin:0 delay:0.05f state:kAnimationState_Stopped type:kAnimationType_Once columns:7 rows:4];
-        missileDetonates = [[Animation alloc] createFromImageNamed:@"explosion-small-ground.png" frameSize:CGSizeMake(43, 55) spacing:0 margin:0 delay:0.15f state:kAnimationState_Stopped type:kAnimationType_Once length:10];
+        PackedSpriteSheet *masterSpriteSheet = [PackedSpriteSheet packedSpriteSheetForImageNamed:@"explosion-atlas.png" controlFile:@"explosion-coordinates" imageFilter:GL_LINEAR];
+        
+        rocketLauncherDestroyed = [[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"explosion-big-ground"] retain] frameSize:CGSizeMake(82, 87) spacing:0 margin:0 delay:0.05f state:kAnimationState_Stopped type:kAnimationType_Once columns:6 rows:4];
+        helicoAirDestroyed = [[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"explosion-big-air"] retain] frameSize:CGSizeMake(60, 63) spacing:0 margin:0 delay:0.05f state:kAnimationState_Stopped type:kAnimationType_Once columns:7 rows:4];
+        missileDetonates = [[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"explosion-small-ground"] retain] frameSize:CGSizeMake(43, 50) spacing:0 margin:0 delay:0.15f state:kAnimationState_Stopped type:kAnimationType_Once columns:10 rows:1];
+        
+        [masterSpriteSheet release];
         
         NSLog(@"INFO - ExplosionManager: Created successfully");
     }

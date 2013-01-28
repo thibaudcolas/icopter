@@ -43,6 +43,8 @@ enum {
 // creates the necessary storage for this animation
 - (id)init;
 
+- (id)createFromImage:(Image*)image frameSize:(CGSize)frameSize spacing:(int)spacing margin:(int)margin delay:(float)animationDelay state:(NSUInteger)animationState type:(NSUInteger)animationType columns:(int)nbColumns rows:(int)nbRows;
+
 - (id)createFromImageNamed:(NSString*)path frameSize:(CGSize)frameSize spacing:(int)spacing margin:(int)margin delay:(float)animationDelay state:(NSUInteger)state type:(NSUInteger)type length:(int)frameNumber;
 
 - (id)createFromImageNamed:(NSString*)path frameSize:(CGSize)frameSize spacing:(int)spacing margin:(int)margin delay:(float)animationDelay state:(NSUInteger)state type:(NSUInteger)type columns:(int)nbColumns rows:(int)nbRows;

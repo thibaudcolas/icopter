@@ -96,6 +96,8 @@
 		BE88EFDD16B622F200878249 /* libfmodex_iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE88EFD916B622F200878249 /* libfmodex_iphoneos.a */; };
 		BE88EFDE16B622F200878249 /* libfmodex_iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE88EFDA16B622F200878249 /* libfmodex_iphonesimulator.a */; };
 		BE88EFE116B624B700878249 /* Projectile.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88EFE016B624B700878249 /* Projectile.m */; };
+		BE88EFE316B62D9200878249 /* explosion-atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFE216B62D9200878249 /* explosion-atlas.png */; };
+		BE88EFE516B62DA300878249 /* explosion-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFE416B62DA300878249 /* explosion-coordinates.plist */; };
 		BEAC4A3816B40278004E04EF /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3516B40278004E04EF /* Explosion.m */; };
 		BEAC4A3916B40278004E04EF /* ExplosionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3716B40278004E04EF /* ExplosionManager.m */; };
 		BEAC4A3E16B4028B004E04EF /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3B16B4028B004E04EF /* Background.m */; };
@@ -243,6 +245,8 @@
 		BE88EFDA16B622F200878249 /* libfmodex_iphonesimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfmodex_iphonesimulator.a; sourceTree = "<group>"; };
 		BE88EFDF16B624B700878249 /* Projectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Projectile.h; path = Classes/entities/projectiles/Projectile.h; sourceTree = "<group>"; };
 		BE88EFE016B624B700878249 /* Projectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Projectile.m; path = Classes/entities/projectiles/Projectile.m; sourceTree = "<group>"; };
+		BE88EFE216B62D9200878249 /* explosion-atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "explosion-atlas.png"; path = "resources/images/entities/explosion-atlas.png"; sourceTree = SOURCE_ROOT; };
+		BE88EFE416B62DA300878249 /* explosion-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "explosion-coordinates.plist"; path = "resources/explosion-coordinates.plist"; sourceTree = "<group>"; };
 		BEAC4A3416B40278004E04EF /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = Classes/entities/explosions/Explosion.h; sourceTree = "<group>"; };
 		BEAC4A3516B40278004E04EF /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = Classes/entities/explosions/Explosion.m; sourceTree = "<group>"; };
 		BEAC4A3616B40278004E04EF /* ExplosionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExplosionManager.h; path = Classes/entities/explosions/ExplosionManager.h; sourceTree = "<group>"; };
@@ -314,6 +318,7 @@
 		18B970D0103AA5CA00809077 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE88EFE416B62DA300878249 /* explosion-coordinates.plist */,
 				BE73960616B5FF0B009A0AE7 /* background-coordinates.plist */,
 				7821890F16B05EF30018B098 /* Images */,
 				7821893F16B05F2B0018B098 /* Fonts */,
@@ -524,6 +529,7 @@
 		BE5E90BE16B3F75300622DED /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				BE88EFE216B62D9200878249 /* explosion-atlas.png */,
 				BE5E917616B3FCF900622DED /* explosion-big-air.png */,
 				BE73961516B61692009A0AE7 /* explosion-small-ground.png */,
 				BE5E917716B3FCF900622DED /* explosion-big-ground.png */,
@@ -811,6 +817,8 @@
 				BE88EFB316B61E5800878249 /* GameOver.jpg in Resources */,
 				BE88EFCB16B622E500878249 /* iCopter.fev in Resources */,
 				BE88EFCC16B622E500878249 /* sound_bank.fsb in Resources */,
+				BE88EFE316B62D9200878249 /* explosion-atlas.png in Resources */,
+				BE88EFE516B62DA300878249 /* explosion-coordinates.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

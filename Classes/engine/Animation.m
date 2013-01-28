@@ -48,6 +48,30 @@
     return self;
 }
 
+
+
+
+- (id)createFromImage:(Image*)image frameSize:(CGSize)frameSize spacing:(int)spacing margin:(int)margin delay:(float)animationDelay state:(NSUInteger)animationState type:(NSUInteger)animationType columns:(int)nbColumns rows:(int)nbRows
+{    
+    self = [self init];
+    if (self != nil)
+    {
+        SpriteSheet* spriteSheet = [[SpriteSheet alloc] initWithImage:image spriteSize:frameSize spacing:spacing margin:margin];
+		
+        state = animationState;
+        type = animationType;
+		bounceFrame = nbRows * nbColumns;;
+		for(int i = 0; i < nbRows; i++)
+        {
+            for(int j = 0; j < nbColumns; j++)
+                [self addFrameWithImage:[spriteSheet spriteImageAtCoords:CGPointMake(j, i)] delay:animationDelay];
+		}
+        [spriteSheet release];
+    }
+    
+    return self;
+}
+
 - (id)createFromImageNamed:(NSString*)path frameSize:(CGSize)frameSize spacing:(int)spacing margin:(int)margin delay:(float)animationDelay state:(NSUInteger)animationState type:(NSUInteger)animationType length:(int)animationLength
 {
     self = [self init];
