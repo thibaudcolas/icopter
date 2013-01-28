@@ -14,16 +14,8 @@
 @implementation SettingsScene
 
 - (void)dealloc {
-
-    
 	[super dealloc];
 }
-
-// Set up the strings for the menu items
-# define startString @"New Game"
-# define resumeString @"Resume Game"
-# define scoreString @"Score"
-# define creditString @"Credits"
 
 - (id)init {
 	
@@ -36,8 +28,6 @@
 		sharedGameController = [GameController sharedGameController];
 		sharedSoundManager = [SoundManager sharedSoundManager];
 		sharedTextureManager = [TextureManager sharedTextureManager];
-
-        background= [[Image alloc] initWithImageNamed:@"GameOver.png" filter:GL_LINEAR];
 
 
 	}
@@ -53,14 +43,24 @@
 }
 
 - (void)renderScene {
- 	[background renderAtPoint:CGPointMake(0, 0)];
+    glClear(GL_COLOR_BUFFER_BIT);
    	[sharedImageRenderManager renderImages];
-
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event view:(UIView*)aView {
+    UITouch *touch = [[event touchesForView:aView] anyObject];
+	
+	// Get the point where the player has touched the screen
+	CGPoint originalTouchLocation = [touch locationInView:aView];
+	
+	CGPoint touchLocation = originalTouchLocation;
+    touchLocation.x = originalTouchLocation.y;
+    touchLocation.y = originalTouchLocation.x;
     
-    NSLog(@"Aucun menu Touch");
+    if (CGRectContainsPoint(CGRectMake(0, 0, 480, 320), touchLocation)) {
+        NSLog(@"Test Menu New Game dans if");
+        [sharedGameController transitionToSceneWithKey:@"menu"];
+    }
 }
 
 - (void)updateHighlight {

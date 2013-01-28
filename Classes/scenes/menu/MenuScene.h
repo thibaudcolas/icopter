@@ -45,16 +45,11 @@
 	/////////////////// Sprite sheets and images
 	Image *background;					// Background image for the menu
 	Image *fadeImage;					// Full screen black image used to fade in and out
-	Image *newGame, *settings, *scores;			// Menu and menu button images
+	Image *settings;
 	
-	/////////////////// Button iVars
-	uint startWidth, resumeWidth;
-	uint xStart, xResume;
-	CGRect startButtonBounds;
-	CGRect scoreButtonBounds;
 	CGRect settingsButtonBounds;
 
-	BOOL buttonPressed;					// YES if the player has pressed a button
+		
 }
 
 @end

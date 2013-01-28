@@ -17,17 +17,10 @@
 	[background release];
 	[fadeImage release];
 	[settings release];
-	[newGame release];
-	[scores release];
 
 	[super dealloc];
 }
 
-// Set up the strings for the menu items
-# define startString @"New Game"
-# define resumeString @"Resume Game"
-# define scoreString @"Score"
-# define creditString @"Credits"
 
 - (id)init {
 	
@@ -35,22 +28,12 @@
 
 		// Set the name of this scene
 		self.name = @"menu";
-        
-        credits = [[BitmapFont alloc] initWithFontImageNamed:@"franklin16.png" controlFile:@"franklin16" scale:Scale2fMake(1.0f, 1.0f) filter:GL_LINEAR];
-        credits.fontColor = Color4fMake(0.95f, 0.7f, 0.3f, 1.0f);
 		
 		sharedImageRenderManager = [ImageRenderManager sharedImageRenderManager];
 		sharedGameController = [GameController sharedGameController];
 		sharedSoundManager = [SoundManager sharedSoundManager];
 		sharedTextureManager = [TextureManager sharedTextureManager];
-	/*	
-		// Register for the instructions view being hidden so that we can undo the button highlight
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHighlight) name:@"hidingInstructions" object:nil];
-		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateHighlight) name:@"hidingScore" object:nil];
 
-		// Create a packed spritesheet for the menu
-		pss = [PackedSpriteSheet packedSpriteSheetForImageNamed:@"menuAtlas.png" controlFile:@"menuCoords" imageFilter:GL_LINEAR];
-*/
         menuBackground = [[Background alloc] init:1];
         
         [menuBackground add:160 image:[[Image alloc] initWithImageNamed:@"background-menu-sky.png" filter:GL_LINEAR] inFront:false];
@@ -66,9 +49,11 @@
         sinModifier = 0;
         sinModifierIncrease = true;
         
-        newGame=  [[Image alloc] initWithImageNamed:@"New-Game.png" filter:GL_LINEAR];
-        scores=  [[Image alloc] initWithImageNamed:@"scores.png" filter:GL_LINEAR];
-        settings=  [[Image alloc] initWithImageNamed:@"menu-settings.png" filter:GL_LINEAR];
+        credits = [[BitmapFont alloc] initWithFontImageNamed:@"franklin16.png" controlFile:@"franklin16" scale:Scale2fMake(1.0f, 1.0f) filter:GL_LINEAR];
+        credits.fontColor = Color4fMake(0.95f, 0.7f, 0.3f, 1.0f);
+        
+        settings =  [[Image alloc] initWithImageNamed:@"menu-settings.png" filter:GL_LINEAR];
+        settingsButtonBounds = CGRectMake(445, 285, 30, 30);
 
 		// The allBack image is a single black pixel. This texture is stretched to fill the full
 		// screen my scaling the image
@@ -80,21 +65,6 @@
 		fadeSpeed = 1.0f;
 		alpha = 1.0f;
 		
-		// Define the bounds for the buttons being used on the menu
-		startButtonBounds = CGRectMake(75, 235, 140, 47);
-		scoreButtonBounds = CGRectMake(75, 178, 140, 47);
-		settingsButtonBounds = CGRectMake(445, 285, 30, 30);
-	/*	
-		// Set the default music volume for the menu.  Start at 0 as we are going to fade the sound up
-		musicVolume = 1.0f;
-		
-		// Set the initial state for the menu
-		state = kSceneState_Idle;
-		
-		// No buttons pressed yet
-        buttonPressed = NO;
- 
-*/
 	}
  return self;
 }
@@ -149,41 +119,20 @@
     [menuBackground renderRear];
     
     [helicoBody renderCenteredAtPoint:helicoCoord];
-    [helicoRotor renderCenteredAtPoint:CGPointMake(helicoCoord.x+15,helicoCoord.y+7)];
+    [helicoRotor renderCenteredAtPoint:CGPointMake(helicoCoord.x + 15,helicoCoord.y + 7)];
     
-    [gameTitle renderCenteredAtPoint:CGPointMake(240,240)];
+    [gameTitle renderCenteredAtPoint:CGPointMake(240,280)];
     
-    [credits renderStringJustifiedInFrame:CGRectMake(220, 70, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"(C) 2013 Patches"];
-    [credits renderStringJustifiedInFrame:CGRectMake(220, 50, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"Antoni ANDRE Eric AUBRY-LACHAINAYE Hatim CHAHDI"];
-    [credits renderStringJustifiedInFrame:CGRectMake(220, 30, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"Thibaud COLAS Romain JOURDES Baptiste VIEILLARD"];
+    [credits renderStringJustifiedInFrame:CGRectMake(230, 120, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"( toucher pour jouer )"];
+    
+    [credits renderStringJustifiedInFrame:CGRectMake(230, 90, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"(C) 2013 Patches"];
+    [credits renderStringJustifiedInFrame:CGRectMake(230, 70, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"Antoni ANDRE Eric AUBRY-LACHAINAYE Hatim CHAHDI"];
+    [credits renderStringJustifiedInFrame:CGRectMake(230, 50, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"Thibaud COLAS Romain JOURDES Baptiste VIEILLARD"];
 	
-	[newGame renderAtPoint:CGPointMake(75, 235)];
-    [scores renderAtPoint:CGPointMake(75, 178)];
     [settings renderAtPoint:settingsButtonBounds.origin];
-    /*
-	// Check with the game controller to see if a saved game is available
-	if ([sharedGameController resumedGameAvailable])
-		[menuButton renderAtPoint:CGPointMake(71, 60)];
-	
-	if (buttonPressed)
-		[buttonHighlight renderAtPoint:highlightPosition];
-	
-	// If we are transitioning in, out or idle then render the fadeImage
-	if (state == kSceneState_TransitionIn || state == kSceneState_TransitionOut || state == kSceneState_Idle) {
-		[fadeImage renderAtPoint:CGPointMake(0, 0)];
-	}
-	*/
-	// Having rendered our images we ask the render manager to actually put then on screen.
+
 	[sharedImageRenderManager renderImages];
-/*
-// If debug is on then display the bounds of the buttons
-	drawRect(startButtonBounds);
-	drawRect(scoreButtonBounds);
-	drawRect(instructionButtonBounds);
-	drawRect(resumeButtonBounds);
-	drawRect(logoButtonBounds);
-	drawRect(settingsButtonBounds);
-		*/
+
 }
 
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event view:(UIView*)aView {
@@ -196,55 +145,10 @@
     touchLocation.x = originalTouchLocation.y;
     touchLocation.y = originalTouchLocation.x;
 
-	// We only want to check the touches on the screen when the scene is running.
-	//if (state == kSceneState_Running) {
-		// Check to see if the user touched the start button
-		if (CGRectContainsPoint(startButtonBounds, touchLocation)) {
-            NSLog(@"Test Menu New Game dans if");
-            // Ask the game controller to transition to the scene called game.
-            [sharedGameController transitionToSceneWithKey:@"game"];
-			return;
-		}
-		
-		if (CGRectContainsPoint(scoreButtonBounds, touchLocation)) {
-			[[NSNotificationCenter defaultCenter] postNotificationName:@"showHighScore" object:self];
-            NSLog(@"Test Menu Score dans if");
-			return;
-		}
-        // If the gear is pressed then show the settings for the game
-        if (CGRectContainsPoint(settingsButtonBounds, touchLocation)) {
-            [sharedGameController transitionToSceneWithKey:@"settings"];
-            NSLog(@"Test Menu Settings dans if");
-            return;
-        }
-		/*
-		// If the resume button is visible then check to see if the player touched 
-		// the resume button
-		if ([sharedGameController resumedGameAvailable] && CGRectContainsPoint(resumeButtonBounds, touchLocation)) {
-			[sharedSoundManager playSoundWithKey:@"guiTouch" gain:0.3f pitch:1.0f location:CGPointMake(0, 0) shouldLoop:NO ];
-			alpha = 0;
-			[sharedGameController setShouldResumeGame:YES];
-			state = kSceneState_TransitionOut;
-			highlightPosition = CGPointMake(85, 65);
-			buttonPressed = YES;
-			return;
-		}
-		
-		// If the logo is pressed then show the credits for the game
-		if (CGRectContainsPoint(logoButtonBounds, touchLocation)) {
-
-			[[NSNotificationCenter defaultCenter] postNotificationName:@"showCredits" object:self];
-			return;
-		}
-		*/
-
-	//}
-    
-    NSLog(@"Aucun menu Touch");
-}
-
-- (void)updateHighlight {
-	//buttonPressed = NO;
+    // If the gear is pressed then show the settings for the game
+    if (CGRectContainsPoint(settingsButtonBounds, touchLocation)) {
+        [sharedGameController transitionToSceneWithKey:@"settings"];
+    }
 }
 
 @end
