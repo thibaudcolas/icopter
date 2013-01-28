@@ -92,6 +92,8 @@
 		BE73960916B60297009A0AE7 /* background-atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73960816B60297009A0AE7 /* background-atlas.png */; };
 		BE73961216B6111C009A0AE7 /* Joypad.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73961116B6111C009A0AE7 /* Joypad.m */; };
 		BE73961616B61692009A0AE7 /* explosion-small-ground.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73961516B61692009A0AE7 /* explosion-small-ground.png */; };
+		BE73961916B619ED009A0AE7 /* rocket-launcher-base.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73961716B619ED009A0AE7 /* rocket-launcher-base.png */; };
+		BE73961A16B619ED009A0AE7 /* rocket-launcher-canon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73961816B619ED009A0AE7 /* rocket-launcher-canon.png */; };
 		BEAC4A3816B40278004E04EF /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3516B40278004E04EF /* Explosion.m */; };
 		BEAC4A3916B40278004E04EF /* ExplosionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3716B40278004E04EF /* ExplosionManager.m */; };
 		BEAC4A3E16B4028B004E04EF /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3B16B4028B004E04EF /* Background.m */; };
@@ -234,6 +236,8 @@
 		BE73961016B6111C009A0AE7 /* Joypad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Joypad.h; path = Classes/engine/hud/Joypad.h; sourceTree = "<group>"; };
 		BE73961116B6111C009A0AE7 /* Joypad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Joypad.m; path = Classes/engine/hud/Joypad.m; sourceTree = "<group>"; };
 		BE73961516B61692009A0AE7 /* explosion-small-ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "explosion-small-ground.png"; path = "resources/images/entities/explosion-small-ground.png"; sourceTree = SOURCE_ROOT; };
+		BE73961716B619ED009A0AE7 /* rocket-launcher-base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rocket-launcher-base.png"; path = "resources/images/entities/rocket-launcher-base.png"; sourceTree = SOURCE_ROOT; };
+		BE73961816B619ED009A0AE7 /* rocket-launcher-canon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rocket-launcher-canon.png"; path = "resources/images/entities/rocket-launcher-canon.png"; sourceTree = SOURCE_ROOT; };
 		BEAC4A3416B40278004E04EF /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = Classes/entities/explosions/Explosion.h; sourceTree = "<group>"; };
 		BEAC4A3516B40278004E04EF /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = Classes/entities/explosions/Explosion.m; sourceTree = "<group>"; };
 		BEAC4A3616B40278004E04EF /* ExplosionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExplosionManager.h; path = Classes/entities/explosions/ExplosionManager.h; sourceTree = "<group>"; };
@@ -560,6 +564,8 @@
 				BE5E90D016B3F7B500622DED /* helicopter.png */,
 				BE5E90D116B3F7B500622DED /* missile.png */,
 				BE5E90D216B3F7B500622DED /* rocket-launcher.png */,
+				BE73961716B619ED009A0AE7 /* rocket-launcher-base.png */,
+				BE73961816B619ED009A0AE7 /* rocket-launcher-canon.png */,
 				BE5E90D316B3F7B500622DED /* rocket.png */,
 				BE5E90D416B3F7B500622DED /* ufo-classic.png */,
 			);
@@ -784,6 +790,8 @@
 				BE73960716B5FF0B009A0AE7 /* background-coordinates.plist in Resources */,
 				BE73960916B60297009A0AE7 /* background-atlas.png in Resources */,
 				BE73961616B61692009A0AE7 /* explosion-small-ground.png in Resources */,
+				BE73961916B619ED009A0AE7 /* rocket-launcher-base.png in Resources */,
+				BE73961A16B619ED009A0AE7 /* rocket-launcher-canon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

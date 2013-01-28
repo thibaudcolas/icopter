@@ -21,12 +21,12 @@ extern FMOD_EVENTGROUP *helicopterGroup;
     self->deltat= 0.02;
     self->chute= 9.81;
 	NSString *path= @"missile.png";
-	self->xCoord= x+10;
-	self->yCoord= y-17;
+	self->xCoord= x+25;
+	self->yCoord= y-25;
 	self->skin= [[Image alloc] initWithImageNamed:path filter:GL_LINEAR];
 
     // create an instance of the FMOD event
-    FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter_shoot_sound", FMOD_EVENT_DEFAULT, &missileEvent);
+    FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter_shoot", FMOD_EVENT_DEFAULT, &missileEvent);
     // trigger the event
     FMOD_Event_Start(missileEvent);
 
@@ -62,6 +62,7 @@ extern FMOD_EVENTGROUP *helicopterGroup;
     //FMOD_Event_Release(missileExplosionEvent, false,1);
     [sharedExplosionManager add:bAnimation_missileDetonates position:CGPointMake(xCoord, yCoord)];
     FMOD_Event_Stop(missileEvent, false);
+    FMOD_Event_Release(missileEvent, false,1);
     [self dealloc];
 }
 
