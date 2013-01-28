@@ -19,7 +19,6 @@
 #pragma mark Public implementation
 
 @implementation EAGLView
-@synthesize button;
 @synthesize animating;
 @dynamic animationFrameInterval;
 
@@ -233,12 +232,6 @@
 - (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event {
 	// Pass touch events onto the current scene
 	[[sharedGameController currentScene] touchesCancelled:touches withEvent:event view:self];
-}
-
-- (IBAction)actionButton:(id)sender
-{
-	// Pass click events onto the current scene
-	[[sharedGameController currentScene] clickedShootButton];
 }
 
 @end

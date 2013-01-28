@@ -7,6 +7,7 @@
 @implementation GameHUD
 
 @synthesize pauseButtonBounds;
+@synthesize shootButtonBounds;
 
 // Initialise l'interface du jeu.
 - (id) init
@@ -27,6 +28,11 @@
         // Il faut que les coordonnées soient inversées pour que la détection de touch fonctionne.
         // Probablement parce que les coordonnées des touch ne sont pas tournées comme le sont celles de OpenGL.
         pauseButtonBounds= CGRectMake(285, 340, 20, 30);
+        
+        shootButton= [[Image alloc] initWithImageNamed:@"shoot-button.png" filter:GL_LINEAR];
+        // Il faut que les coordonnées soient inversées pour que la détection de touch fonctionne.
+        // Probablement parce que les coordonnées des touch ne sont pas tournées comme le sont celles de OpenGL.
+        shootButtonBounds= CGRectMake(30, 400, 32, 32);
         
         joypad = [[Joypad alloc] init];
         
@@ -61,11 +67,21 @@
 {
     [go render];
     [scorePanel renderAtPoint:CGPointMake(375, 285)];
+    
+    if (scoreArrow.state == kAnimationState_Running) {
+        [scoreArrow renderAtPoint:CGPointMake(377, 292)];
+        scoreDisplay.fontColor = Color4fMake(0.99f, 0.9f, 0.4f, 1.0f);
+    }
+    else {
+        scoreDisplay.fontColor = Color4fMake(0.95f, 0.7f, 0.3f, 1.0f);
+    }
+    
     [scoreDisplay renderStringJustifiedInFrame:CGRectMake(385, 288, 80, 24) justification:BitmapFontJustification_MiddleRight text:[numberFormatter stringFromNumber:[NSNumber numberWithInt:scoreValue]]];
     
-    if (scoreArrow.state == kAnimationState_Running) [scoreArrow renderAtPoint:CGPointMake(377, 292)];
+    
     
     [pauseButton renderAtPoint:CGPointMake(340, 285)];
+    [shootButton renderAtPoint:CGPointMake(400, 30)];
     
     [joypad render];
     

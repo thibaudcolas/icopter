@@ -108,9 +108,6 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(GameController);
     // Set the starting scene for the game
     currentScene = [gameScenes objectForKey:@"game"];
     
-	// Initialize the accelerometer
-	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:1.0 / 100.0];
-	[[UIAccelerometer sharedAccelerometer] setDelegate:currentScene];
 	
     NSLOG(@"INFO - GameController: Finished game initialization.");
     

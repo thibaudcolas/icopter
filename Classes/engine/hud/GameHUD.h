@@ -25,12 +25,16 @@
     Image *pauseButton;
     CGRect pauseButtonBounds;
     
+    Image *shootButton;
+    CGRect shootButtonBounds;
+    
     Joypad *joypad;
     
     NSNumberFormatter *numberFormatter;
 }
 
 @property (nonatomic, getter = getPauseButtonBounds) CGRect pauseButtonBounds;
+@property (nonatomic, getter = getShootButtonBounds) CGRect shootButtonBounds;
 
 - (id)init;
 

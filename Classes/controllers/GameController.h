@@ -12,7 +12,7 @@
 // The state manager hold the currently active scene and the game controller
 // will then pass the necessary messages to that scene.
 //
-@interface GameController : NSObject <UIAccelerometerDelegate> {
+@interface GameController : NSObject {
 	
 	///////////////////// Views and orientation
 	EAGLView *eaglView;						// Reference to the EAGLView

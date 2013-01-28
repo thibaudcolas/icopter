@@ -30,11 +30,7 @@
 	InstructionsViewController *instructionsViewController;
 	CreditsViewController *creditsViewController;
 	
-	//IBOutlet UISwitch *uiSwitch;
-	IBOutlet UIButton *button;
 }
-@property (nonatomic,retain)IBOutlet UIButton *button;
-- (IBAction)actionButton:(id)sender;
 
 @property (readonly, nonatomic, getter=isAnimating) BOOL animating;
 @property (nonatomic) NSInteger animationFrameInterval;

@@ -67,10 +67,6 @@ enum {
 #pragma mark -
 #pragma mark Inline Functions
 
-// Converts a tile position into a pixel position
-static inline CGPoint tileMapPositionToPixelPosition(CGPoint tmp) {
-	return CGPointMake((int)(tmp.x * kTile_Width), (int)(tmp.y * kTile_Height));
-}
 
 // Returns YES is the point provided is inside the closed poly defined by
 // the vertices provided

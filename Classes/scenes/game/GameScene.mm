@@ -374,6 +374,10 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
 			joypadTouchHash = [touch hash];
 			continue;
 		}
+        
+        if (CGRectContainsPoint([hud getShootButtonBounds], touchLocation)) {
+            [helicopter shoot];
+        }
 		
         // Next check to see if the pause/play button has been pressed
         if (CGRectContainsPoint([hud getPauseButtonBounds], touchLocation))
@@ -468,11 +472,6 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
 		[previousTouchTimestamps removeObjectForKey:[NSNumber numberWithInteger:[cancelledTouch hash]]];
 		[fmodEventsForTouches removeObjectForKey:[NSNumber numberWithInteger:[cancelledTouch hash]]];
 	}
-}
-
-- (void)clickedShootButton
-{
-    [helicopter shoot];
 }
 
 @end

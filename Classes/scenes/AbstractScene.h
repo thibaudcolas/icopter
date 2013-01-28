@@ -49,7 +49,6 @@
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event view:(UIView*)aView;
 - (void)touchesEnded:(NSSet*)touches withEvent:(UIEvent*)event view:(UIView*)aView;
 - (void)touchesCancelled:(NSSet*)touches withEvent:(UIEvent*)event view:(UIView*)aView;
-- (void)clickedShootButton;
 
 // Selector which enables accelerometer data to be passed into the scene.
 - (void)updateWithAccelerometer:(UIAcceleration*)aAcceleration;
