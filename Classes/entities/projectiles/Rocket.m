@@ -40,7 +40,7 @@
     Image *tmpImage= [spriteSheet spriteImageAtCoords:CGPointMake(frameNum, self->direction==1?0:1)];
     [animation addFrameWithImage:tmpImage delay:animationDelay];
 
-    [sharedFmodSoundManager add:rocketLauncherShoot];
+    [sharedFmodSoundManager newInstance:rocketLauncherShoot];
     [spriteSheet release];
 	return self;
 }
@@ -70,8 +70,8 @@
 
 - (void) die
 {
-    [sharedFmodSoundManager stop:rocketLauncherShoot immediate:false];
-    [sharedFmodSoundManager release:rocketLauncherShoot immediate:false];
+    [sharedFmodSoundManager stop:rocketLauncherShoot immediate:true];
+    [sharedFmodSoundManager release:rocketLauncherShoot immediate:true];
     [super die];
     
 }

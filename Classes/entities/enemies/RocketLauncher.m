@@ -127,7 +127,6 @@
  */
 - (void) shoot:(float)targetX targetY:(float)targetY aDelta:(float)aDelta
 {
-    NSLog(@"shoot tank");
     //ajout d'un nouvel rockets dans le tableau
     [self->rockets addObject:[[Rocket alloc] init:xCoord - direction * 20 yCoord:yCoord + 5 targetX:(float)targetX targetY:(float)targetY aDelta:(float)aDelta]];
     self->shootTimer= self->shootTimeout;//reinitialise le timer au bout duquel le RocketLauncher tire
@@ -147,8 +146,8 @@
 {
     [rocketLaunchers removeObject: self];
     
-    [sharedFmodSoundManager stop:rocketLauncherSound immediate:false];
-    [sharedFmodSoundManager release:rocketLauncherSound immediate:false];
+    [sharedFmodSoundManager stop:rocketLauncherSound immediate:true];
+    [sharedFmodSoundManager release:rocketLauncherSound immediate:true];
     [sharedFmodSoundManager add:rocketLauncherExplosion];
     //[sharedFmodSoundManager stop:rocketLauncherExplosion immediate:false];
     [sharedFmodSoundManager release:rocketLauncherExplosion immediate:false];
@@ -156,7 +155,6 @@
     [sharedExplosionManager add:bAnimation_rocketLauncherDestroyed position:CGPointMake(xCoord, yCoord)];
     [animationC release];
     [super die];
-    NSLog(@"ROCKET LAUNCHER DESTROYED!");
 }
 
 @end

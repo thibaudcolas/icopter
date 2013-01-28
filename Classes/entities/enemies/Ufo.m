@@ -53,7 +53,7 @@
         [animation addFrameWithImage:tmpImage delay:animationDelay];
     }
     
-    [sharedFmodSoundManager add:ufo];
+    [sharedFmodSoundManager add:kindOfUFO==1?ufo:michou];
 
     [spriteSheet release];
 	return self;
@@ -98,8 +98,7 @@
 {
     [sharedFmodSoundManager stop:kindOfUFO==1?ufo:michou immediate:false];
     [sharedFmodSoundManager release:kindOfUFO==1?ufo:michou immediate:false];
-    [sharedFmodSoundManager add:kindOfUFO==1?ufo:michou];
-
+    
     [super die];
 
 }

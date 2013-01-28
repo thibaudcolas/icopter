@@ -8,9 +8,6 @@
 
 #import "Helicopter.h"
 
-extern FMOD_EVENTPROJECT *project;
-extern FMOD_EVENTGROUP *generalGroup;
-
 @implementation Helicopter
 
 - (id) init
@@ -22,14 +19,6 @@ extern FMOD_EVENTGROUP *generalGroup;
     self->xCoord= self->width/2+20;//helico initialement place a 20 pixels du coin superieur gauche
     self->yCoord= screenBounds.size.width-self->height/2-20;
 	self->direction= 1;
-	/*if (self->direction>0)
-        self->hitBox= CGRectMake(self->xCoord-self->width, self->yCoord-self->height,
-                                 self->width, self->height);
-    else
-        self->hitBox= CGRectMake(self->xCoord+self->width, self->yCoord+self->height,
-                                 self->width, self->height);*/
-	
-    //self->skin= [[Image alloc] initWithImageNamed:@"helicopter1.png" filter:GL_LINEAR];
     
     //============== Classe MISSILE ==============//
     self->missiles= [[NSMutableArray alloc] initWithObjects:nil];
@@ -70,7 +59,12 @@ extern FMOD_EVENTGROUP *generalGroup;
     //altitude et crash:
     if (self->yCoord<140) [sharedFmodSoundManager play:helicopterAltitudeAlert];
     else [sharedFmodSoundManager pause:helicopterAltitudeAlert];
-    if (self->yCoord<100) {NSLog(@"HELICOPTER CRASHED ON THE GROUND!");[self die];}
+    if (self->yCoord<100)
+    {
+        NSLog(@"HELICOPTER CRASHED ON THE GROUND!");
+        [sharedFmodSoundManager pause:helicopterAltitudeAlert];
+        [self die];
+    }
 }
 
 - (void) shoot
@@ -88,14 +82,14 @@ extern FMOD_EVENTGROUP *generalGroup;
 
 - (void) die
 {
-    [sharedFmodSoundManager stop:helicopterSound immediate:false];
-    [sharedFmodSoundManager release:helicopterSound immediate:false];
+    [sharedFmodSoundManager stop:helicopterSound immediate:true];
+    [sharedFmodSoundManager release:helicopterSound immediate:true];
     [sharedFmodSoundManager add:helicopterExplosion];
-    [sharedFmodSoundManager stop:helicopterExplosion immediate:false];
+    //[sharedFmodSoundManager stop:helicopterExplosion immediate:false];
     [sharedFmodSoundManager release:helicopterExplosion immediate:false];
-    [sharedFmodSoundManager add:gameOverSound];
-    [sharedFmodSoundManager stop:gameOverSound immediate:false];
-    [sharedFmodSoundManager release:gameOverSound immediate:false];
+    [sharedFmodSoundManager newInstance:gameOverSound];
+    //[sharedFmodSoundManager stop:gameOverSound immediate:false];
+    //[sharedFmodSoundManager release:gameOverSound immediate:false];
     
     [sharedExplosionManager add:bAnimation_helicoAirDestroyed position:CGPointMake(xCoord, yCoord)];
     //[super die];

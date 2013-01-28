@@ -23,7 +23,7 @@
 	self->yCoord= y-25;
 	self->skin= [[Image alloc] initWithImageNamed:path filter:GL_LINEAR];
 
-    [sharedFmodSoundManager add:helicopterShoot];
+    [sharedFmodSoundManager newInstance:helicopterShoot];
     
     return self;
 }
@@ -52,10 +52,11 @@
 - (void) die
 {
     [sharedFmodSoundManager stop:helicopterShoot immediate:true];
-    [sharedFmodSoundManager release:helicopterShoot immediate:false];
-    [sharedFmodSoundManager add:helicopterMissileDetonates];
+    [sharedFmodSoundManager release:helicopterShoot immediate:true];
+    [sharedFmodSoundManager newInstance:helicopterMissileDetonates];
+    [sharedFmodSoundManager stop:helicopterMissileDetonates immediate:false];
     [sharedFmodSoundManager release:helicopterMissileDetonates immediate:false];
-    
+
     [sharedExplosionManager add:bAnimation_missileDetonates position:CGPointMake(xCoord, yCoord)];
 }
 
