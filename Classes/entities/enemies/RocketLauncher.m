@@ -69,7 +69,9 @@
         [animationC addFrameWithImage:tmpImageC delay:animationCDelay];
     }
     //============================================//
-    [spriteSheet release];
+    [tmpImageC release];
+    [tmpImage release];
+
     return self;
 }
 

@@ -30,19 +30,21 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ExplosionManager);
 // Ajoute une explosion à gérer.
 - (void)add:(int)type position:(CGPoint)pos {
     
-    switch (type) {
-        case bAnimation_rocketLauncherDestroyed : 
-            [explosions addObject:[[Explosion alloc] init:rocketLauncherDestroyed position:pos]];
-            break;
-        case bAnimation_helicoAirDestroyed :
-            [explosions addObject:[[Explosion alloc] init:helicoAirDestroyed position:pos]];
-            break;
-        case bAnimation_missileDetonates :
-            [explosions addObject:[[Explosion alloc] init:missileDetonates position:pos]];
-            break;
-        default:
-            [explosions addObject:[[Explosion alloc] init:missileDetonates position:pos]];
-            break;
+    if ([explosions count] < 10) {
+        switch (type) {
+            case bAnimation_rocketLauncherDestroyed : 
+                [explosions addObject:[[Explosion alloc] init:rocketLauncherDestroyed position:pos]];
+                break;
+            case bAnimation_helicoAirDestroyed :
+                [explosions addObject:[[Explosion alloc] init:helicoAirDestroyed position:pos]];
+                break;
+            case bAnimation_missileDetonates :
+                [explosions addObject:[[Explosion alloc] init:missileDetonates position:pos]];
+                break;
+            default:
+                [explosions addObject:[[Explosion alloc] init:missileDetonates position:pos]];
+                break;
+        }
     }
 }
 
@@ -71,6 +73,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ExplosionManager);
 - (void)dealloc {
     [rocketLauncherDestroyed release];
     [helicoAirDestroyed release];
+    [missileDetonates release];
     [explosions release];
     NSLog(@"INFO - ExplosionManager: Removed successfully");
     [super dealloc];

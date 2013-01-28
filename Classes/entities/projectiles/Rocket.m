@@ -47,7 +47,7 @@ extern FMOD_EVENTGROUP *rocketLauncherGroup;
     FMOD_EventGroup_GetEvent(rocketLauncherGroup, "rocketLauncher_shoot", FMOD_EVENT_DEFAULT, &rocketEvent);
     // trigger the event
     FMOD_Event_Start(rocketEvent);
-    [spriteSheet release];
+    [tmpImage release];
 	return self;
 }
 
