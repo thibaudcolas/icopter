@@ -32,10 +32,7 @@
 		BE5E90D916B3F7B500622DED /* rocket-launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D216B3F7B500622DED /* rocket-launcher.png */; };
 		BE5E90DA16B3F7B500622DED /* rocket.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D316B3F7B500622DED /* rocket.png */; };
 		BE5E90DB16B3F7B500622DED /* ufo-classic.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D416B3F7B500622DED /* ufo-classic.png */; };
-		BE5E90E116B3F7C900622DED /* exit.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90DC16B3F7C900622DED /* exit.png */; };
 		BE5E90E216B3F7C900622DED /* GameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90DD16B3F7C900622DED /* GameOver.png */; };
-		BE5E90E316B3F7C900622DED /* New-Game.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90DE16B3F7C900622DED /* New-Game.png */; };
-		BE5E90E416B3F7C900622DED /* scores.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90DF16B3F7C900622DED /* scores.png */; };
 		BE5E90EC16B3F7E200622DED /* hud-go.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90E616B3F7E200622DED /* hud-go.png */; };
 		BE5E90ED16B3F7E200622DED /* joypad.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90E716B3F7E200622DED /* joypad.png */; };
 		BE5E90EE16B3F7E200622DED /* pause-label.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90E816B3F7E200622DED /* pause-label.png */; };
@@ -113,6 +110,7 @@
 		BED3EB7E16B72ACD003AD6C8 /* background-menu-clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7B16B72ACD003AD6C8 /* background-menu-clouds.png */; };
 		BED3EB7F16B72ACD003AD6C8 /* biker.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7C16B72ACD003AD6C8 /* biker.png */; };
 		BED3EB8016B72ACD003AD6C8 /* biker2.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7D16B72ACD003AD6C8 /* biker2.png */; };
+		BED3EB8216B72C50003AD6C8 /* background-gameover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB8116B72C50003AD6C8 /* background-gameover.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,10 +141,7 @@
 		BE5E90D216B3F7B500622DED /* rocket-launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rocket-launcher.png"; path = "resources/images/entities/rocket-launcher.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90D316B3F7B500622DED /* rocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rocket.png; path = resources/images/entities/rocket.png; sourceTree = SOURCE_ROOT; };
 		BE5E90D416B3F7B500622DED /* ufo-classic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ufo-classic.png"; path = "resources/images/entities/ufo-classic.png"; sourceTree = SOURCE_ROOT; };
-		BE5E90DC16B3F7C900622DED /* exit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = exit.png; path = resources/images/menu/exit.png; sourceTree = SOURCE_ROOT; };
 		BE5E90DD16B3F7C900622DED /* GameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GameOver.png; path = resources/images/menu/GameOver.png; sourceTree = SOURCE_ROOT; };
-		BE5E90DE16B3F7C900622DED /* New-Game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "New-Game.png"; path = "resources/images/menu/New-Game.png"; sourceTree = SOURCE_ROOT; };
-		BE5E90DF16B3F7C900622DED /* scores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scores.png; path = resources/images/menu/scores.png; sourceTree = SOURCE_ROOT; };
 		BE5E90E616B3F7E200622DED /* hud-go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hud-go.png"; path = "resources/images/hud/hud-go.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90E716B3F7E200622DED /* joypad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = joypad.png; path = resources/images/hud/joypad.png; sourceTree = SOURCE_ROOT; };
 		BE5E90E816B3F7E200622DED /* pause-label.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause-label.png"; path = "resources/images/hud/pause-label.png"; sourceTree = SOURCE_ROOT; };
@@ -274,6 +269,7 @@
 		BED3EB7B16B72ACD003AD6C8 /* background-menu-clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-menu-clouds.png"; path = "resources/images/menu/background-menu-clouds.png"; sourceTree = SOURCE_ROOT; };
 		BED3EB7C16B72ACD003AD6C8 /* biker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = biker.png; path = resources/images/menu/biker.png; sourceTree = SOURCE_ROOT; };
 		BED3EB7D16B72ACD003AD6C8 /* biker2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = biker2.png; path = resources/images/menu/biker2.png; sourceTree = SOURCE_ROOT; };
+		BED3EB8116B72C50003AD6C8 /* background-gameover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-gameover.jpg"; path = "resources/images/menu/background-gameover.jpg"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,6 +557,7 @@
 		BE5E90BF16B3F75A00622DED /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				BED3EB8116B72C50003AD6C8 /* background-gameover.jpg */,
 				BED3EB7B16B72ACD003AD6C8 /* background-menu-clouds.png */,
 				BED3EB7C16B72ACD003AD6C8 /* biker.png */,
 				BED3EB7D16B72ACD003AD6C8 /* biker2.png */,
@@ -569,11 +566,8 @@
 				BE68A86D16B6BE00003ED348 /* background-menu-forest.png */,
 				BE68A86E16B6BE00003ED348 /* background-menu-sky.png */,
 				BE68A87116B6C3C8003ED348 /* background-menu-clouds.png */,
-				BE5E90DC16B3F7C900622DED /* exit.png */,
 				BE5E90DD16B3F7C900622DED /* GameOver.png */,
 				BE88EFB216B61E5800878249 /* GameOver.jpg */,
-				BE5E90DE16B3F7C900622DED /* New-Game.png */,
-				BE5E90DF16B3F7C900622DED /* scores.png */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -803,10 +797,7 @@
 				BE5E90D916B3F7B500622DED /* rocket-launcher.png in Resources */,
 				BE5E90DA16B3F7B500622DED /* rocket.png in Resources */,
 				BE5E90DB16B3F7B500622DED /* ufo-classic.png in Resources */,
-				BE5E90E116B3F7C900622DED /* exit.png in Resources */,
 				BE5E90E216B3F7C900622DED /* GameOver.png in Resources */,
-				BE5E90E316B3F7C900622DED /* New-Game.png in Resources */,
-				BE5E90E416B3F7C900622DED /* scores.png in Resources */,
 				BE5E90EC16B3F7E200622DED /* hud-go.png in Resources */,
 				BE5E90ED16B3F7E200622DED /* joypad.png in Resources */,
 				BE5E90EE16B3F7E200622DED /* pause-label.png in Resources */,
@@ -844,6 +835,7 @@
 				BED3EB7E16B72ACD003AD6C8 /* background-menu-clouds.png in Resources */,
 				BED3EB7F16B72ACD003AD6C8 /* biker.png in Resources */,
 				BED3EB8016B72ACD003AD6C8 /* biker2.png in Resources */,
+				BED3EB8216B72C50003AD6C8 /* background-gameover.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

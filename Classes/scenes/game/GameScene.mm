@@ -94,7 +94,13 @@
 
 - (void)updateSceneWithDelta:(float)aDelta
 {
-    if (state== kSceneState_Paused)
+    if (state== kSceneState_GameOver)
+    {
+        [sharedGameController transitionToSceneWithKey:@"gameOver"];
+        NSLog(@"ToSceneGameOver");
+        state= kSceneState_Running;
+    }
+    else if (state== kSceneState_Paused)
     {
         [sharedFmodSoundManager play:pauseMusic];
         [sharedFmodSoundManager pause:gameMusic];
@@ -257,6 +263,11 @@
                 [helicopter->missiles removeObject: missile];
                 [missile die];
             }
+        }
+        
+        if(collision)
+        {
+            state=kSceneState_GameOver;
         }
         
         [sharedExplosionManager update:aDelta];
