@@ -110,9 +110,9 @@
 		BEAC4A3E16B4028B004E04EF /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3B16B4028B004E04EF /* Background.m */; };
 		BEAC4A3F16B4028B004E04EF /* BGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3D16B4028B004E04EF /* BGLayer.m */; };
 		BEAC4A4216B402A1004E04EF /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A4116B402A1004E04EF /* Score.m */; };
-		BED3EB7616B726A0003AD6C8 /* biker.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7416B726A0003AD6C8 /* biker.png */; };
-		BED3EB7716B726A0003AD6C8 /* biker2.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7516B726A0003AD6C8 /* biker2.png */; };
-		BED3EB7A16B7275E003AD6C8 /* biker-ground-projection.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7916B7275E003AD6C8 /* biker-ground-projection.png */; };
+		BED3EB7E16B72ACD003AD6C8 /* background-menu-clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7B16B72ACD003AD6C8 /* background-menu-clouds.png */; };
+		BED3EB7F16B72ACD003AD6C8 /* biker.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7C16B72ACD003AD6C8 /* biker.png */; };
+		BED3EB8016B72ACD003AD6C8 /* biker2.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7D16B72ACD003AD6C8 /* biker2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -271,9 +271,9 @@
 		BEAC4A3D16B4028B004E04EF /* BGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGLayer.m; path = Classes/engine/background/BGLayer.m; sourceTree = "<group>"; };
 		BEAC4A4016B402A1004E04EF /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = Classes/engine/hud/Score.h; sourceTree = "<group>"; };
 		BEAC4A4116B402A1004E04EF /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Score.m; path = Classes/engine/hud/Score.m; sourceTree = "<group>"; };
-		BED3EB7416B726A0003AD6C8 /* biker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = biker.png; path = resources/images/menu/biker.png; sourceTree = SOURCE_ROOT; };
-		BED3EB7516B726A0003AD6C8 /* biker2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = biker2.png; path = resources/images/menu/biker2.png; sourceTree = SOURCE_ROOT; };
-		BED3EB7916B7275E003AD6C8 /* biker-ground-projection.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "biker-ground-projection.png"; path = "resources/images/menu/biker-ground-projection.png"; sourceTree = SOURCE_ROOT; };
+		BED3EB7B16B72ACD003AD6C8 /* background-menu-clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-menu-clouds.png"; path = "resources/images/menu/background-menu-clouds.png"; sourceTree = SOURCE_ROOT; };
+		BED3EB7C16B72ACD003AD6C8 /* biker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = biker.png; path = resources/images/menu/biker.png; sourceTree = SOURCE_ROOT; };
+		BED3EB7D16B72ACD003AD6C8 /* biker2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = biker2.png; path = resources/images/menu/biker2.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,9 +561,9 @@
 		BE5E90BF16B3F75A00622DED /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				BED3EB7916B7275E003AD6C8 /* biker-ground-projection.png */,
-				BED3EB7416B726A0003AD6C8 /* biker.png */,
-				BED3EB7516B726A0003AD6C8 /* biker2.png */,
+				BED3EB7B16B72ACD003AD6C8 /* background-menu-clouds.png */,
+				BED3EB7C16B72ACD003AD6C8 /* biker.png */,
+				BED3EB7D16B72ACD003AD6C8 /* biker2.png */,
 				BE68A87516B6DFF9003ED348 /* menu-settings.png */,
 				BE68A87316B6CE2C003ED348 /* menu-title.png */,
 				BE68A86D16B6BE00003ED348 /* background-menu-forest.png */,
@@ -841,9 +841,9 @@
 				BE68A87216B6C3C8003ED348 /* background-menu-clouds.png in Resources */,
 				BE68A87416B6CE2C003ED348 /* menu-title.png in Resources */,
 				BE68A87616B6DFF9003ED348 /* menu-settings.png in Resources */,
-				BED3EB7616B726A0003AD6C8 /* biker.png in Resources */,
-				BED3EB7716B726A0003AD6C8 /* biker2.png in Resources */,
-				BED3EB7A16B7275E003AD6C8 /* biker-ground-projection.png in Resources */,
+				BED3EB7E16B72ACD003AD6C8 /* background-menu-clouds.png in Resources */,
+				BED3EB7F16B72ACD003AD6C8 /* biker.png in Resources */,
+				BED3EB8016B72ACD003AD6C8 /* biker2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

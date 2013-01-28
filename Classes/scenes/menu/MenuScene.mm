@@ -141,9 +141,9 @@
     [helicoBody renderCenteredAtPoint:helicoCoord];
     [helicoRotor renderCenteredAtPoint:CGPointMake(helicoCoord.x + 15, helicoCoord.y + 7)];
     
-    [biker renderCenteredAtPoint:CGPointMake(bikerCoord.x,bikerCoord.y)];
+    [biker renderCenteredAtPoint:bikerCoord];
     [groundProjection renderCenteredAtPoint:CGPointMake(bikerCoord.x+12,bikerCoord.y-13)];
-    [biker2 renderCenteredAtPoint:CGPointMake(biker2Coord.x,biker2Coord.y)];
+    [biker2 renderCenteredAtPoint:biker2Coord];
     
     [gameTitle renderCenteredAtPoint:CGPointMake(240, 280)];
     
