@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Ennemies.h"
+#import "Enemy.h"
 
 FMOD_EVENT *ufoEvent;
 
-@interface Ufo : Ennemies
+@interface Ufo : Enemy
 {
     int kindOfUFO;//les differents types d'UFOs
     NSString *image;

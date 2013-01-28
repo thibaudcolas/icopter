@@ -37,7 +37,7 @@ extern FMOD_EVENTGROUP *generalGroup;
     
     self->skin=[[Image alloc] initWithImageNamed:@"helicopter.png" filter:GL_LINEAR];
     
-    spriteSheet = [[SpriteSheet alloc] initWithImageNamed:@"helicopter-rotor.png" spriteSize:CGSizeMake(80,17) spacing:0 margin:0 imageFilter:GL_LINEAR];
+    SpriteSheet *spriteSheet = [[SpriteSheet alloc] initWithImageNamed:@"helicopter-rotor.png" spriteSize:CGSizeMake(80,17) spacing:0 margin:0 imageFilter:GL_LINEAR];
     float animationDelay = 0.01f;
     
     animation = [[Animation alloc] init];
@@ -50,13 +50,17 @@ extern FMOD_EVENTGROUP *generalGroup;
         
         [animation addFrameWithImage:tmpImage delay:animationDelay];
     }
-    
         
     FMOD_EventProject_GetGroup(project, "helicopter", 1, &helicopterGroup);
-    FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter_sound", FMOD_EVENT_DEFAULT, &helicopterEvent);
+    FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter", FMOD_EVENT_DEFAULT, &helicopterEvent);
     // trigger the event
     FMOD_Event_Start(helicopterEvent);
     
+    FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter_altitude_alert", FMOD_EVENT_DEFAULT, &altitudeEvent);
+    // trigger the event
+    FMOD_Event_Start(altitudeEvent);
+    FMOD_Event_SetPaused(altitudeEvent, 1);
+    [spriteSheet release];
     return self;
 }
 
@@ -71,6 +75,10 @@ extern FMOD_EVENTGROUP *generalGroup;
 	self->yCoord= MIN(MAX(0+self->height/2, self->yCoord),screenBounds.size.width-self->height/2);
     
     [animation updateWithDelta:aDelta];
+    
+    //altitude et crash:
+    FMOD_Event_SetPaused(altitudeEvent, self->yCoord<140?0:1);
+    if (self->yCoord<100) {NSLog(@"HELICOPTER CRASHED ON THE GROUND!");[self die];}
 }
 
 - (void) shoot
@@ -90,10 +98,15 @@ extern FMOD_EVENTGROUP *generalGroup;
 {
     NSLog(@"GAME OVER.");
     FMOD_Event_Stop(helicopterEvent, false);
+    FMOD_Event_Release(helicopterEvent, false,1);
+
     [sharedExplosionManager add:bAnimation_helicoAirDestroyed position:CGPointMake(xCoord, yCoord)];
-    FMOD_EventGroup_GetEvent(generalGroup, "game_over_sound", FMOD_EVENT_DEFAULT, &gameOverEvent);
+    FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter_explosion", FMOD_EVENT_DEFAULT, &gameOverEvent);
     FMOD_Event_Start(gameOverEvent);
-    //[self dealloc];
+    FMOD_Event_Release(gameOverEvent, false,1);
+
+    //[super die];
+    NSLog(@"GAME OVER.");
 }
 
 @end

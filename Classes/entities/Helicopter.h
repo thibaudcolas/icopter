@@ -10,11 +10,11 @@
 #import "MobileObject.h"
 #import "Missile.h"
 
-@class GameScene;
 @class Missile;
 
 FMOD_EVENTGROUP *helicopterGroup;//global var
 FMOD_EVENT *helicopterEvent;
+FMOD_EVENT *altitudeEvent;
 FMOD_EVENT *gameOverEvent;
 
 @interface Helicopter : MobileObject
@@ -22,7 +22,7 @@ FMOD_EVENT *gameOverEvent;
     @public
     //============== Classe MISSILE ==============//
     NSMutableArray *missiles;
-	CGSize missileRectangleSize;// Height and Width of the tank touch rectangle
+	CGSize missileRectangleSize;// Height and Width of the rocketLauncher touch rectangle
     //============================================//
 }
 

@@ -22,15 +22,14 @@
 	CGRect hitBox;
 	float speed;
 	Image *skin; //Image de base
-	SpriteSheet *spriteSheet; //Frame d'animation de l'entite
 	Animation *animation; //Animation
     
     ExplosionManager *sharedExplosionManager;
 }
 
-- (void)move;
-- (void)die;
-- (void)render;
+- (void) move;
+- (void) die;
+- (void) render;
 @property (nonatomic, getter= getXCoord) float xCoord;
 @property (nonatomic, getter= getYCoord) float yCoord;
 @property (nonatomic, assign) int width;

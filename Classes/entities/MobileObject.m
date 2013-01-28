@@ -23,8 +23,9 @@
 
 - (void) die//explosion de l'engin (animation) et suppression de l'instance
 {
-    //[animation release];
-    [self dealloc];
+     [skin release]; //Image de base
+	 [animation release]; //Animation
+     [self dealloc];
 }
 
 
