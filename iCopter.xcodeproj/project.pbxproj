@@ -29,12 +29,8 @@
 		8F1E17E9111CBFE500984AC5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1E17DC111CBFE500984AC5 /* AudioToolbox.framework */; };
 		8F8569DC10C3E8F2008E53F8 /* dist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F8569DB10C3E8F2008E53F8 /* dist.plist */; };
 		BE5E90C116B3F7A500622DED /* allBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90C016B3F7A500622DED /* allBlack.png */; };
-		BE5E90C816B3F7AD00622DED /* bg-dark-sky.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90C216B3F7AD00622DED /* bg-dark-sky.png */; };
 		BE5E90C916B3F7AD00622DED /* bg-garbage-back.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90C316B3F7AD00622DED /* bg-garbage-back.png */; };
 		BE5E90CA16B3F7AD00622DED /* bg-garbage-ground.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90C416B3F7AD00622DED /* bg-garbage-ground.png */; };
-		BE5E90CB16B3F7AD00622DED /* bg-road-bridge.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90C516B3F7AD00622DED /* bg-road-bridge.png */; };
-		BE5E90CC16B3F7AD00622DED /* bg-ruins.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90C616B3F7AD00622DED /* bg-ruins.png */; };
-		BE5E90CD16B3F7AD00622DED /* bg-towers-ruins.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90C716B3F7AD00622DED /* bg-towers-ruins.png */; };
 		BE5E90D516B3F7B500622DED /* flying-michou.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90CE16B3F7B500622DED /* flying-michou.png */; };
 		BE5E90D616B3F7B500622DED /* helicopter-rotor.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90CF16B3F7B500622DED /* helicopter-rotor.png */; };
 		BE5E90D716B3F7B500622DED /* helicopter.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D016B3F7B500622DED /* helicopter.png */; };
@@ -88,6 +84,10 @@
 		BE5E917516B3FC4500622DED /* AbstractScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E917416B3FC4500622DED /* AbstractScene.m */; };
 		BE5E917816B3FCF900622DED /* explosion-big-air.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E917616B3FCF900622DED /* explosion-big-air.png */; };
 		BE5E917916B3FCF900622DED /* explosion-big-ground.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E917716B3FCF900622DED /* explosion-big-ground.png */; };
+		BE7395FC16B5F132009A0AE7 /* background-road.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7395FB16B5F132009A0AE7 /* background-road.png */; };
+		BE7395FF16B5F463009A0AE7 /* background-ruins.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7395FE16B5F463009A0AE7 /* background-ruins.png */; };
+		BE73960116B5F5CA009A0AE7 /* background-towers.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73960016B5F5CA009A0AE7 /* background-towers.png */; };
+		BE73960316B5F76E009A0AE7 /* background-sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE73960216B5F76E009A0AE7 /* background-sky.jpg */; };
 		BEAC4A3816B40278004E04EF /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3516B40278004E04EF /* Explosion.m */; };
 		BEAC4A3916B40278004E04EF /* ExplosionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3716B40278004E04EF /* ExplosionManager.m */; };
 		BEAC4A3E16B4028B004E04EF /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3B16B4028B004E04EF /* Background.m */; };
@@ -131,12 +131,8 @@
 		8F1E17DC111CBFE500984AC5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8F8569DB10C3E8F2008E53F8 /* dist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dist.plist; sourceTree = "<group>"; };
 		BE5E90C016B3F7A500622DED /* allBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = allBlack.png; path = resources/images/allBlack.png; sourceTree = SOURCE_ROOT; };
-		BE5E90C216B3F7AD00622DED /* bg-dark-sky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-dark-sky.png"; path = "resources/images/bg/bg-dark-sky.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90C316B3F7AD00622DED /* bg-garbage-back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-garbage-back.png"; path = "resources/images/bg/bg-garbage-back.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90C416B3F7AD00622DED /* bg-garbage-ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-garbage-ground.png"; path = "resources/images/bg/bg-garbage-ground.png"; sourceTree = SOURCE_ROOT; };
-		BE5E90C516B3F7AD00622DED /* bg-road-bridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-road-bridge.png"; path = "resources/images/bg/bg-road-bridge.png"; sourceTree = SOURCE_ROOT; };
-		BE5E90C616B3F7AD00622DED /* bg-ruins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-ruins.png"; path = "resources/images/bg/bg-ruins.png"; sourceTree = SOURCE_ROOT; };
-		BE5E90C716B3F7AD00622DED /* bg-towers-ruins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg-towers-ruins.png"; path = "resources/images/bg/bg-towers-ruins.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90CE16B3F7B500622DED /* flying-michou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flying-michou.png"; path = "resources/images/entities/flying-michou.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90CF16B3F7B500622DED /* helicopter-rotor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "helicopter-rotor.png"; path = "resources/images/entities/helicopter-rotor.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90D016B3F7B500622DED /* helicopter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = helicopter.png; path = resources/images/entities/helicopter.png; sourceTree = SOURCE_ROOT; };
@@ -225,6 +221,10 @@
 		BE5E917416B3FC4500622DED /* AbstractScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractScene.m; path = Classes/scenes/AbstractScene.m; sourceTree = "<group>"; };
 		BE5E917616B3FCF900622DED /* explosion-big-air.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "explosion-big-air.png"; path = "resources/images/entities/explosion-big-air.png"; sourceTree = SOURCE_ROOT; };
 		BE5E917716B3FCF900622DED /* explosion-big-ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "explosion-big-ground.png"; path = "resources/images/entities/explosion-big-ground.png"; sourceTree = SOURCE_ROOT; };
+		BE7395FB16B5F132009A0AE7 /* background-road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-road.png"; path = "resources/images/bg/background-road.png"; sourceTree = SOURCE_ROOT; };
+		BE7395FE16B5F463009A0AE7 /* background-ruins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-ruins.png"; path = "resources/images/bg/background-ruins.png"; sourceTree = SOURCE_ROOT; };
+		BE73960016B5F5CA009A0AE7 /* background-towers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-towers.png"; path = "resources/images/bg/background-towers.png"; sourceTree = SOURCE_ROOT; };
+		BE73960216B5F76E009A0AE7 /* background-sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-sky.jpg"; path = "resources/images/bg/background-sky.jpg"; sourceTree = SOURCE_ROOT; };
 		BEAC4A3416B40278004E04EF /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = Classes/entities/explosions/Explosion.h; sourceTree = "<group>"; };
 		BEAC4A3516B40278004E04EF /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = Classes/entities/explosions/Explosion.m; sourceTree = "<group>"; };
 		BEAC4A3616B40278004E04EF /* ExplosionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExplosionManager.h; path = Classes/entities/explosions/ExplosionManager.h; sourceTree = "<group>"; };
@@ -515,12 +515,12 @@
 		BE5E90BC16B3F74500622DED /* Background */ = {
 			isa = PBXGroup;
 			children = (
-				BE5E90C216B3F7AD00622DED /* bg-dark-sky.png */,
+				BE73960216B5F76E009A0AE7 /* background-sky.jpg */,
+				BE73960016B5F5CA009A0AE7 /* background-towers.png */,
+				BE7395FE16B5F463009A0AE7 /* background-ruins.png */,
+				BE7395FB16B5F132009A0AE7 /* background-road.png */,
 				BE5E90C316B3F7AD00622DED /* bg-garbage-back.png */,
 				BE5E90C416B3F7AD00622DED /* bg-garbage-ground.png */,
-				BE5E90C516B3F7AD00622DED /* bg-road-bridge.png */,
-				BE5E90C616B3F7AD00622DED /* bg-ruins.png */,
-				BE5E90C716B3F7AD00622DED /* bg-towers-ruins.png */,
 			);
 			name = Background;
 			sourceTree = "<group>";
@@ -737,12 +737,8 @@
 				78EF35A716AE0C44002DF160 /* iCopter.fev in Resources */,
 				78EF35A816AE0C44002DF160 /* sound_bank.fsb in Resources */,
 				BE5E90C116B3F7A500622DED /* allBlack.png in Resources */,
-				BE5E90C816B3F7AD00622DED /* bg-dark-sky.png in Resources */,
 				BE5E90C916B3F7AD00622DED /* bg-garbage-back.png in Resources */,
 				BE5E90CA16B3F7AD00622DED /* bg-garbage-ground.png in Resources */,
-				BE5E90CB16B3F7AD00622DED /* bg-road-bridge.png in Resources */,
-				BE5E90CC16B3F7AD00622DED /* bg-ruins.png in Resources */,
-				BE5E90CD16B3F7AD00622DED /* bg-towers-ruins.png in Resources */,
 				BE5E90D516B3F7B500622DED /* flying-michou.png in Resources */,
 				BE5E90D616B3F7B500622DED /* helicopter-rotor.png in Resources */,
 				BE5E90D716B3F7B500622DED /* helicopter.png in Resources */,
@@ -767,6 +763,10 @@
 				BE5E910116B3F8BB00622DED /* SettingsView.xib in Resources */,
 				BE5E917816B3FCF900622DED /* explosion-big-air.png in Resources */,
 				BE5E917916B3FCF900622DED /* explosion-big-ground.png in Resources */,
+				BE7395FC16B5F132009A0AE7 /* background-road.png in Resources */,
+				BE7395FF16B5F463009A0AE7 /* background-ruins.png in Resources */,
+				BE73960116B5F5CA009A0AE7 /* background-towers.png in Resources */,
+				BE73960316B5F76E009A0AE7 /* background-sky.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -79,11 +79,11 @@ FMOD_EVENTGROUP *generalGroup;
         //================ BACKGROUND ================//
         background = [[Background alloc] init:1];
         
-        [background add:120 image:@"bg-dark-sky.png" inFront:false];
-        [background add:120 image:@"bg-towers-ruins.png" inFront:false];
-        [background add:110 image:@"bg-ruins.png" inFront:false];
-        [background add:86 image:@"bg-garbage-back.png" inFront:false];
-        [background add:0 image:@"bg-road-bridge.png" inFront:false];
+        [background add:120 image:@"background-sky.jpg" inFront:false];
+        [background add:120 image:@"background-towers.png" inFront:false];
+        [background add:110 image:@"background-ruins.png" inFront:false];
+        [background add:82 image:@"bg-garbage-back.png" inFront:false];
+        [background add:32 image:@"background-road.png" inFront:false];
         [background add:0 image:@"bg-garbage-ground.png" inFront:true];
 		
         hud = [[GameHUD alloc] init];
