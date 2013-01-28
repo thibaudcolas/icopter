@@ -8,20 +8,6 @@
 
 #import "Ufo.h"
 
-extern FMOD_EVENTPROJECT *project;
-// Convenience macro/function for logging FMOD errors
-#define checkFMODError(e) _checkFMODError(__FILE__, __LINE__, e)
-void _checkFMODError(const char *sourceFile, int line, FMOD_RESULT errorCode);
-void _checkFMODError(const char *sourceFile, int line, FMOD_RESULT errorCode)
-{
-	if (errorCode != FMOD_OK)
-	{
-		NSString *filename = [[NSString stringWithUTF8String:sourceFile] lastPathComponent];
-		NSLog(@"%@:%d FMOD Error %d:%s", filename, line, errorCode, FMOD_ErrorString(errorCode));
-	}
-}
-
-
 @implementation Ufo
 
 - (void)dealloc
@@ -67,11 +53,8 @@ void _checkFMODError(const char *sourceFile, int line, FMOD_RESULT errorCode)
         [animation addFrameWithImage:tmpImage delay:animationDelay];
     }
     
-    FMOD_EventProject_GetGroup(project, "ufo", 1, &ufoGroup);
-    // create an instance of the FMOD event
-    FMOD_EventGroup_GetEvent(ufoGroup, kindOfUFO==1?"ufo":"michou", FMOD_EVENT_DEFAULT, &ufoEvent);
-    // trigger the event
-    FMOD_Event_Start(ufoEvent);
+    [sharedFmodSoundManager add:ufo];
+
     [spriteSheet release];
 	return self;
 }
@@ -113,10 +96,8 @@ void _checkFMODError(const char *sourceFile, int line, FMOD_RESULT errorCode)
 
 - (void) die//explosion de l'ufo (animation) et suppression de l'objet ufo
 {
-   FMOD_Event_Stop(ufoEvent, false);
-    
-    //[self dealloc];
-    checkFMODError(FMOD_Event_Release(ufoEvent, false,1));
+    [sharedFmodSoundManager stop:ufo immediate:false];
+    [sharedFmodSoundManager release:ufo immediate:false];
 
     [super die];
 

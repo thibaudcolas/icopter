@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 #import "Enemy.h"
 
-FMOD_EVENT *ufoEvent;
-
 @interface Ufo : Enemy
 {
     int kindOfUFO;//les differents types d'UFOs
@@ -19,8 +17,6 @@ FMOD_EVENT *ufoEvent;
     int framesNum;
     int sinModifier;
     Boolean sinModifierIncrease;
-    
-	FMOD_EVENTGROUP *ufoGroup;
 }
 
 - (void) update:(float)delta;
