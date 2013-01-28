@@ -31,14 +31,7 @@
     self->rockets= [[NSMutableArray alloc] initWithObjects:nil];
     self->readyToShoot= false;
     
-    //=================== son ====================//
-    FMOD_EventProject_GetGroup(project, "rocketLauncher", 1, &rocketLauncherGroup);
-    // create an instance of the FMOD event
-    FMOD_EventGroup_GetEvent(rocketLauncherGroup, "rocketLauncher", FMOD_EVENT_DEFAULT, &rocketLauncherEvent);
-    // trigger the event
-    FMOD_Event_Start(rocketLauncherEvent);
-    //============================================//
-    
+    [sharedFmodSoundManager add:rocketLauncherSound];
     
     //============== animations ==================//
     SpriteSheet *spriteSheet= [[SpriteSheet alloc] initWithImageNamed:@"rocket-launcher-base.png" spriteSize:CGSizeMake(60, 21) spacing:0
@@ -153,15 +146,12 @@
 -(void) die
 {
     [rocketLaunchers removeObject: self];
-    //================== son =====================//
-    FMOD_Event_Stop(rocketLauncherEvent, false);
-    FMOD_Event_Release(rocketLauncherEvent, false,1);
-
-    FMOD_EVENT *explosionEvent;
-    FMOD_EventGroup_GetEvent(rocketLauncherGroup, "rocketLauncher_explosion", FMOD_EVENT_DEFAULT, &explosionEvent);
-    FMOD_Event_Start(explosionEvent);
-    FMOD_Event_Release(explosionEvent, false,1);
-    //============================================//
+    
+    [sharedFmodSoundManager stop:rocketLauncherSound immediate:false];
+    [sharedFmodSoundManager release:rocketLauncherSound immediate:false];
+    [sharedFmodSoundManager add:rocketLauncherExplosion];
+    //[sharedFmodSoundManager stop:rocketLauncherExplosion immediate:false];
+    [sharedFmodSoundManager release:rocketLauncherExplosion immediate:false];
     
     [sharedExplosionManager add:bAnimation_rocketLauncherDestroyed position:CGPointMake(xCoord, yCoord)];
     [animationC release];

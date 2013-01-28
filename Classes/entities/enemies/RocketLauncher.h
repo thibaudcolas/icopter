@@ -15,9 +15,6 @@
 
 extern Helicopter *helicopter;
 extern NSMutableArray *rocketLaunchers;
-extern FMOD_EVENTPROJECT *project;
-FMOD_EVENTGROUP *rocketLauncherGroup;
-FMOD_EVENT *rocketLauncherEvent;
 
 @interface RocketLauncher : Enemy
 {
