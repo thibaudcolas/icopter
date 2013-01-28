@@ -6,8 +6,6 @@ void _checkFMODError(const char *sourceFile, int line, FMOD_RESULT errorCode);
 
 // Convenience function for constraining parameter values
 float constrainFloat(float value, float lowerLimit, float upperLimit);
-FMOD_EVENTPROJECT *project;
-FMOD_EVENTGROUP *generalGroup;
 
 @implementation GameScene
 
@@ -45,33 +43,27 @@ FMOD_EVENTGROUP *generalGroup;
         // create an instance of the FMOD event
 		checkFMODError(FMOD_EventGroup_GetEvent(generalGroup, "game_music", FMOD_EVENT_DEFAULT, &generalEvent));
 		
-        float minTime, maxTime, minTank, maxTank,minUfo,maxUfo;
+        float minTime, maxTime, minRocketLauncher, maxRocketLauncher,minUfo,maxUfo;
         // get the value of parameter of the event
         checkFMODError(FMOD_Event_GetParameter(generalEvent, "time", &timeParam));
-        checkFMODError(FMOD_Event_GetParameter(generalEvent, "tank_count", &nbTankParam));
+        checkFMODError(FMOD_Event_GetParameter(generalEvent, "rocketLauncher_count", &nbRocketLauncherParam));
         checkFMODError(FMOD_Event_GetParameter(generalEvent, "ufo_count", &nbUfoParam));
         // get the required range of the parameter and constrain the value
 		checkFMODError(FMOD_EventParameter_GetRange(timeParam, &minTime, &maxTime));
-		checkFMODError(FMOD_EventParameter_GetRange(nbTankParam, &minTank, &maxTank));
+		checkFMODError(FMOD_EventParameter_GetRange(nbRocketLauncherParam, &minRocketLauncher, &maxRocketLauncher));
 		checkFMODError(FMOD_EventParameter_GetRange(nbUfoParam, &minUfo, &maxUfo));
         float constrainedValueTime = constrainFloat(0, minTime, maxTime);
-        float constrainedValueTank = constrainFloat(0, minTank, maxTank);
+        float constrainedValueRocketLauncher = constrainFloat(0, minRocketLauncher, maxRocketLauncher);
         float constrainedValueUfo = constrainFloat(0, minUfo, maxUfo);
         // set the new value
         checkFMODError(FMOD_EventParameter_SetValue(timeParam, constrainedValueTime));
-        checkFMODError(FMOD_EventParameter_SetValue(nbTankParam, constrainedValueTank));
+        checkFMODError(FMOD_EventParameter_SetValue(nbRocketLauncherParam, constrainedValueRocketLauncher));
         checkFMODError(FMOD_EventParameter_SetValue(nbUfoParam, constrainedValueUfo));
         
         // trigger the event
 		checkFMODError(FMOD_Event_Start(generalEvent));
         checkFMODError(FMOD_EventGroup_GetEvent(generalGroup, "pause_music", FMOD_EVENT_DEFAULT, &pauseEvent));
-        checkFMODError(FMOD_Event_Start(pauseEvent));FMOD_Event_SetPaused(pauseEvent, 1);//
-        
-        FMOD_EVENT *helicopterEvent= NULL;
-        // create an instance of the FMOD event
-		checkFMODError(FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter_sound", FMOD_EVENT_DEFAULT, &helicopterEvent));
-		// trigger the event
-		checkFMODError(FMOD_Event_Start(helicopterEvent));
+        checkFMODError(FMOD_Event_Start(pauseEvent));FMOD_Event_SetPaused(pauseEvent, 1);
         //============================================//
  		
         timeEllapsed= 0;
@@ -101,13 +93,15 @@ FMOD_EVENTGROUP *generalGroup;
         //============================================//
 	
 
-        //================== TANKS ===================//
-        maxNumTank= 5;
-        createTankTimeout= 5;
-        createTankTimer= 0;
+        //================== ROCKET LAUNCHERS ===================//
+        maxNumRocketLauncher= 5;
+        createRocketLauncherTimeout= 5;
+        createRocketLauncherTimer= 0;
 		
-        tanks= [[NSMutableArray alloc] initWithObjects:nil];
-        [tanks addObject:[[Tank alloc] init]];//ajout d'un nouveau tank dans le tableau
+        rocketLaunchers= [[NSMutableArray alloc] initWithObjects:nil];
+        [rocketLaunchers addObject:[[RocketLauncher alloc] init]];//ajout d'un nouveau rocketLauncher dans le tableau
+        
+        killedRocketLaunchers = 0;
         //============================================//
 		
 		//==================== UFO ===================//
@@ -142,7 +136,7 @@ FMOD_EVENTGROUP *generalGroup;
     {
         FMOD_Event_SetPaused(generalEvent, 1);
         FMOD_Event_SetPaused(helicopterEvent, 1);
-        FMOD_Event_SetPaused(tankEvent, 1);
+        FMOD_Event_SetPaused(rocketLauncherEvent, 1);
         FMOD_Event_SetPaused(ufoEvent, 1);
         FMOD_Event_SetPaused(gameOverEvent, 1);
         FMOD_Event_SetPaused(pauseEvent, 0);
@@ -154,92 +148,94 @@ FMOD_EVENTGROUP *generalGroup;
         //FMOD_EventCategory_SetPaused(game, 0);
         FMOD_Event_SetPaused(generalEvent, 0);
         FMOD_Event_SetPaused(helicopterEvent, 0);
-        FMOD_Event_SetPaused(tankEvent, 0);
+        FMOD_Event_SetPaused(rocketLauncherEvent, 0);
         FMOD_Event_SetPaused(ufoEvent, 0);
         FMOD_Event_SetPaused(gameOverEvent, 0);
         FMOD_Event_SetPaused(pauseEvent, 1);
         timeEllapsed+= aDelta;
         
-        //================== FMOD SOUND MUSIC ===================//
-        float minTime, maxTime, minTank, maxTank,minUfo,maxUfo;
+        //==================== SOUND =================//
+        float minTime, maxTime, minRocketLauncher, maxRocketLauncher,minUfo,maxUfo;
         // get the value of parameter of the event
         checkFMODError(FMOD_Event_GetParameter(generalEvent, "time", &timeParam));
-        checkFMODError(FMOD_Event_GetParameter(generalEvent, "tank_count", &nbTankParam));
+        checkFMODError(FMOD_Event_GetParameter(generalEvent, "rocketLauncher_count", &nbRocketLauncherParam));
         checkFMODError(FMOD_Event_GetParameter(generalEvent, "ufo_count", &nbUfoParam));
         // get the required range of the parameter and constrain the value
         checkFMODError(FMOD_EventParameter_GetRange(timeParam, &minTime, &maxTime));
-        checkFMODError(FMOD_EventParameter_GetRange(nbTankParam, &minTank, &maxTank));
+        checkFMODError(FMOD_EventParameter_GetRange(nbRocketLauncherParam, &minRocketLauncher, &maxRocketLauncher));
         checkFMODError(FMOD_EventParameter_GetRange(nbUfoParam, &minUfo, &maxUfo));
         float constrainedValueTime = constrainFloat(timeEllapsed/100, minTime, maxTime);
-        float constrainedValueTank = constrainFloat([tanks count], minTank, maxTank);
+        float constrainedValueRocketLauncher = constrainFloat([rocketLaunchers count], minRocketLauncher, maxRocketLauncher);
         float constrainedValueUfo = constrainFloat([ufos count], minUfo, maxUfo);
         // set the new value
         checkFMODError(FMOD_EventParameter_SetValue(timeParam, constrainedValueTime));
-        checkFMODError(FMOD_EventParameter_SetValue(nbTankParam, constrainedValueTank));
+        checkFMODError(FMOD_EventParameter_SetValue(nbRocketLauncherParam, constrainedValueRocketLauncher));
         checkFMODError(FMOD_EventParameter_SetValue(nbUfoParam, constrainedValueUfo));
         
         //============================================//
         
-        //================== TANKS ===================//
-        //Toutes les createTankTimeout secondes on cree un nouveau tank si le maxNumTank n'est pas atteint
-        if (createTankTimer>= createTankTimeout) if ([tanks count]< maxNumTank)
+        //============= ROCKET LAUNCHERS =============//
+        //Toutes les createRocketLauncherTimeout secondes on cree un nouveau rocketLauncher si le maxNumRocketLauncher n'est pas atteint
+        if (createRocketLauncherTimer>= createRocketLauncherTimeout) if ([rocketLaunchers count]< maxNumRocketLauncher)
         {
-            [tanks addObject:[[Tank alloc] init]];//ajout d'un nouveau tank dans le tableau
-            createTankTimer= 0;
+            [rocketLaunchers addObject:[[RocketLauncher alloc] init]];//ajout d'un nouveau rocketLauncher dans le tableau
+            createRocketLauncherTimer= 0;
         }
-        createTankTimer+= aDelta;
-
+        createRocketLauncherTimer+= aDelta;
         
-        if ([tanks count]) for(int i=0;i<[tanks count];i++)
-        //iteration sur un nombre plutot que "for(Tank *tank in tanks)" pour eviter erreur liee a la suppression du tank tué :
-        //"NSmutableArray was mutated while being iterated"
+        
+        if ([rocketLaunchers count]) for(int i=0;i<[rocketLaunchers count];i++)
+            //iteration sur un nombre plutot que "for(RocketLauncher *rocketLauncher in rocketLaunchers)" pour eviter erreur liee a la suppression du rocketLauncher tué :
+            //"NSmutableArray was mutated while being iterated"
         {
-            Tank *tank= [tanks objectAtIndex:i];        
+            RocketLauncher *rocketLauncher= [rocketLaunchers objectAtIndex:i];        
             
             bool touched= false;
             for(Missile *missile in helicopter->missiles)
             {
-                if (   [missile getXCoord]>= [tank getXCoord]-tank->width/2
-                    && [missile getXCoord]<= [tank getXCoord]+tank->width/2
-                    //&& [missile getYCoord]>= [tank getYCoord]-tank->height/2 //tjs le cas avec la gravité (le missile arrive par le haut)
-                    && [missile getYCoord]<= [tank getYCoord]+tank->height/2)
+                if (   [missile getXCoord]>= [rocketLauncher getXCoord]-rocketLauncher->width/2
+                    && [missile getXCoord]<= [rocketLauncher getXCoord]+rocketLauncher->width/2
+                    //&& [missile getYCoord]>= [rocketLauncher getYCoord]-rocketLauncher->height/2 //tjs le cas avec la gravité (le missile arrive par le haut)
+                    && [missile getYCoord]<= [rocketLauncher getYCoord]+rocketLauncher->height/2)
                 {
-                    [tanks removeObject: tank];
-                    [tank die];
+                    [rocketLaunchers removeObject: rocketLauncher];
+                    [rocketLauncher die];
                     [helicopter->missiles removeObject: missile];
                     [missile die];
                     
-                    killedTanks++;
+                    killedRocketLaunchers++;
                     touched= true;
                     i--;
                     break;
                 }
             }
-            if (!touched)
+            if (!touched && [rocketLaunchers count])
             {
-                [tank move];
-                [tank update:aDelta];
-                if (tank->shootTimer>= tank->shootTimeout)
+                [rocketLauncher update:aDelta];
+                [rocketLauncher move];
+                if (rocketLauncher->shootTimer<= 0)
                 {
-                    [tank aim:(float)helicopter.getXCoord targetY:(float)helicopter.getYCoord aDelta:(float)aDelta];
-                    tank->shootTimer= 0;
+                    if (rocketLauncher->readyToShoot)
+                        [rocketLauncher shoot:(float)helicopter.getXCoord targetY:(float)helicopter.getYCoord aDelta:(float)aDelta];
+                    else [rocketLauncher aim:(float)helicopter.getXCoord targetY:(float)helicopter.getYCoord aDelta:(float)aDelta];
                 }
-                tank->shootTimer+= aDelta;
-                //================== Obus ===================//
-                for(int j=0;j<[tank->obus count];j++)
-                //iteration sur un nombre plutot que "for(Obus *obu in tank->obus)" pour eviter erreur liee a la suppression de l'obus :
-                //"NSmutableArray was mutated while being iterated"
+                rocketLauncher->shootTimer-= aDelta;
+                //================== Rocket ===================//
+                for(int j=0;j<[rocketLauncher->rockets count];j++)
+                    //iteration sur un nombre plutot que "for(Rocket *rocket in rocketLauncher->rockets)" pour eviter erreur liee a la suppression de l'rockets :
+                    //"NSmutableArray was mutated while being iterated"
                 {
-                    Obus *obu= [tank->obus objectAtIndex:j];
-                    if (![obu move])
+                    Rocket *rocket= [rocketLauncher->rockets objectAtIndex:j];
+                    if (![rocket move])
                     {
-                        [tank->obus removeObject: obu];
-                        [obu die];
+                        [rocketLauncher->rockets removeObject: rocket];
+                        [rocket die];
                     }
-                    else [obu update:aDelta];
+                    else [rocket update:aDelta];
                 }
                 //==========================================//
             }
+            else break;
         }
         //===========================================//
         
@@ -277,43 +273,30 @@ FMOD_EVENTGROUP *generalGroup;
         
         //================= HELICOPTER ===============//
         collision= false;
-        if ([tanks count]) for(int i=0;i<[tanks count];i++)
+        if ([rocketLaunchers count]) for(int i=0;i<[rocketLaunchers count];i++)
         {
-            Tank *tank= [tanks objectAtIndex:i];
+            RocketLauncher *rocketLauncher= [rocketLaunchers objectAtIndex:i];
             
-            for(int j=0;j<[tank->obus count];j++)
-                //iteration sur un nombre plutot que "for(Obus *obu in tank->obus)" pour eviter erreur liee a la suppression de
-                //l'obus : "NSmutableArray was mutated while being iterated"
+            for(int j=0;j<[rocketLauncher->rockets count];j++)
+                //iteration sur un nombre plutot que "for(Rocket *rocket in rocketLauncher->rockets)" pour eviter erreur liee a la
+                //suppression du rockets : "NSmutableArray was mutated while being iterated"
             {
-                if( ([helicopter getYCoord] <= 100) ||
-                   ([tank getXCoord]+tank->width/4 >= [helicopter getXCoord]-helicopter->width/4	&&
-                    [tank getYCoord]+tank->height/4 >= [helicopter getYCoord]-helicopter->height/4	&&
-                    [tank getYCoord]-tank->height/4 <= [helicopter getYCoord]+helicopter->height/4))
+                Rocket *rocket= [rocketLauncher->rockets objectAtIndex:j];
+                if (   [rocket getXCoord] >= [helicopter getXCoord]-helicopter->width/2
+                    && [rocket getXCoord] <= [helicopter getXCoord]+helicopter->width/2
+                    && [rocket getYCoord] >= [helicopter getYCoord]-helicopter->height/2)
                 {
-                    [tank die];
-                    NSLog(@"CRASH HELICOPTER FLOOR OR BY TANK!");
+                    [rocketLauncher->rockets removeObject: rocket];
+                    [rocket die];
+                    
+                    NSLog(@"CRASH OBUS!");
                     [helicopter die];
-                    collision= false;
-                       
-                }			   
-                else
-                {
-                    Obus *obu= [tank->obus objectAtIndex:j];
-                    if (   [obu getXCoord] >= [helicopter getXCoord]-helicopter->width/2
-                        && [obu getXCoord] <= [helicopter getXCoord]+helicopter->width/2
-                        && [obu getYCoord] >= [helicopter getYCoord]-helicopter->height/2)
-                    {
-                        [tank->obus removeObject: obu];
-                        [obu die];
-                        NSLog(@"CRASH OBUS!");
-                        [helicopter die];
-                        collision= true;
-                        i--;
-                        break;
-                    }
+                    collision= true;
+                    
+                    break;
                 }
             }
-        }	
+        }
         if (!collision) [helicopter move:joypadDistance joypadDirection:(float)joypadDirection aDelta:(float)aDelta];
         
         
@@ -335,7 +318,7 @@ FMOD_EVENTGROUP *generalGroup;
         
         [background update:aDelta];
         
-        [score update:aDelta kills:killedTanks];
+        [score update:aDelta kills:killedRocketLaunchers];
         [hud update:aDelta score:[score getValue]];
         //============================================//
 	}
@@ -351,10 +334,10 @@ FMOD_EVENTGROUP *generalGroup;
     //============================================//    
     
     //================== TANKS ===================//
-    for(Tank *tank in tanks)
+    for(RocketLauncher *rocketLauncher in rocketLaunchers)
     {
-        [tank render];
-        for (id obu in tank->obus) [obu render];
+        [rocketLauncher render];
+        for (id rocket in rocketLauncher->rockets) [rocket render];
     }
     //============================================//
     

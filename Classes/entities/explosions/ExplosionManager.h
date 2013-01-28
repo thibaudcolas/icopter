@@ -3,8 +3,8 @@
 //
 
 enum {
-    bAnimation_tankDestroyed = 0,
-    bAnimation_tankDamaged = 1,
+    bAnimation_rocketLauncherDestroyed = 0,
+    bAnimation_rocketLauncherDamaged = 1,
     bAnimation_helicoDamaged = 2,
     bAnimation_helicoAirDestroyed = 3,
     bAnimation_helicoGroundDestroyed = 4,
@@ -22,7 +22,7 @@ enum {
 
     NSMutableArray *explosions;
     
-    Animation *tankDestroyed;
+    Animation *rocketLauncherDestroyed;
     Animation *helicoAirDestroyed;
     Animation *missileDetonates;
 }

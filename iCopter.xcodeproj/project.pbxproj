@@ -17,12 +17,6 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
-		78AB62521663D5CC00BD35B7 /* libfmodevent_iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB61491663D5CB00BD35B7 /* libfmodevent_iphoneos.a */; };
-		78AB62531663D5CC00BD35B7 /* libfmodevent_iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB614A1663D5CB00BD35B7 /* libfmodevent_iphonesimulator.a */; };
-		78AB62541663D5CC00BD35B7 /* libfmodex_iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB614B1663D5CB00BD35B7 /* libfmodex_iphoneos.a */; };
-		78AB62551663D5CC00BD35B7 /* libfmodex_iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78AB614C1663D5CB00BD35B7 /* libfmodex_iphonesimulator.a */; };
-		78EF35A716AE0C44002DF160 /* iCopter.fev in Resources */ = {isa = PBXBuildFile; fileRef = 78EF358416AE0C44002DF160 /* iCopter.fev */; };
-		78EF35A816AE0C44002DF160 /* sound_bank.fsb in Resources */ = {isa = PBXBuildFile; fileRef = 78EF358516AE0C44002DF160 /* sound_bank.fsb */; };
 		78F17D3F16A4713200884770 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F17D3E16A4713200884770 /* CFNetwork.framework */; };
 		78F17D4116A4714200884770 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F17D4016A4714200884770 /* SystemConfiguration.framework */; };
 		78F17D4316A4715F00884770 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F17D4216A4715E00884770 /* MobileCoreServices.framework */; };
@@ -76,11 +70,8 @@
 		BE5E915516B3FAF400622DED /* Helicopter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E915216B3FAF400622DED /* Helicopter.m */; };
 		BE5E915616B3FAF400622DED /* MobileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E915416B3FAF400622DED /* MobileObject.m */; };
 		BE5E915D16B3FAFA00622DED /* Ennemies.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E915816B3FAFA00622DED /* Ennemies.m */; };
-		BE5E915E16B3FAFA00622DED /* Tank.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E915A16B3FAFA00622DED /* Tank.m */; };
 		BE5E915F16B3FAFA00622DED /* Ufo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E915C16B3FAFA00622DED /* Ufo.m */; };
 		BE5E916616B3FB0100622DED /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E916116B3FB0100622DED /* Missile.m */; };
-		BE5E916716B3FB0100622DED /* Obus.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E916316B3FB0100622DED /* Obus.m */; };
-		BE5E916816B3FB0100622DED /* Projectiles.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E916516B3FB0100622DED /* Projectiles.m */; };
 		BE5E917516B3FC4500622DED /* AbstractScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E917416B3FC4500622DED /* AbstractScene.m */; };
 		BE5E917816B3FCF900622DED /* explosion-big-air.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E917616B3FCF900622DED /* explosion-big-air.png */; };
 		BE5E917916B3FCF900622DED /* explosion-big-ground.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E917716B3FCF900622DED /* explosion-big-ground.png */; };
@@ -98,6 +89,13 @@
 		BE88EFB716B61E9D00878249 /* Rocket.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88EFB616B61E9D00878249 /* Rocket.m */; };
 		BE88EFBC16B61EB900878249 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88EFB916B61EB900878249 /* Enemy.m */; };
 		BE88EFBD16B61EB900878249 /* RocketLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88EFBB16B61EB900878249 /* RocketLauncher.m */; };
+		BE88EFCB16B622E500878249 /* iCopter.fev in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFC916B622E500878249 /* iCopter.fev */; };
+		BE88EFCC16B622E500878249 /* sound_bank.fsb in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFCA16B622E500878249 /* sound_bank.fsb */; };
+		BE88EFDB16B622F200878249 /* libfmodevent_iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE88EFD716B622F200878249 /* libfmodevent_iphoneos.a */; };
+		BE88EFDC16B622F200878249 /* libfmodevent_iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE88EFD816B622F200878249 /* libfmodevent_iphonesimulator.a */; };
+		BE88EFDD16B622F200878249 /* libfmodex_iphoneos.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE88EFD916B622F200878249 /* libfmodex_iphoneos.a */; };
+		BE88EFDE16B622F200878249 /* libfmodex_iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE88EFDA16B622F200878249 /* libfmodex_iphonesimulator.a */; };
+		BE88EFE116B624B700878249 /* Projectile.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88EFE016B624B700878249 /* Projectile.m */; };
 		BEAC4A3816B40278004E04EF /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3516B40278004E04EF /* Explosion.m */; };
 		BEAC4A3916B40278004E04EF /* ExplosionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3716B40278004E04EF /* ExplosionManager.m */; };
 		BEAC4A3E16B4028B004E04EF /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3B16B4028B004E04EF /* Background.m */; };
@@ -120,20 +118,6 @@
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		78AB61411663D5CB00BD35B7 /* fmod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod.h; sourceTree = "<group>"; };
-		78AB61421663D5CB00BD35B7 /* fmod_codec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_codec.h; sourceTree = "<group>"; };
-		78AB61431663D5CB00BD35B7 /* fmod_dsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_dsp.h; sourceTree = "<group>"; };
-		78AB61441663D5CB00BD35B7 /* fmod_errors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_errors.h; sourceTree = "<group>"; };
-		78AB61451663D5CB00BD35B7 /* fmod_event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_event.h; sourceTree = "<group>"; };
-		78AB61461663D5CB00BD35B7 /* fmod_memoryinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_memoryinfo.h; sourceTree = "<group>"; };
-		78AB61471663D5CB00BD35B7 /* fmod_output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_output.h; sourceTree = "<group>"; };
-		78AB61481663D5CB00BD35B7 /* fmodiphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmodiphone.h; sourceTree = "<group>"; };
-		78AB61491663D5CB00BD35B7 /* libfmodevent_iphoneos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfmodevent_iphoneos.a; sourceTree = "<group>"; };
-		78AB614A1663D5CB00BD35B7 /* libfmodevent_iphonesimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfmodevent_iphonesimulator.a; sourceTree = "<group>"; };
-		78AB614B1663D5CB00BD35B7 /* libfmodex_iphoneos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfmodex_iphoneos.a; sourceTree = "<group>"; };
-		78AB614C1663D5CB00BD35B7 /* libfmodex_iphonesimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfmodex_iphonesimulator.a; sourceTree = "<group>"; };
-		78EF358416AE0C44002DF160 /* iCopter.fev */ = {isa = PBXFileReference; lastKnownFileType = file; path = iCopter.fev; sourceTree = "<group>"; };
-		78EF358516AE0C44002DF160 /* sound_bank.fsb */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_bank.fsb; sourceTree = "<group>"; };
 		78F17D3E16A4713200884770 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		78F17D4016A4714200884770 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		78F17D4216A4715E00884770 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -216,16 +200,10 @@
 		BE5E915416B3FAF400622DED /* MobileObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MobileObject.m; path = Classes/entities/MobileObject.m; sourceTree = "<group>"; };
 		BE5E915716B3FAFA00622DED /* Ennemies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ennemies.h; path = Classes/entities/enemies/Ennemies.h; sourceTree = "<group>"; };
 		BE5E915816B3FAFA00622DED /* Ennemies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ennemies.m; path = Classes/entities/enemies/Ennemies.m; sourceTree = "<group>"; };
-		BE5E915916B3FAFA00622DED /* Tank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tank.h; path = Classes/entities/enemies/Tank.h; sourceTree = "<group>"; };
-		BE5E915A16B3FAFA00622DED /* Tank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Tank.m; path = Classes/entities/enemies/Tank.m; sourceTree = "<group>"; };
 		BE5E915B16B3FAFA00622DED /* Ufo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ufo.h; path = Classes/entities/enemies/Ufo.h; sourceTree = "<group>"; };
 		BE5E915C16B3FAFA00622DED /* Ufo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ufo.m; path = Classes/entities/enemies/Ufo.m; sourceTree = "<group>"; };
 		BE5E916016B3FB0100622DED /* Missile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Missile.h; path = Classes/entities/projectiles/Missile.h; sourceTree = "<group>"; };
 		BE5E916116B3FB0100622DED /* Missile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Missile.m; path = Classes/entities/projectiles/Missile.m; sourceTree = "<group>"; };
-		BE5E916216B3FB0100622DED /* Obus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Obus.h; path = Classes/entities/projectiles/Obus.h; sourceTree = "<group>"; };
-		BE5E916316B3FB0100622DED /* Obus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Obus.m; path = Classes/entities/projectiles/Obus.m; sourceTree = "<group>"; };
-		BE5E916416B3FB0100622DED /* Projectiles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Projectiles.h; path = Classes/entities/projectiles/Projectiles.h; sourceTree = "<group>"; };
-		BE5E916516B3FB0100622DED /* Projectiles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Projectiles.m; path = Classes/entities/projectiles/Projectiles.m; sourceTree = "<group>"; };
 		BE5E917216B3FC2D00622DED /* iCopter_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCopter_Prefix.pch; sourceTree = "<group>"; };
 		BE5E917316B3FC4500622DED /* AbstractScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AbstractScene.h; path = Classes/scenes/AbstractScene.h; sourceTree = "<group>"; };
 		BE5E917416B3FC4500622DED /* AbstractScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AbstractScene.m; path = Classes/scenes/AbstractScene.m; sourceTree = "<group>"; };
@@ -249,6 +227,22 @@
 		BE88EFB916B61EB900878249 /* Enemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Enemy.m; path = Classes/entities/enemies/Enemy.m; sourceTree = "<group>"; };
 		BE88EFBA16B61EB900878249 /* RocketLauncher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RocketLauncher.h; path = Classes/entities/enemies/RocketLauncher.h; sourceTree = "<group>"; };
 		BE88EFBB16B61EB900878249 /* RocketLauncher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RocketLauncher.m; path = Classes/entities/enemies/RocketLauncher.m; sourceTree = "<group>"; };
+		BE88EFC916B622E500878249 /* iCopter.fev */ = {isa = PBXFileReference; lastKnownFileType = file; path = iCopter.fev; sourceTree = "<group>"; };
+		BE88EFCA16B622E500878249 /* sound_bank.fsb */ = {isa = PBXFileReference; lastKnownFileType = file; path = sound_bank.fsb; sourceTree = "<group>"; };
+		BE88EFCF16B622F200878249 /* fmod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod.h; sourceTree = "<group>"; };
+		BE88EFD016B622F200878249 /* fmod_codec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_codec.h; sourceTree = "<group>"; };
+		BE88EFD116B622F200878249 /* fmod_dsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_dsp.h; sourceTree = "<group>"; };
+		BE88EFD216B622F200878249 /* fmod_errors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_errors.h; sourceTree = "<group>"; };
+		BE88EFD316B622F200878249 /* fmod_event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_event.h; sourceTree = "<group>"; };
+		BE88EFD416B622F200878249 /* fmod_memoryinfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_memoryinfo.h; sourceTree = "<group>"; };
+		BE88EFD516B622F200878249 /* fmod_output.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmod_output.h; sourceTree = "<group>"; };
+		BE88EFD616B622F200878249 /* fmodiphone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fmodiphone.h; sourceTree = "<group>"; };
+		BE88EFD716B622F200878249 /* libfmodevent_iphoneos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfmodevent_iphoneos.a; sourceTree = "<group>"; };
+		BE88EFD816B622F200878249 /* libfmodevent_iphonesimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfmodevent_iphonesimulator.a; sourceTree = "<group>"; };
+		BE88EFD916B622F200878249 /* libfmodex_iphoneos.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfmodex_iphoneos.a; sourceTree = "<group>"; };
+		BE88EFDA16B622F200878249 /* libfmodex_iphonesimulator.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfmodex_iphonesimulator.a; sourceTree = "<group>"; };
+		BE88EFDF16B624B700878249 /* Projectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Projectile.h; path = Classes/entities/projectiles/Projectile.h; sourceTree = "<group>"; };
+		BE88EFE016B624B700878249 /* Projectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Projectile.m; path = Classes/entities/projectiles/Projectile.m; sourceTree = "<group>"; };
 		BEAC4A3416B40278004E04EF /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = Classes/entities/explosions/Explosion.h; sourceTree = "<group>"; };
 		BEAC4A3516B40278004E04EF /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = Classes/entities/explosions/Explosion.m; sourceTree = "<group>"; };
 		BEAC4A3616B40278004E04EF /* ExplosionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExplosionManager.h; path = Classes/entities/explosions/ExplosionManager.h; sourceTree = "<group>"; };
@@ -285,10 +279,10 @@
 				18B97168103AAB0F00809077 /* OpenAL.framework in Frameworks */,
 				18B97330103AAB2F00809077 /* libz.dylib in Frameworks */,
 				8F1E17E9111CBFE500984AC5 /* AudioToolbox.framework in Frameworks */,
-				78AB62521663D5CC00BD35B7 /* libfmodevent_iphoneos.a in Frameworks */,
-				78AB62531663D5CC00BD35B7 /* libfmodevent_iphonesimulator.a in Frameworks */,
-				78AB62541663D5CC00BD35B7 /* libfmodex_iphoneos.a in Frameworks */,
-				78AB62551663D5CC00BD35B7 /* libfmodex_iphonesimulator.a in Frameworks */,
+				BE88EFDB16B622F200878249 /* libfmodevent_iphoneos.a in Frameworks */,
+				BE88EFDC16B622F200878249 /* libfmodevent_iphonesimulator.a in Frameworks */,
+				BE88EFDD16B622F200878249 /* libfmodex_iphoneos.a in Frameworks */,
+				BE88EFDE16B622F200878249 /* libfmodex_iphonesimulator.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -330,7 +324,6 @@
 		18B970D1103AA5D400809077 /* Headers */ = {
 			isa = PBXGroup;
 			children = (
-				78EF356016AE0C44002DF160 /* FMOD Designer Project */,
 				BE5E90F616B3F81A00622DED /* Global.h */,
 				BE5E90F716B3F81A00622DED /* Structures.h */,
 				BE5E90F816B3F81A00622DED /* SynthesizeSingleton.h */,
@@ -345,6 +338,7 @@
 				BE5E914B16B3F9DB00622DED /* HUD */,
 				BE5E914C16B3F9E500622DED /* Background */,
 				BE5E914D16B3F9EF00622DED /* Managers */,
+				BE88EFC616B622BD00878249 /* Sound */,
 				BE5E914E16B3FA1700622DED /* Sprites */,
 				BE5E914F16B3FA2900622DED /* Fonts */,
 				BE5E915016B3FA3200622DED /* OpenAL */,
@@ -436,7 +430,6 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				78AB613F1663D5CB00BD35B7 /* FMOD Libraries */,
 				18B9732F103AAB2F00809077 /* libz.dylib */,
 				18B9715F103AAB0F00809077 /* AVFoundation.framework */,
 				18B97163103AAB0F00809077 /* CoreAudio.framework */,
@@ -472,42 +465,6 @@
 			);
 			name = Fonts;
 			path = fonts;
-			sourceTree = "<group>";
-		};
-		78AB613F1663D5CB00BD35B7 /* FMOD Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				78AB61401663D5CB00BD35B7 /* Headers */,
-				78AB61491663D5CB00BD35B7 /* libfmodevent_iphoneos.a */,
-				78AB614A1663D5CB00BD35B7 /* libfmodevent_iphonesimulator.a */,
-				78AB614B1663D5CB00BD35B7 /* libfmodex_iphoneos.a */,
-				78AB614C1663D5CB00BD35B7 /* libfmodex_iphonesimulator.a */,
-			);
-			path = "FMOD Libraries";
-			sourceTree = "<group>";
-		};
-		78AB61401663D5CB00BD35B7 /* Headers */ = {
-			isa = PBXGroup;
-			children = (
-				78AB61411663D5CB00BD35B7 /* fmod.h */,
-				78AB61421663D5CB00BD35B7 /* fmod_codec.h */,
-				78AB61431663D5CB00BD35B7 /* fmod_dsp.h */,
-				78AB61441663D5CB00BD35B7 /* fmod_errors.h */,
-				78AB61451663D5CB00BD35B7 /* fmod_event.h */,
-				78AB61461663D5CB00BD35B7 /* fmod_memoryinfo.h */,
-				78AB61471663D5CB00BD35B7 /* fmod_output.h */,
-				78AB61481663D5CB00BD35B7 /* fmodiphone.h */,
-			);
-			path = Headers;
-			sourceTree = "<group>";
-		};
-		78EF356016AE0C44002DF160 /* FMOD Designer Project */ = {
-			isa = PBXGroup;
-			children = (
-				78EF358416AE0C44002DF160 /* iCopter.fev */,
-				78EF358516AE0C44002DF160 /* sound_bank.fsb */,
-			);
-			path = "FMOD Designer Project";
 			sourceTree = "<group>";
 		};
 		810EC7F916B2CAC40034C3D3 /* Menu */ = {
@@ -673,14 +630,12 @@
 		BE5E916916B3FB0500622DED /* Projectiles */ = {
 			isa = PBXGroup;
 			children = (
+				BE88EFDF16B624B700878249 /* Projectile.h */,
+				BE88EFE016B624B700878249 /* Projectile.m */,
 				BE88EFB516B61E9D00878249 /* Rocket.h */,
 				BE88EFB616B61E9D00878249 /* Rocket.m */,
 				BE5E916016B3FB0100622DED /* Missile.h */,
 				BE5E916116B3FB0100622DED /* Missile.m */,
-				BE5E916216B3FB0100622DED /* Obus.h */,
-				BE5E916316B3FB0100622DED /* Obus.m */,
-				BE5E916416B3FB0100622DED /* Projectiles.h */,
-				BE5E916516B3FB0100622DED /* Projectiles.m */,
 			);
 			name = Projectiles;
 			sourceTree = "<group>";
@@ -694,8 +649,6 @@
 				BE88EFBB16B61EB900878249 /* RocketLauncher.m */,
 				BE5E915716B3FAFA00622DED /* Ennemies.h */,
 				BE5E915816B3FAFA00622DED /* Ennemies.m */,
-				BE5E915916B3FAFA00622DED /* Tank.h */,
-				BE5E915A16B3FAFA00622DED /* Tank.m */,
 				BE5E915B16B3FAFA00622DED /* Ufo.h */,
 				BE5E915C16B3FAFA00622DED /* Ufo.m */,
 				BEE0CCBF16B4246000D7B332 /* OVNI.h */,
@@ -715,6 +668,53 @@
 				BEAC4A3716B40278004E04EF /* ExplosionManager.m */,
 			);
 			name = Explosions;
+			sourceTree = "<group>";
+		};
+		BE88EFC616B622BD00878249 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				BE88EFC816B622E500878249 /* FMOD Designer Project */,
+				BE88EFCD16B622F200878249 /* FMOD Libraries */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
+		BE88EFC816B622E500878249 /* FMOD Designer Project */ = {
+			isa = PBXGroup;
+			children = (
+				BE88EFC916B622E500878249 /* iCopter.fev */,
+				BE88EFCA16B622E500878249 /* sound_bank.fsb */,
+			);
+			name = "FMOD Designer Project";
+			path = "Classes/engine/sound/FMOD Designer Project";
+			sourceTree = "<group>";
+		};
+		BE88EFCD16B622F200878249 /* FMOD Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				BE88EFCE16B622F200878249 /* Headers */,
+				BE88EFD716B622F200878249 /* libfmodevent_iphoneos.a */,
+				BE88EFD816B622F200878249 /* libfmodevent_iphonesimulator.a */,
+				BE88EFD916B622F200878249 /* libfmodex_iphoneos.a */,
+				BE88EFDA16B622F200878249 /* libfmodex_iphonesimulator.a */,
+			);
+			name = "FMOD Libraries";
+			path = "Classes/engine/sound/FMOD Libraries";
+			sourceTree = "<group>";
+		};
+		BE88EFCE16B622F200878249 /* Headers */ = {
+			isa = PBXGroup;
+			children = (
+				BE88EFCF16B622F200878249 /* fmod.h */,
+				BE88EFD016B622F200878249 /* fmod_codec.h */,
+				BE88EFD116B622F200878249 /* fmod_dsp.h */,
+				BE88EFD216B622F200878249 /* fmod_errors.h */,
+				BE88EFD316B622F200878249 /* fmod_event.h */,
+				BE88EFD416B622F200878249 /* fmod_memoryinfo.h */,
+				BE88EFD516B622F200878249 /* fmod_output.h */,
+				BE88EFD616B622F200878249 /* fmodiphone.h */,
+			);
+			path = Headers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -772,8 +772,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F8569DC10C3E8F2008E53F8 /* dist.plist in Resources */,
-				78EF35A716AE0C44002DF160 /* iCopter.fev in Resources */,
-				78EF35A816AE0C44002DF160 /* sound_bank.fsb in Resources */,
 				BE5E90C116B3F7A500622DED /* allBlack.png in Resources */,
 				BE5E90C916B3F7AD00622DED /* background-back.png in Resources */,
 				BE5E90CA16B3F7AD00622DED /* background-ground.png in Resources */,
@@ -811,6 +809,8 @@
 				BE73961916B619ED009A0AE7 /* rocket-launcher-base.png in Resources */,
 				BE73961A16B619ED009A0AE7 /* rocket-launcher-canon.png in Resources */,
 				BE88EFB316B61E5800878249 /* GameOver.jpg in Resources */,
+				BE88EFCB16B622E500878249 /* iCopter.fev in Resources */,
+				BE88EFCC16B622E500878249 /* sound_bank.fsb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,11 +845,8 @@
 				BE5E915516B3FAF400622DED /* Helicopter.m in Sources */,
 				BE5E915616B3FAF400622DED /* MobileObject.m in Sources */,
 				BE5E915D16B3FAFA00622DED /* Ennemies.m in Sources */,
-				BE5E915E16B3FAFA00622DED /* Tank.m in Sources */,
 				BE5E915F16B3FAFA00622DED /* Ufo.m in Sources */,
 				BE5E916616B3FB0100622DED /* Missile.m in Sources */,
-				BE5E916716B3FB0100622DED /* Obus.m in Sources */,
-				BE5E916816B3FB0100622DED /* Projectiles.m in Sources */,
 				BE5E917516B3FC4500622DED /* AbstractScene.m in Sources */,
 				BEAC4A3816B40278004E04EF /* Explosion.m in Sources */,
 				BEAC4A3916B40278004E04EF /* ExplosionManager.m in Sources */,
@@ -863,6 +860,7 @@
 				BE88EFB716B61E9D00878249 /* Rocket.m in Sources */,
 				BE88EFBC16B61EB900878249 /* Enemy.m in Sources */,
 				BE88EFBD16B61EB900878249 /* RocketLauncher.m in Sources */,
+				BE88EFE116B624B700878249 /* Projectile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -891,17 +889,18 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/FMOD Libraries\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
 				"OTHER_LDFLAGS[sdk=iphoneos*]" = (
-					"\"$(SRCROOT)/FMOD Libraries/libfmodevent_iphoneos.a\"",
-					"\"$(SRCROOT)/FMOD Libraries/libfmodex_iphoneos.a\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries/libfmodevent_iphonesimulator.a\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries/libfmodex_iphonesimulator.a\"",
 				);
 				"OTHER_LDFLAGS[sdk=iphonesimulator*]" = (
-					"\"$(SRCROOT)/FMOD Libraries/libfmodevent_iphonesimulator.a\"",
-					"\"$(SRCROOT)/FMOD Libraries/libfmodex_iphonesimulator.a\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries/libfmodevent_iphonesimulator.a\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries/libfmodex_iphonesimulator.a\"",
 				);
 				PRODUCT_NAME = iCopter;
 				SDKROOT = iphoneos;
@@ -928,9 +927,14 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/FMOD Libraries\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
+				"OTHER_LDFLAGS[sdk=iphonesimulator*]" = (
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries/libfmodevent_iphonesimulator.a\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries/libfmodex_iphonesimulator.a\"",
+				);
 				PRODUCT_NAME = iCopter;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -976,9 +980,14 @@
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
 					"\"$(SRCROOT)/FMOD Libraries\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
+				"OTHER_LDFLAGS[sdk=iphonesimulator*]" = (
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries/libfmodevent_iphonesimulator.a\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries/libfmodex_iphonesimulator.a\"",
+				);
 				PRODUCT_NAME = iCopter;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;

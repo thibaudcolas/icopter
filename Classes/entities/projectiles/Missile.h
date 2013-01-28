@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Projectiles.h"
+#import "Projectile.h"
 
 @class Helicopter;
 
-@interface Missile : Projectiles
+@interface Missile : Projectile
 {
 	float deltat;
 	float chute;//9.81

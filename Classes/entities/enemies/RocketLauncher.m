@@ -150,7 +150,6 @@
 
 -(void) die
 {
-    killedRocketLaunchers++;
     [rocketLaunchers removeObject: self];
     //================== son =====================//
     FMOD_Event_Stop(rocketLauncherEvent, false);

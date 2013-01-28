@@ -13,14 +13,14 @@
 #import "OVNIManager.h"
 #import "GameHUD.h"
 #import "Helicopter.h"
-#import "Tank.h"
+#import "RocketLauncher.h"
 #import "Ufo.h"
 #import "Score.h"
 
 #define MAX_FMOD_AUDIO_CHANNELS 10
 
 @class Image;
-@class Tank;
+@class RocketLauncher;
 @class Background;
 @class ExplosionManager;
 @class OVNIManager;
@@ -37,6 +37,11 @@
 @class GoText;
 @class Helicopter;
 
+Helicopter *helicopter;
+NSMutableArray *rocketLaunchers;
+FMOD_EVENTPROJECT *project;
+FMOD_EVENTGROUP *generalGroup;
+
 
 @interface GameScene : AbstractScene
 {
@@ -46,7 +51,7 @@
     
     SoundManager *sharedSoundManager;
 	FMOD_EVENTSYSTEM *eventSystem;
-    FMOD_EVENTPARAMETER *nbUfoParam,*nbTankParam,*timeParam;// parameter of the event_music_game
+    FMOD_EVENTPARAMETER *nbUfoParam,*nbRocketLauncherParam,*timeParam;// parameter of the event_music_game
     
     FMOD_EVENTCATEGORY *game;
     FMOD_EVENT *generalEvent;
@@ -70,21 +75,21 @@
     OVNIManager* sharedOVNIManager;
     //============================================//
 
-    //================ Classe TANK ===============//
-    int killedTanks;
-    NSMutableArray *tanks;
-    float createTankTimer;
-    int maxNumTank;//nombre max de tanks a l'ecran
-    int createTankTimeout;//temps au bout duquel un tank est cree (tant que numTank<maxNumTank)
-	CGSize tankRectangleSize;// Height and Width of the tank touch rectangle
-    //============================================//    
+    //============= ROCKET LAUNCHER ==============//
+    float createRocketLauncherTimer;
+    int maxNumRocketLauncher;//nombre max de rocketLaunchers a l'ecran
+    int createRocketLauncherTimeout;//temps au bout duquel un rocketLauncher est cree (tant que numRocketLauncher<maxNumRocketLauncher)
+	CGSize rocketLauncherRectangleSize;// Height and Width of the rocketLauncher touch rectangle
+    //============================================// 
+    
+    int killedRocketLaunchers;
     
 	//================ Classe UFO ================//
     NSMutableArray *ufos;
     float createUfoTimer;
     int maxNumUfo;//nombre max d'ufo a l'ecran
     int createUfoTimeout;//temps au bout duquel un ufo est cree (tant que numUfo<maxNumUfo)
-	CGSize ufoRectangleSize;// Height and Width of the tank touch rectangle
+	CGSize ufoRectangleSize;
     //============================================//
     
 	float joypadDistance;
@@ -94,8 +99,6 @@
 	BOOL isJoypadTouchMoving;	
 	//============================================//  
 
-	//Helicopter
-	Helicopter *helicopter;
 }
 
 @end

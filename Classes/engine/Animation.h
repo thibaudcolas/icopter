@@ -35,7 +35,7 @@ enum {
 @property (nonatomic, assign) NSUInteger type;
 @property (nonatomic, assign) NSInteger currentFrame;
 @property (nonatomic, assign) NSUInteger bounceFrame;
-@property (nonatomic, assign, readonly) NSInteger direction;
+@property (nonatomic, assign) NSInteger direction;
 @property (nonatomic, assign, readonly) NSUInteger maxFrames;
 @property (nonatomic, assign, readonly) NSInteger frameCount;
 
