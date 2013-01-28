@@ -119,9 +119,9 @@
     [menuBackground renderRear];
     
     [helicoBody renderCenteredAtPoint:helicoCoord];
-    [helicoRotor renderCenteredAtPoint:CGPointMake(helicoCoord.x + 15,helicoCoord.y + 7)];
+    [helicoRotor renderCenteredAtPoint:CGPointMake(helicoCoord.x + 15, helicoCoord.y + 7)];
     
-    [gameTitle renderCenteredAtPoint:CGPointMake(240,280)];
+    [gameTitle renderCenteredAtPoint:CGPointMake(240, 280)];
     
     [credits renderStringJustifiedInFrame:CGRectMake(230, 120, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"( toucher pour jouer )"];
     
@@ -148,6 +148,9 @@
     // If the gear is pressed then show the settings for the game
     if (CGRectContainsPoint(settingsButtonBounds, touchLocation)) {
         [sharedGameController transitionToSceneWithKey:@"settings"];
+    }
+    else {
+        [sharedGameController transitionToSceneWithKey:@"game"];
     }
 }
 
