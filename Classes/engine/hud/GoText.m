@@ -9,7 +9,7 @@ extern FMOD_EVENTGROUP *generalGroup;
 
 @synthesize position;
 
-- (id)init
+- (id)init:(Animation*)anim
 {
 	self= [super init];
     
@@ -17,7 +17,7 @@ extern FMOD_EVENTGROUP *generalGroup;
     {
         position= CGPointMake(240, 300);
         
-		animation= [[Animation alloc] createFromImageNamed:@"hud-go.png" frameSize:CGSizeMake(33, 31) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Once length:16];
+		animation= anim;
         
         goEvent = NULL;
         // create an instance of the FMOD event

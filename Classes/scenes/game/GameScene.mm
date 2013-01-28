@@ -331,8 +331,8 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
     //================== TANKS ===================//
     for(RocketLauncher *rocketLauncher in rocketLaunchers)
     {
-        [rocketLauncher render];
         for (id rocket in rocketLauncher->rockets) [rocket render];
+        [rocketLauncher render];
     }
     //============================================//
     
@@ -341,8 +341,8 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
     //============================================//
     
     //================ HELICOPTER ================//
-	[helicopter render];
     for(id missile in helicopter->missiles) [missile render];
+    [helicopter render];
     //============================================//
     
     [sharedExplosionManager render];

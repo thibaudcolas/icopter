@@ -17,7 +17,7 @@
 @property (nonatomic, getter = getBounds) CGRect bounds;
 @property (nonatomic, getter = getCenter) CGPoint center;
 
-- (id) init;
+- (id) init:(Image*)img;
 
 - (void) render;
 

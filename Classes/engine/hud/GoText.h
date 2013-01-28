@@ -18,7 +18,7 @@
 
 @property(nonatomic)CGPoint position;
 
-- (id) init;
+- (id) init:(Animation*)anim;
 
 - (void) update:(float)delta;
 

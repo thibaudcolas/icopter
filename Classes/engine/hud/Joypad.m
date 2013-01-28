@@ -9,7 +9,7 @@
 @synthesize bounds;
 @synthesize center;
 
-- (id)init
+- (id)init:(Image*)img
 {
 	self= [super init];
     
@@ -17,7 +17,7 @@
     {
         int size = 40;
         
-        image = [[Image alloc] initWithImageNamed:@"joypad.png" filter:GL_LINEAR];
+        image = img;
         center = CGPointMake(size + 10, size + 10);
         bounds = CGRectMake(center.x - size, center.y - size, size * 2, size * 2);
         
