@@ -101,6 +101,7 @@
 		BE88EFF216B6494400878249 /* score-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFF116B6494400878249 /* score-arrow.png */; };
 		BE88EFF416B659E600878249 /* hud-atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFF316B659E600878249 /* hud-atlas.png */; };
 		BE88EFF616B65A6100878249 /* hud-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFF516B65A6100878249 /* hud-coordinates.plist */; };
+		BE88F00516B6AECC00878249 /* FmodSoundManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE88F00416B6AECC00878249 /* FmodSoundManager.mm */; };
 		BEAC4A3816B40278004E04EF /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3516B40278004E04EF /* Explosion.m */; };
 		BEAC4A3916B40278004E04EF /* ExplosionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3716B40278004E04EF /* ExplosionManager.m */; };
 		BEAC4A3E16B4028B004E04EF /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3B16B4028B004E04EF /* Background.m */; };
@@ -250,6 +251,8 @@
 		BE88EFF116B6494400878249 /* score-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "score-arrow.png"; path = "resources/images/hud/score-arrow.png"; sourceTree = SOURCE_ROOT; };
 		BE88EFF316B659E600878249 /* hud-atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hud-atlas.png"; path = "resources/images/hud/hud-atlas.png"; sourceTree = SOURCE_ROOT; };
 		BE88EFF516B65A6100878249 /* hud-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "hud-coordinates.plist"; path = "resources/hud-coordinates.plist"; sourceTree = "<group>"; };
+		BE88F00316B6AECC00878249 /* FmodSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FmodSoundManager.h; path = Classes/engine/managers/FmodSoundManager.h; sourceTree = "<group>"; };
+		BE88F00416B6AECC00878249 /* FmodSoundManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FmodSoundManager.mm; path = Classes/engine/managers/FmodSoundManager.mm; sourceTree = "<group>"; };
 		BEAC4A3416B40278004E04EF /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = Classes/entities/explosions/Explosion.h; sourceTree = "<group>"; };
 		BEAC4A3516B40278004E04EF /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = Classes/entities/explosions/Explosion.m; sourceTree = "<group>"; };
 		BEAC4A3616B40278004E04EF /* ExplosionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExplosionManager.h; path = Classes/entities/explosions/ExplosionManager.h; sourceTree = "<group>"; };
@@ -586,6 +589,8 @@
 		BE5E914D16B3F9EF00622DED /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				BE88F00316B6AECC00878249 /* FmodSoundManager.h */,
+				BE88F00416B6AECC00878249 /* FmodSoundManager.mm */,
 				BE5E913316B3F9C700622DED /* ImageRenderManager.h */,
 				BE5E913416B3F9C700622DED /* ImageRenderManager.m */,
 				BE5E913516B3F9C700622DED /* SoundManager.h */,
@@ -863,6 +868,7 @@
 				BE88EFBC16B61EB900878249 /* Enemy.m in Sources */,
 				BE88EFBD16B61EB900878249 /* RocketLauncher.m in Sources */,
 				BE88EFE116B624B700878249 /* Projectile.m in Sources */,
+				BE88F00516B6AECC00878249 /* FmodSoundManager.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
