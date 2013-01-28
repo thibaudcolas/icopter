@@ -24,6 +24,7 @@ enum {
     
     Animation *tankDestroyed;
     Animation *helicoAirDestroyed;
+    Animation *missileDetonates;
 }
 
 // Returns as instance of the ExplosionManager class.  If an instance has already been created

@@ -20,6 +20,7 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ExplosionManager);
         
         tankDestroyed = [[Animation alloc] createFromImageNamed:@"explosion-big-ground.png" frameSize:CGSizeMake(82, 87) spacing:0 margin:0 delay:0.05f state:kAnimationState_Stopped type:kAnimationType_Once columns:6 rows:4];
         helicoAirDestroyed = [[Animation alloc] createFromImageNamed:@"explosion-big-air.png" frameSize:CGSizeMake(60, 63) spacing:0 margin:0 delay:0.05f state:kAnimationState_Stopped type:kAnimationType_Once columns:7 rows:4];
+        missileDetonates = [[Animation alloc] createFromImageNamed:@"explosion-small-ground.png" frameSize:CGSizeMake(43, 55) spacing:0 margin:0 delay:0.15f state:kAnimationState_Stopped type:kAnimationType_Once length:10];
         
         NSLog(@"INFO - ExplosionManager: Created successfully");
     }
@@ -36,8 +37,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ExplosionManager);
         case bAnimation_helicoAirDestroyed :
             [explosions addObject:[[Explosion alloc] init:helicoAirDestroyed position:pos]];
             break;
+        case bAnimation_missileDetonates :
+            [explosions addObject:[[Explosion alloc] init:missileDetonates position:pos]];
+            break;
         default:
-            [explosions addObject:[[Explosion alloc] init:tankDestroyed position:pos]];
+            [explosions addObject:[[Explosion alloc] init:missileDetonates position:pos]];
             break;
     }
 }

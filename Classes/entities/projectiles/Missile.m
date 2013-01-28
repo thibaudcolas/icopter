@@ -40,7 +40,7 @@ extern FMOD_EVENTGROUP *helicopterGroup;
 	xCoord= xCoord + 2*0.2;
 	yCoord= yCoord + speed*deltat;
         
-    return yCoord > -10;
+    return yCoord > 70;
     //-10 pour etre sur que le missile est bien completement sorti de l'ecran (pour pas voir le missile disparaitre subitement)
 }
 
@@ -57,6 +57,10 @@ extern FMOD_EVENTGROUP *helicopterGroup;
 
 - (void) die
 {
+    //FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter_missile_detonates", FMOD_EVENT_DEFAULT, &missileExplosionEvent);
+    //FMOD_Event_Start(missileExplosionEvent);
+    //FMOD_Event_Release(missileExplosionEvent, false,1);
+    [sharedExplosionManager add:bAnimation_missileDetonates position:CGPointMake(xCoord, yCoord)];
     FMOD_Event_Stop(missileEvent, false);
     [self dealloc];
 }

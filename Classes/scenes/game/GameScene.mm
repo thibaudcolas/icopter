@@ -88,7 +88,7 @@ FMOD_EVENTGROUP *generalGroup;
         [background add:110 image:[[masterSpriteSheet imageForKey:@"background-ruins"] retain] inFront:false];
         [background add:82 image:[[masterSpriteSheet imageForKey:@"background-back"] retain] inFront:false];
         [background add:32 image:[[masterSpriteSheet imageForKey:@"background-road"] retain] inFront:false];
-        [background add:0 image:[[masterSpriteSheet imageForKey:@"background-ground"] retain] inFront:true];
+        [background add:0 image:[[Image alloc] initWithImageNamed:@"background-ground.png" filter:GL_LINEAR] inFront:true];
         
         [masterSpriteSheet release];
 		
