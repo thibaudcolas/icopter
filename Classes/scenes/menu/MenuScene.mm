@@ -49,10 +49,21 @@
 		// Create a packed spritesheet for the menu
 		pss = [PackedSpriteSheet packedSpriteSheetForImageNamed:@"menuAtlas.png" controlFile:@"menuCoords" imageFilter:GL_LINEAR];
 */
+        menuBackground = [[Background alloc] init:1];
         
-        //background = [[Animation alloc] createFromImage:[[Image alloc] initWithImageNamed:@"background-menu.jpg" filter:GL_LINEAR] frameSize:CGSizeMake(304, 144) spacing:0 margin:0 delay:0.15f state:kAnimationState_Running type:kAnimationType_Repeating columns:3 rows:2];
-		// Create images for the menu from packed spritesheet and also the fade image
-        background= [[Image alloc] initWithImageNamed:@"GameOver.png" filter:GL_LINEAR];
+        [menuBackground add:160 image:[[Image alloc] initWithImageNamed:@"background-menu-sky.png" filter:GL_LINEAR] inFront:false];
+        [menuBackground add:170 image:[[Image alloc] initWithImageNamed:@"background-menu-clouds.png" filter:GL_LINEAR] inFront:false];
+        [menuBackground add:0 image:[[Image alloc] initWithImageNamed:@"background-menu-forest.png" filter:GL_LINEAR] inFront:false];
+        
+        gameTitle = [[Image alloc] initWithImageNamed:@"menu-title.png" filter:GL_LINEAR];
+        
+        helicoBody = [[Image alloc] initWithImageNamed:@"helicopter.png" filter:GL_LINEAR];
+        helicoRotor = [[Animation alloc] createFromImageNamed:@"helicopter-rotor.png" frameSize:CGSizeMake(80, 17) spacing:0 margin:0 delay:0.01f state:kAnimationState_Running type:kAnimationType_Repeating columns:10 rows:1];
+        helicoCoord = CGPointMake(-50, 200);
+        
+        sinModifier = 0;
+        sinModifierIncrease = true;
+        
         newGame=  [[Image alloc] initWithImageNamed:@"New-Game.png" filter:GL_LINEAR];
         scores=  [[Image alloc] initWithImageNamed:@"scores.png" filter:GL_LINEAR];
         settings=  [[Image alloc] initWithImageNamed:@"settings.png" filter:GL_LINEAR];
@@ -90,101 +101,23 @@
 }
 
 - (void)updateSceneWithDelta:(float)aDelta {
-/*	switch (state) {
-		case kSceneState_Running:
-			
-			// Loop through clouds travelling to the right.  We want the speed of each cloud to 
-			// be different as it looks better than having them all travel at the same speed.  To
-			// Achieve this we have a very simple calculation that uses the index of the cloud in 
-			// the array to work out the speed.
-			for (int index=0; index < 4 ; index++) {
-				CGPoint point = cloudPositions[index];
-				point.x += (cloudSpeed * index+1) * aDelta;
-				if (point.x > 480)
-					point.x = - 200;
-				cloudPositions[index] = point;
-			}
-
-			// Loop through clouds travelling to the right
-			for (int index=4; index < 7 ; index++) {
-				CGPoint point = cloudPositions[index];
-				point.x -= (cloudSpeed * index+1) * aDelta;
-				if (point.x < -200)
-					point.x = 480;
-				cloudPositions[index] = point;
-			}
-			break;
-		case kSceneState_TransitionIn:
-			
-			// If external music is playing, then don't start the in game music
-			if (!isMusicFading && !sharedSoundManager.isExternalAudioPlaying) {
-				isMusicFading = YES;
-				sharedSoundManager.currentMusicVolume = 0;
-				[sharedSoundManager startPlaylistNamed:@"menu"];
-				[sharedSoundManager fadeMusicVolumeFrom:0 toVolume:sharedSoundManager.musicVolume duration:0.8f stop:NO];
-			}
-			
-			// Update the alpha value of the fadeImage
-			alpha -= fadeSpeed * aDelta;
-			fadeImage.color = Color4fMake(1.0, 1.0, 1.0, alpha);
-
-			if(alpha < 0.0f) {
-				alpha = 0.0f;
-				isMusicFading = NO;
-				state = kSceneState_Running;
-			}
-			break;
-		case kSceneState_TransitionOut:
-			
-			// If not already fading, fade the currently playing track from the current volume to 0
-			if (!isMusicFading && sharedSoundManager.isMusicPlaying) {
-				isMusicFading = YES;
-				[sharedSoundManager fadeMusicVolumeFrom:sharedSoundManager.musicVolume toVolume:0 duration:0.8f stop:YES];
-			}
-			
-			// Adjust the alpha value of the fadeImage.  This will cause the image to move from transparent to opaque
-			alpha += fadeSpeed * aDelta;
-			fadeImage.color = Color4fMake(1.0, 1.0, 1.0, alpha);
-			
-			// Check to see if the image is now fully opache.  If so then the fade is finished
-			if(alpha > 1.0f) {
-				alpha = 1.0f;
-				
-				// The render routine will not be called for this scene past this point, so we have added
-				// a render of the fadeImage here so that the menu scene is completely removed.  Without this
-				// it was sometimes possible to see the main menu faintly.
-				[fadeImage renderAtPoint:CGPointMake(0, 0)];
-				[sharedImageRenderManager renderImages];
-				
-				// This scene is now idle
-				state = kSceneState_Idle;
-				
-				// We stop the music for this scene and also remove the music we have been using.  This frees
-				// up memory for the game scene.
-				[sharedSoundManager removeMusicWithKey:@"themeIntro"];
-				[sharedSoundManager removeMusicWithKey:@"themeLoop"];
-				[sharedSoundManager removeSoundWithKey:@"guiTouch"];
-				[sharedSoundManager removePlaylistNamed:@"menu"];
-				sharedSoundManager.usePlaylist = NO;
-				sharedSoundManager.loopLastPlaylistTrack = NO;
-				
-				// Stop the idletimer from kicking in while playing the game.  This stops the screen from fading
-				// during game play
-				[[UIApplication sharedApplication] setIdleTimerDisabled:YES];
-				
-				// Reset the music fading flag
-				isMusicFading = NO;
-				
-				// Ask the game controller to transition to the scene called game.
-				[sharedGameController transitionToSceneWithKey:@"game"];
-			}
-			break;
-
-		default:
-			break;
-	}
- */
-    //[background updateWithDelta:aDelta];
+    [menuBackground update:aDelta];
+    
+    
+    if (helicoCoord.x - helicoBody.imageSize.width / 2 > 480) {
+        helicoCoord.x = -50;
+        helicoCoord.y = arc4random()%(int)((300 - helicoBody.imageSize.height) / 2) + 340 / 2;
+        
+	}	
+    else {
+        sinModifierIncrease = (sinModifierIncrease && sinModifier <= 20) || (!sinModifierIncrease && sinModifier <= -20);
+        sinModifier += sinModifierIncrease ? 1 : -1;
+        helicoCoord.y += sinModifierIncrease ? .2 : -.2;
+    }
+                         
+    helicoCoord.x += 1;
+    
+    [helicoRotor updateWithDelta:aDelta];
 }
 
 - (void)transitionIn {
@@ -214,8 +147,13 @@
 
     glClear(GL_COLOR_BUFFER_BIT);
 	// Render the background
+    [menuBackground renderRear];
+    
+    [helicoBody renderCenteredAtPoint:helicoCoord];
+    [helicoRotor renderCenteredAtPoint:CGPointMake(helicoCoord.x+15,helicoCoord.y+7)];
+    
+    [gameTitle renderCenteredAtPoint:CGPointMake(240,160)];
 	
-    [background renderAtPoint:CGPointMake(0, 0)];
 	[newGame renderAtPoint:CGPointMake(75, 235)];
     [scores renderAtPoint:CGPointMake(75, 178)];
     [settings renderAtPoint:CGPointMake(75, 120)];

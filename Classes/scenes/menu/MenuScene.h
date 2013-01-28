@@ -1,12 +1,14 @@
 #import "AbstractScene.h"
 
 #import "Animation.h"
+#import "Background.h"
 
 @class ImageRenderManager;
 @class SoundManager;
 @class TextureManager;
 @class GameController;
 @class Image;
+@class Background;
 @class Animation;
 @class BitmapFont;
 @class PackedSpriteSheet;
@@ -24,6 +26,16 @@
 	GameController *sharedGameController;
 	SoundManager *sharedSoundManager;
 	TextureManager *sharedTextureManager;
+    
+    Background* menuBackground;
+    Image* gameTitle;
+    
+    Image* helicoBody;
+    Animation* helicoRotor;
+    CGPoint helicoCoord;
+    
+    int sinModifier;
+    Boolean sinModifierIncrease;
 	
     //Animation* background;
 	/////////////////// Sprite sheets and images

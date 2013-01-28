@@ -40,7 +40,7 @@
     float currentAbs = position.x;
     while(currentAbs < 480 + [image imageSize].width) {
         [image renderAtPoint:CGPointMake(currentAbs, position.y)];
-        currentAbs += [image imageSize].width;
+        currentAbs += [image imageSize].width - 1;
     }
     
 }
