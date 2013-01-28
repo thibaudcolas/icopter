@@ -35,7 +35,7 @@ enum
 @interface FmodSoundManager : NSObject
 {
     NSMutableArray *sounds;
-
+    
     //SoundManager *sharedSoundManager;
 	FMOD_EVENTSYSTEM *eventSystem;
     FMOD_EVENTPARAMETER *nbUfoParam,*nbRocketLauncherParam,*timeParam;// parameter of the event_music_game
@@ -69,6 +69,8 @@ enum
 - (void) update;
 - (void) add:(int)sound;
 - (void) add:(int)sound immediate:(Boolean)immediate;
+- (void) newInstance:(int)sound;
+- (void) newInstance:(int)sound immediate:(Boolean)immediate;
 - (FMOD_EVENT *) getEvent:(int)sound;
 - (void) pause:(int)sound;
 - (void) play:(int)sound;

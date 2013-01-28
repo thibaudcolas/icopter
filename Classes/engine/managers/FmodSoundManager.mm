@@ -29,7 +29,7 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
     if (self != nil)
     {
         NSLog(@"SOUND INIT");
-        sounds = [[NSMutableArray alloc] init];
+        sounds = [[NSMutableArray alloc] initWithObjects:nil];
         
         // Initialize the FMOD event system
         FMOD_EventSystem_Create(&eventSystem);
@@ -37,7 +37,7 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
         // Load the FEV file
         NSString *fevPath = [[NSBundle mainBundle] pathForResource:@"iCopter" ofType:@"fev"];
         checkFMODError(FMOD_EventSystem_Load(eventSystem, [fevPath UTF8String], FMOD_EVENT_INIT_NORMAL, &project));
-
+        
         //charge les groupes d'evenements sonores et les evenements eux-memes
         //general
         checkFMODError(FMOD_EventProject_GetGroup(project, "general", 1, &generalGrp));
@@ -58,7 +58,7 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
         checkFMODError(FMOD_EventProject_GetGroup(project, "ufo", 1, &uGrp));
         checkFMODError(FMOD_EventGroup_GetEvent(uGrp, "ufo", FMOD_EVENT_DEFAULT, &uEv));
         checkFMODError(FMOD_EventGroup_GetEvent(uGrp, "michou", FMOD_EVENT_DEFAULT, &michouEv));
-
+        
         NSLog(@"INFO - Sound: Created successfully");
     }
     
@@ -76,9 +76,93 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
     if (!immediate)[self pause:sound];
 }
 
+- (void) newInstance:(int)sound
+{
+    [self newInstance:sound immediate:true];
+}
+
+- (void) newInstance:(int)sound immediate:(Boolean)immediate
+{
+    FMOD_EVENT *event;
+    FMOD_EVENTGROUP *group;
+    char *eventName;
+    switch (sound)
+    {
+        case gameMusic:
+            group= generalGrp;
+            eventName= "game_music";
+            break;
+        case pauseMusic:
+            group= generalGrp;
+            eventName= "pause_music";
+            break;
+        case gameOverSound:
+            group= generalGrp;
+            eventName= "game_over";
+            break;
+        case goSound:
+            group= generalGrp;
+            eventName= "go_sound";
+            break;
+        case helicopterSound:
+            group= hGrp;
+            eventName= "helicopter";
+            break;
+        case helicopterShoot:
+            group= hGrp;
+            eventName= "helicopter_shoot";
+            break;
+        case helicopterExplosion:
+            group= hGrp;
+            eventName= "helicopter_explosion";
+            break;
+        case helicopterAltitudeAlert:
+            group= hGrp;
+            eventName= "helicopter_altitude_alert";
+            break;
+        case helicopterMissileDetonates:
+            group= hGrp;
+            eventName= "helicopter_missile_detonates";
+            break;
+        case rocketLauncherSound:
+            group= rlGrp;
+            eventName= "rocketLauncher";
+            break;
+        case rocketLauncherExplosion:
+            group= rlGrp;
+            eventName= "rocketLauncher_explosion";
+            break;
+        case rocketLauncherShoot:
+            group= rlGrp;
+            eventName= "rocketLauncher_shoot";
+            break;
+        case ufo:
+            group= uGrp;
+            eventName= "ufo";
+            break;
+        case michou:
+            eventName= "michou";
+            group= uGrp;
+            break;
+        default:
+            group= NULL;
+            eventName= NULL;
+            break;
+    }
+    if (group && eventName)
+    {
+        checkFMODError(FMOD_EventGroup_GetEvent(group, eventName, FMOD_EVENT_DEFAULT, &event));
+        checkFMODError(FMOD_Event_Start(event));
+        if (!immediate)[self pause:sound];
+    }
+}
+
+
+
 - (FMOD_EVENT *) getEvent:(int)sound
 {
     FMOD_EVENT *event;
+    
     switch (sound)
     {
         case gameMusic:
@@ -173,7 +257,7 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
     checkFMODError(FMOD_EventParameter_GetRange(timeParam, &minTime, &maxTime));
     checkFMODError(FMOD_EventParameter_GetRange(nbRocketLauncherParam, &minRocketLauncher, &maxRocketLauncher));
     checkFMODError(FMOD_EventParameter_GetRange(nbUfoParam, &minUfo, &maxUfo));
-
+    
     // set the new value
     checkFMODError(FMOD_EventParameter_SetValue(timeParam, constrainFloat(0, minTime, maxTime)));
     checkFMODError(FMOD_EventParameter_SetValue(nbRocketLauncherParam, constrainFloat(0, minRocketLauncher, maxRocketLauncher)));
@@ -182,29 +266,28 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
 - (void) updateMusicParams:(float)timeEllapsed rocketLaunchersCount:(int)rocketLaunchersCount ufoCount:(int)ufoCount
 {
     float minTime, maxTime, minRocketLauncher, maxRocketLauncher,minUfo,maxUfo;
-     // get the value of parameter of the event
-     checkFMODError(FMOD_Event_GetParameter(generalEv, "time", &timeParam));
-     checkFMODError(FMOD_Event_GetParameter(generalEv, "rocketLauncher_count", &nbRocketLauncherParam));
-     checkFMODError(FMOD_Event_GetParameter(generalEv, "ufo_count", &nbUfoParam));
-     // get the required range of the parameter and constrain the value
-     checkFMODError(FMOD_EventParameter_GetRange(timeParam, &minTime, &maxTime));
-     checkFMODError(FMOD_EventParameter_GetRange(nbRocketLauncherParam, &minRocketLauncher, &maxRocketLauncher));
-     checkFMODError(FMOD_EventParameter_GetRange(nbUfoParam, &minUfo, &maxUfo));
-     // set the new value
-     checkFMODError(FMOD_EventParameter_SetValue(timeParam, constrainFloat(timeEllapsed/100, minTime, maxTime)));
-     checkFMODError(FMOD_EventParameter_SetValue(nbRocketLauncherParam, constrainFloat(rocketLaunchersCount, minRocketLauncher,
-                                                                                       maxRocketLauncher)));
-     checkFMODError(FMOD_EventParameter_SetValue(nbUfoParam, constrainFloat(ufoCount, minUfo, maxUfo)));
+    // get the value of parameter of the event
+    checkFMODError(FMOD_Event_GetParameter(generalEv, "time", &timeParam));
+    checkFMODError(FMOD_Event_GetParameter(generalEv, "rocketLauncher_count", &nbRocketLauncherParam));
+    checkFMODError(FMOD_Event_GetParameter(generalEv, "ufo_count", &nbUfoParam));
+    // get the required range of the parameter and constrain the value
+    checkFMODError(FMOD_EventParameter_GetRange(timeParam, &minTime, &maxTime));
+    checkFMODError(FMOD_EventParameter_GetRange(nbRocketLauncherParam, &minRocketLauncher, &maxRocketLauncher));
+    checkFMODError(FMOD_EventParameter_GetRange(nbUfoParam, &minUfo, &maxUfo));
+    // set the new value
+    checkFMODError(FMOD_EventParameter_SetValue(timeParam, constrainFloat(timeEllapsed/100, minTime, maxTime)));
+    checkFMODError(FMOD_EventParameter_SetValue(nbRocketLauncherParam, constrainFloat(rocketLaunchersCount, minRocketLauncher,
+                                                                                      maxRocketLauncher)));
+    checkFMODError(FMOD_EventParameter_SetValue(nbUfoParam, constrainFloat(ufoCount, minUfo, maxUfo)));
 }
 
 - (void) release:(int)sound immediate:(Boolean)immediate
 {
-   checkFMODError(FMOD_Event_Release([self getEvent:sound],true,!immediate));
+    checkFMODError(FMOD_Event_Release([self getEvent:sound],true,!immediate));
 }
 
 - (void) dealloc
 {
-    NSLog(@"INFO - Explosion: Removed successfully");
     [super dealloc];
 }
 
