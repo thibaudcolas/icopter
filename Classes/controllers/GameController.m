@@ -2,6 +2,7 @@
 #import "SLQTSORAppDelegate.h"
 #import "GameScene.h"
 #import "MenuScene.h"
+#import "GameOverScene.h"
 #import "EAGLView.h"
 #import "SoundManager.h"
 #import "SettingsScene.h"
@@ -105,8 +106,14 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(GameController);
     [gameScenes setValue:scene forKey:@"settings"];
 	[scene release];
 
+    scene = [[GameOverScene alloc] init];
+    [gameScenes setValue:scene forKey:@"gameOver"];
+	[scene release];
+    
     // Set the starting scene for the game
-    currentScene = [gameScenes objectForKey:@"menu"];
+    currentScene = [gameScenes objectForKey:@"gameOver"];
+    
+    
     
 	
     NSLOG(@"INFO - GameController: Finished game initialization.");
