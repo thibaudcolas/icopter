@@ -20,24 +20,7 @@
 	SoundManager *sharedSoundManager;
 	TextureManager *sharedTextureManager;
 	
-    /////////////////// Sprite sheets and images
-	Image *background;					// Background image for the menu
-	Image *fadeImage;					// Full screen black image used to fade in and out
-	Image *done;			// Menu and menu button images
-    
-    
-	/////////////////// Button iVars
-	uint startWidth, resumeWidth;
-	uint xStart, xResume;
-	CGRect doneButtonBounds;
-    
-    
-	/////////////////// Sound iVar
-	GLfloat musicVolume;				// Music volume used to fade music in and out
-	
-    /////////////////// Flags
-	BOOL isMusicFading;					// YES if the music is already fading during a transition
-	BOOL buttonPressed;					// YES if the player has pressed a button
+	Image *background;
     
 }
 

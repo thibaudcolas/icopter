@@ -96,8 +96,7 @@
 {
     if (state== kSceneState_GameOver)
     {
-        [sharedGameController transitionToSceneWithKey:@"gameOver"];
-        NSLog(@"ToSceneGameOver");
+        [sharedGameController transitionToSceneWithKey:@"gameover"];
         state= kSceneState_Running;
     }
     else if (state== kSceneState_Paused)

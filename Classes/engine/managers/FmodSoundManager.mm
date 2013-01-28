@@ -85,7 +85,7 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
 {
     FMOD_EVENT *event;
     FMOD_EVENTGROUP *group;
-    char *eventName;
+    const char* eventName;
     switch (sound)
     {
         case gameMusic:

@@ -107,11 +107,11 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(GameController);
 	[scene release];
 
     scene = [[GameOverScene alloc] init];
-    [gameScenes setValue:scene forKey:@"gameOver"];
+    [gameScenes setValue:scene forKey:@"gameover"];
 	[scene release];
     
     // Set the starting scene for the game
-    currentScene = [gameScenes objectForKey:@"gameOver"];
+    currentScene = [gameScenes objectForKey:@"menu"];
     
     
     

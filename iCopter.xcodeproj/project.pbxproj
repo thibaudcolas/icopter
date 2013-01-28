@@ -32,7 +32,6 @@
 		BE5E90D916B3F7B500622DED /* rocket-launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D216B3F7B500622DED /* rocket-launcher.png */; };
 		BE5E90DA16B3F7B500622DED /* rocket.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D316B3F7B500622DED /* rocket.png */; };
 		BE5E90DB16B3F7B500622DED /* ufo-classic.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D416B3F7B500622DED /* ufo-classic.png */; };
-		BE5E90E216B3F7C900622DED /* GameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90DD16B3F7C900622DED /* GameOver.png */; };
 		BE5E90EC16B3F7E200622DED /* hud-go.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90E616B3F7E200622DED /* hud-go.png */; };
 		BE5E90ED16B3F7E200622DED /* joypad.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90E716B3F7E200622DED /* joypad.png */; };
 		BE5E90EE16B3F7E200622DED /* pause-label.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90E816B3F7E200622DED /* pause-label.png */; };
@@ -85,7 +84,6 @@
 		BE73961616B61692009A0AE7 /* explosion-small-ground.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73961516B61692009A0AE7 /* explosion-small-ground.png */; };
 		BE73961916B619ED009A0AE7 /* rocket-launcher-base.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73961716B619ED009A0AE7 /* rocket-launcher-base.png */; };
 		BE73961A16B619ED009A0AE7 /* rocket-launcher-canon.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73961816B619ED009A0AE7 /* rocket-launcher-canon.png */; };
-		BE88EFB316B61E5800878249 /* GameOver.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFB216B61E5800878249 /* GameOver.jpg */; };
 		BE88EFB716B61E9D00878249 /* Rocket.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88EFB616B61E9D00878249 /* Rocket.m */; };
 		BE88EFBC16B61EB900878249 /* Enemy.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88EFB916B61EB900878249 /* Enemy.m */; };
 		BE88EFBD16B61EB900878249 /* RocketLauncher.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88EFBB16B61EB900878249 /* RocketLauncher.m */; };
@@ -110,7 +108,8 @@
 		BED3EB7E16B72ACD003AD6C8 /* background-menu-clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7B16B72ACD003AD6C8 /* background-menu-clouds.png */; };
 		BED3EB7F16B72ACD003AD6C8 /* biker.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7C16B72ACD003AD6C8 /* biker.png */; };
 		BED3EB8016B72ACD003AD6C8 /* biker2.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB7D16B72ACD003AD6C8 /* biker2.png */; };
-		BED3EB8216B72C50003AD6C8 /* background-gameover.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB8116B72C50003AD6C8 /* background-gameover.jpg */; };
+		BED3EB8516B733D3003AD6C8 /* gameover.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB8416B733D3003AD6C8 /* gameover.png */; };
+		BED3EB8816B73407003AD6C8 /* GameOverScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = BED3EB8716B73407003AD6C8 /* GameOverScene.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -141,7 +140,6 @@
 		BE5E90D216B3F7B500622DED /* rocket-launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rocket-launcher.png"; path = "resources/images/entities/rocket-launcher.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90D316B3F7B500622DED /* rocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rocket.png; path = resources/images/entities/rocket.png; sourceTree = SOURCE_ROOT; };
 		BE5E90D416B3F7B500622DED /* ufo-classic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ufo-classic.png"; path = "resources/images/entities/ufo-classic.png"; sourceTree = SOURCE_ROOT; };
-		BE5E90DD16B3F7C900622DED /* GameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GameOver.png; path = resources/images/menu/GameOver.png; sourceTree = SOURCE_ROOT; };
 		BE5E90E616B3F7E200622DED /* hud-go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hud-go.png"; path = "resources/images/hud/hud-go.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90E716B3F7E200622DED /* joypad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = joypad.png; path = resources/images/hud/joypad.png; sourceTree = SOURCE_ROOT; };
 		BE5E90E816B3F7E200622DED /* pause-label.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause-label.png"; path = "resources/images/hud/pause-label.png"; sourceTree = SOURCE_ROOT; };
@@ -226,7 +224,6 @@
 		BE73961516B61692009A0AE7 /* explosion-small-ground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "explosion-small-ground.png"; path = "resources/images/entities/explosion-small-ground.png"; sourceTree = SOURCE_ROOT; };
 		BE73961716B619ED009A0AE7 /* rocket-launcher-base.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rocket-launcher-base.png"; path = "resources/images/entities/rocket-launcher-base.png"; sourceTree = SOURCE_ROOT; };
 		BE73961816B619ED009A0AE7 /* rocket-launcher-canon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rocket-launcher-canon.png"; path = "resources/images/entities/rocket-launcher-canon.png"; sourceTree = SOURCE_ROOT; };
-		BE88EFB216B61E5800878249 /* GameOver.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = GameOver.jpg; path = resources/images/menu/GameOver.jpg; sourceTree = SOURCE_ROOT; };
 		BE88EFB516B61E9D00878249 /* Rocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Rocket.h; path = Classes/entities/projectiles/Rocket.h; sourceTree = "<group>"; };
 		BE88EFB616B61E9D00878249 /* Rocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Rocket.m; path = Classes/entities/projectiles/Rocket.m; sourceTree = "<group>"; };
 		BE88EFB816B61EB900878249 /* Enemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Enemy.h; path = Classes/entities/enemies/Enemy.h; sourceTree = "<group>"; };
@@ -269,7 +266,9 @@
 		BED3EB7B16B72ACD003AD6C8 /* background-menu-clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-menu-clouds.png"; path = "resources/images/menu/background-menu-clouds.png"; sourceTree = SOURCE_ROOT; };
 		BED3EB7C16B72ACD003AD6C8 /* biker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = biker.png; path = resources/images/menu/biker.png; sourceTree = SOURCE_ROOT; };
 		BED3EB7D16B72ACD003AD6C8 /* biker2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = biker2.png; path = resources/images/menu/biker2.png; sourceTree = SOURCE_ROOT; };
-		BED3EB8116B72C50003AD6C8 /* background-gameover.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-gameover.jpg"; path = "resources/images/menu/background-gameover.jpg"; sourceTree = SOURCE_ROOT; };
+		BED3EB8416B733D3003AD6C8 /* gameover.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gameover.png; path = resources/images/gameover/gameover.png; sourceTree = SOURCE_ROOT; };
+		BED3EB8616B73407003AD6C8 /* GameOverScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameOverScene.h; path = Classes/scenes/gameover/GameOverScene.h; sourceTree = "<group>"; };
+		BED3EB8716B73407003AD6C8 /* GameOverScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GameOverScene.mm; path = Classes/scenes/gameover/GameOverScene.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,6 +380,7 @@
 				BE5E917316B3FC4500622DED /* AbstractScene.h */,
 				BE5E917416B3FC4500622DED /* AbstractScene.m */,
 				81E33F3416B2FB1B00E54A9D /* Settings */,
+				BED3EB8916B7340B003AD6C8 /* GameOver */,
 				810EC7F916B2CAC40034C3D3 /* Menu */,
 				810EC80616B2CAF90034C3D3 /* Game */,
 			);
@@ -460,6 +460,7 @@
 			children = (
 				BE5E90BC16B3F74500622DED /* Background */,
 				BE5E90BF16B3F75A00622DED /* Menu */,
+				BED3EB8316B733C4003AD6C8 /* GameOver */,
 				BE5E90BD16B3F74D00622DED /* HUD */,
 				BE5E90BE16B3F75300622DED /* Entities */,
 				BE5E90C016B3F7A500622DED /* allBlack.png */,
@@ -557,7 +558,6 @@
 		BE5E90BF16B3F75A00622DED /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				BED3EB8116B72C50003AD6C8 /* background-gameover.jpg */,
 				BED3EB7B16B72ACD003AD6C8 /* background-menu-clouds.png */,
 				BED3EB7C16B72ACD003AD6C8 /* biker.png */,
 				BED3EB7D16B72ACD003AD6C8 /* biker2.png */,
@@ -566,8 +566,6 @@
 				BE68A86D16B6BE00003ED348 /* background-menu-forest.png */,
 				BE68A86E16B6BE00003ED348 /* background-menu-sky.png */,
 				BE68A87116B6C3C8003ED348 /* background-menu-clouds.png */,
-				BE5E90DD16B3F7C900622DED /* GameOver.png */,
-				BE88EFB216B61E5800878249 /* GameOver.jpg */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -732,6 +730,23 @@
 			path = Headers;
 			sourceTree = "<group>";
 		};
+		BED3EB8316B733C4003AD6C8 /* GameOver */ = {
+			isa = PBXGroup;
+			children = (
+				BED3EB8416B733D3003AD6C8 /* gameover.png */,
+			);
+			name = GameOver;
+			sourceTree = "<group>";
+		};
+		BED3EB8916B7340B003AD6C8 /* GameOver */ = {
+			isa = PBXGroup;
+			children = (
+				BED3EB8616B73407003AD6C8 /* GameOverScene.h */,
+				BED3EB8716B73407003AD6C8 /* GameOverScene.mm */,
+			);
+			name = GameOver;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -797,7 +812,6 @@
 				BE5E90D916B3F7B500622DED /* rocket-launcher.png in Resources */,
 				BE5E90DA16B3F7B500622DED /* rocket.png in Resources */,
 				BE5E90DB16B3F7B500622DED /* ufo-classic.png in Resources */,
-				BE5E90E216B3F7C900622DED /* GameOver.png in Resources */,
 				BE5E90EC16B3F7E200622DED /* hud-go.png in Resources */,
 				BE5E90ED16B3F7E200622DED /* joypad.png in Resources */,
 				BE5E90EE16B3F7E200622DED /* pause-label.png in Resources */,
@@ -819,7 +833,6 @@
 				BE73961616B61692009A0AE7 /* explosion-small-ground.png in Resources */,
 				BE73961916B619ED009A0AE7 /* rocket-launcher-base.png in Resources */,
 				BE73961A16B619ED009A0AE7 /* rocket-launcher-canon.png in Resources */,
-				BE88EFB316B61E5800878249 /* GameOver.jpg in Resources */,
 				BE88EFCB16B622E500878249 /* iCopter.fev in Resources */,
 				BE88EFCC16B622E500878249 /* sound_bank.fsb in Resources */,
 				BE88EFE316B62D9200878249 /* explosion-atlas.png in Resources */,
@@ -835,7 +848,7 @@
 				BED3EB7E16B72ACD003AD6C8 /* background-menu-clouds.png in Resources */,
 				BED3EB7F16B72ACD003AD6C8 /* biker.png in Resources */,
 				BED3EB8016B72ACD003AD6C8 /* biker2.png in Resources */,
-				BED3EB8216B72C50003AD6C8 /* background-gameover.jpg in Resources */,
+				BED3EB8516B733D3003AD6C8 /* gameover.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +896,7 @@
 				BE88EFBD16B61EB900878249 /* RocketLauncher.m in Sources */,
 				BE88EFE116B624B700878249 /* Projectile.m in Sources */,
 				BE88F00516B6AECC00878249 /* FmodSoundManager.mm in Sources */,
+				BED3EB8816B73407003AD6C8 /* GameOverScene.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
