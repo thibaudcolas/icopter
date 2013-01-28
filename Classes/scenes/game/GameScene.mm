@@ -79,12 +79,18 @@ FMOD_EVENTGROUP *generalGroup;
         //================ BACKGROUND ================//
         background = [[Background alloc] init:1];
         
-        [background add:120 image:@"background-sky.jpg" inFront:false];
-        [background add:120 image:@"background-towers.png" inFront:false];
-        [background add:110 image:@"background-ruins.png" inFront:false];
-        [background add:82 image:@"bg-garbage-back.png" inFront:false];
-        [background add:32 image:@"background-road.png" inFront:false];
-        [background add:0 image:@"bg-garbage-ground.png" inFront:true];
+        // Get the master sprite sheet we are going to get all of our other graphical items from.  Having a single texture with all
+        // the graphics will help reduce the number of textures bound per frame and therefor performance
+        PackedSpriteSheet *masterSpriteSheet = [PackedSpriteSheet packedSpriteSheetForImageNamed:@"background-atlas.png" controlFile:@"background-coordinates" imageFilter:GL_LINEAR];
+        
+        [background add:120 image:[[Image alloc] initWithImageNamed:@"background-sky.jpg" filter:GL_LINEAR] inFront:false];
+        [background add:120 image:[[masterSpriteSheet imageForKey:@"background-towers"] retain] inFront:false];
+        [background add:110 image:[[masterSpriteSheet imageForKey:@"background-ruins"] retain] inFront:false];
+        [background add:82 image:[[masterSpriteSheet imageForKey:@"background-back"] retain] inFront:false];
+        [background add:32 image:[[masterSpriteSheet imageForKey:@"background-road"] retain] inFront:false];
+        [background add:0 image:[[masterSpriteSheet imageForKey:@"background-ground"] retain] inFront:true];
+        
+        [masterSpriteSheet release];
 		
         hud = [[GameHUD alloc] init];
         score = [[Score alloc] init];

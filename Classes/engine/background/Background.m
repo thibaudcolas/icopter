@@ -23,11 +23,11 @@
 }
 
 // Ajoute une couche à notre background.
-- (void)add:(int)initOrdinate image:(NSString*)imagePath inFront:(Boolean)putInFront {
+- (void)add:(int)initOrdinate image:(Image*)img inFront:(Boolean)putInFront {
     // Plus un élément est loin de la route (i.e ajouté tôt), plus il est lent.
     int layersCount = [rearLayers count] + [frontLayers count];
     float calculatedSpeed = (layersCount * layersCount + 1) * 10 * speed;
-    BGLayer *tmp = [[BGLayer alloc] init:calculatedSpeed ord:initOrdinate image:imagePath];
+    BGLayer *tmp = [[BGLayer alloc] init:calculatedSpeed ord:initOrdinate image:img];
     if (putInFront) {
         [frontLayers addObject:tmp];
     }
@@ -36,7 +36,7 @@
     }
     [tmp release];
     
-    NSLog(@"INFO - Background: Added image %@", imagePath);
+    NSLog(@"INFO - Background: Added image");
 }
 
 // Met à jour la position des couches du background.

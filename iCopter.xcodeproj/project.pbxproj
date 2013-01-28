@@ -88,6 +88,8 @@
 		BE7395FF16B5F463009A0AE7 /* background-ruins.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7395FE16B5F463009A0AE7 /* background-ruins.png */; };
 		BE73960116B5F5CA009A0AE7 /* background-towers.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73960016B5F5CA009A0AE7 /* background-towers.png */; };
 		BE73960316B5F76E009A0AE7 /* background-sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE73960216B5F76E009A0AE7 /* background-sky.jpg */; };
+		BE73960716B5FF0B009A0AE7 /* background-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE73960616B5FF0B009A0AE7 /* background-coordinates.plist */; };
+		BE73960916B60297009A0AE7 /* background-atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73960816B60297009A0AE7 /* background-atlas.png */; };
 		BEAC4A3816B40278004E04EF /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3516B40278004E04EF /* Explosion.m */; };
 		BEAC4A3916B40278004E04EF /* ExplosionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3716B40278004E04EF /* ExplosionManager.m */; };
 		BEAC4A3E16B4028B004E04EF /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3B16B4028B004E04EF /* Background.m */; };
@@ -225,6 +227,8 @@
 		BE7395FE16B5F463009A0AE7 /* background-ruins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-ruins.png"; path = "resources/images/bg/background-ruins.png"; sourceTree = SOURCE_ROOT; };
 		BE73960016B5F5CA009A0AE7 /* background-towers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-towers.png"; path = "resources/images/bg/background-towers.png"; sourceTree = SOURCE_ROOT; };
 		BE73960216B5F76E009A0AE7 /* background-sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-sky.jpg"; path = "resources/images/bg/background-sky.jpg"; sourceTree = SOURCE_ROOT; };
+		BE73960616B5FF0B009A0AE7 /* background-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "background-coordinates.plist"; path = "resources/background-coordinates.plist"; sourceTree = "<group>"; };
+		BE73960816B60297009A0AE7 /* background-atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-atlas.png"; path = "resources/images/bg/background-atlas.png"; sourceTree = SOURCE_ROOT; };
 		BEAC4A3416B40278004E04EF /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = Classes/entities/explosions/Explosion.h; sourceTree = "<group>"; };
 		BEAC4A3516B40278004E04EF /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = Classes/entities/explosions/Explosion.m; sourceTree = "<group>"; };
 		BEAC4A3616B40278004E04EF /* ExplosionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExplosionManager.h; path = Classes/entities/explosions/ExplosionManager.h; sourceTree = "<group>"; };
@@ -296,6 +300,7 @@
 		18B970D0103AA5CA00809077 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BE73960616B5FF0B009A0AE7 /* background-coordinates.plist */,
 				7821890F16B05EF30018B098 /* Images */,
 				7821893F16B05F2B0018B098 /* Fonts */,
 			);
@@ -515,6 +520,7 @@
 		BE5E90BC16B3F74500622DED /* Background */ = {
 			isa = PBXGroup;
 			children = (
+				BE73960816B60297009A0AE7 /* background-atlas.png */,
 				BE73960216B5F76E009A0AE7 /* background-sky.jpg */,
 				BE73960016B5F5CA009A0AE7 /* background-towers.png */,
 				BE7395FE16B5F463009A0AE7 /* background-ruins.png */,
@@ -767,6 +773,8 @@
 				BE7395FF16B5F463009A0AE7 /* background-ruins.png in Resources */,
 				BE73960116B5F5CA009A0AE7 /* background-towers.png in Resources */,
 				BE73960316B5F76E009A0AE7 /* background-sky.jpg in Resources */,
+				BE73960716B5FF0B009A0AE7 /* background-coordinates.plist in Resources */,
+				BE73960916B60297009A0AE7 /* background-atlas.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

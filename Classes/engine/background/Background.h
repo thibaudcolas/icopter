@@ -17,7 +17,7 @@
 
 - (id)init:(float)initSpeed;
 
-- (void)add:(int)initHeight image:(NSString*)imagePath inFront:(Boolean)putInFront;
+- (void)add:(int)initHeight image:(Image*)img inFront:(Boolean)putInFront;
 
 - (void)update:(float)delta;
 

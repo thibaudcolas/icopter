@@ -10,7 +10,7 @@
 @synthesize speed;
 
 // Initialise un élément du background.
-- (id)init:(float)initSpeed ord:(int)initOrdinate image:(NSString*)imagePath  {
+- (id)init:(float)initSpeed ord:(int)initOrdinate image:(Image*)img  {
     self = [super init];
     
     if (self != nil) {
@@ -18,7 +18,7 @@
         position = CGPointMake(0, (float)initOrdinate);
         speed = initSpeed;
         
-        image = [[Image alloc] initWithImageNamed:imagePath filter:GL_LINEAR];
+        image = img;
     }
     return self;
 }

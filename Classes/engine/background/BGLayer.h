@@ -17,7 +17,7 @@
 @property(nonatomic)CGPoint position;
 @property(nonatomic)float speed;
 
-- (id)init:(float)initSpeed ord:(int)initOrdinate image:(NSString*)imagePath;
+- (id)init:(float)initSpeed ord:(int)initOrdinate image:(Image*)img;
 
 - (void)update:(float)delta;
 
