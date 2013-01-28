@@ -26,6 +26,8 @@
         // Probablement parce que les coordonnées des touch ne sont pas tournées comme le sont celles de OpenGL.
         pauseButtonBounds= CGRectMake(285, 340, 20, 30);
         
+        joypad = [[Joypad alloc] init];
+        
         numberFormatter= [[NSNumberFormatter alloc] init];
         [numberFormatter setNumberStyle:NSNumberFormatterDecimalStyle];
         
@@ -49,8 +51,19 @@
     
     [pauseButton renderAtPoint:CGPointMake(340, 285)];
     
+    [joypad render];
+    
     if (state == kSceneState_Paused) [pauseLabel renderCenteredAtPoint:CGPointMake(240, 160)];
 }
+
+- (CGPoint)getJoypadCenter {
+    return [joypad getCenter];
+}
+
+- (CGRect)getJoypadBounds {
+    return [joypad getBounds];
+}
+
 
 // Libère la mémoire utilisée.
 - (void) dealloc
@@ -58,6 +71,12 @@
     [go dealloc];
     [scoreDisplay release];
     [numberFormatter release];
+    
+    [pauseLabel release];
+    [pauseButton release];
+    
+    [joypad dealloc];
+    
     [super dealloc];
 }
 

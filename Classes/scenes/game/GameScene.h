@@ -87,12 +87,6 @@
 	CGSize ufoRectangleSize;// Height and Width of the tank touch rectangle
     //============================================//
     
-    //================= JOYPAD ===================//  
-	Image *joypad;				
-	
-	CGRect joypadBounds;		
-	CGPoint joypadCenter;		
-	CGSize joypadRectangleSize;	
 	float joypadDistance;
 	float joypadDirection;
 	int joypadTouchHash;		  

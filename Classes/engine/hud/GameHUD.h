@@ -4,6 +4,7 @@
 
 #import <Foundation/Foundation.h>
 #import "GoText.h"
+#import "Joypad.h"
 #import "BitmapFont.h"
 #import "Image.h"
 
@@ -17,6 +18,8 @@
     Image *pauseButton;
     CGRect pauseButtonBounds;
     
+    Joypad *joypad;
+    
     NSNumberFormatter *numberFormatter;
 }
 
@@ -27,6 +30,10 @@
 - (void)update:(float)delta score:(int)scoreValue;
 
 - (void)render:(uint)state;
+
+- (CGPoint)getJoypadCenter;
+
+- (CGRect)getJoypadBounds;
 
 - (void)dealloc;
 

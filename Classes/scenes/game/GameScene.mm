@@ -118,15 +118,6 @@ FMOD_EVENTGROUP *generalGroup;
         ufos= [[NSMutableArray alloc] initWithObjects:nil];
         //[ufos addObject:[[Ufo alloc] init]];//ajout d'un nouvel ufo dans le tableau
         //============================================//
-
-		//=================== JOYPAD =================//
-		joypadCenter= CGPointMake(50, 50);
-		joypadRectangleSize= CGSizeMake(40, 40);
-		joypadBounds= CGRectMake(joypadCenter.x - joypadRectangleSize.width, 
-								 joypadCenter.y - joypadRectangleSize.height, 
-								 joypadRectangleSize.width * 2, 
-								 joypadRectangleSize.height * 2);
-		joypad= [[Image alloc] initWithImageNamed:@"joypad.png" filter:GL_LINEAR];
 		
 		joypadDistance= 0;
         joypadDirection= 0;
@@ -372,7 +363,6 @@ FMOD_EVENTGROUP *generalGroup;
     //============================================//
     
     //================ HELICOPTER ================//
-	[joypad renderCenteredAtPoint:joypadCenter];
 	[helicopter render];
     for(id missile in helicopter->missiles) [missile render];
     //============================================//
@@ -402,7 +392,7 @@ FMOD_EVENTGROUP *generalGroup;
         // As we have the game in landscape mode we need to switch the touches 
         // x and y coordinates
         CGPoint touchLocation = [sharedGameController adjustTouchOrientationForTouch:originalTouchLocation];
-		if (CGRectContainsPoint(joypadBounds, touchLocation) && !isJoypadTouchMoving)
+		if (CGRectContainsPoint([hud getJoypadBounds], touchLocation) && !isJoypadTouchMoving)
         {
 			isJoypadTouchMoving = YES;
 			joypadTouchHash = [touch hash];
@@ -455,6 +445,7 @@ FMOD_EVENTGROUP *generalGroup;
 			// x and y coordinates
 			CGPoint touchLocation= [sharedGameController adjustTouchOrientationForTouch:originalTouchLocation];
 			
+            CGPoint joypadCenter = [hud getJoypadCenter];
 			// Calculate the angle of the touch from the center of the joypad
 			float dx= (float)joypadCenter.x - (float)touchLocation.x;
 			float dy= (float)joypadCenter.y - (float)touchLocation.y;

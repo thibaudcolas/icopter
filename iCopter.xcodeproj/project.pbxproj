@@ -90,6 +90,7 @@
 		BE73960316B5F76E009A0AE7 /* background-sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE73960216B5F76E009A0AE7 /* background-sky.jpg */; };
 		BE73960716B5FF0B009A0AE7 /* background-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE73960616B5FF0B009A0AE7 /* background-coordinates.plist */; };
 		BE73960916B60297009A0AE7 /* background-atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73960816B60297009A0AE7 /* background-atlas.png */; };
+		BE73961216B6111C009A0AE7 /* Joypad.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73961116B6111C009A0AE7 /* Joypad.m */; };
 		BEAC4A3816B40278004E04EF /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3516B40278004E04EF /* Explosion.m */; };
 		BEAC4A3916B40278004E04EF /* ExplosionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3716B40278004E04EF /* ExplosionManager.m */; };
 		BEAC4A3E16B4028B004E04EF /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3B16B4028B004E04EF /* Background.m */; };
@@ -229,6 +230,8 @@
 		BE73960216B5F76E009A0AE7 /* background-sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-sky.jpg"; path = "resources/images/bg/background-sky.jpg"; sourceTree = SOURCE_ROOT; };
 		BE73960616B5FF0B009A0AE7 /* background-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "background-coordinates.plist"; path = "resources/background-coordinates.plist"; sourceTree = "<group>"; };
 		BE73960816B60297009A0AE7 /* background-atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-atlas.png"; path = "resources/images/bg/background-atlas.png"; sourceTree = SOURCE_ROOT; };
+		BE73961016B6111C009A0AE7 /* Joypad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Joypad.h; path = Classes/engine/hud/Joypad.h; sourceTree = "<group>"; };
+		BE73961116B6111C009A0AE7 /* Joypad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Joypad.m; path = Classes/engine/hud/Joypad.m; sourceTree = "<group>"; };
 		BEAC4A3416B40278004E04EF /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = Classes/entities/explosions/Explosion.h; sourceTree = "<group>"; };
 		BEAC4A3516B40278004E04EF /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = Classes/entities/explosions/Explosion.m; sourceTree = "<group>"; };
 		BEAC4A3616B40278004E04EF /* ExplosionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExplosionManager.h; path = Classes/entities/explosions/ExplosionManager.h; sourceTree = "<group>"; };
@@ -575,6 +578,8 @@
 		BE5E914B16B3F9DB00622DED /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				BE73961016B6111C009A0AE7 /* Joypad.h */,
+				BE73961116B6111C009A0AE7 /* Joypad.m */,
 				BEAC4A4016B402A1004E04EF /* Score.h */,
 				BEAC4A4116B402A1004E04EF /* Score.m */,
 				BE5E914216B3F9D500622DED /* GameHUD.h */,
@@ -823,6 +828,7 @@
 				BEE0CCBD16B41FEA00D7B332 /* MobileEntity.m in Sources */,
 				BEE0CCC116B4246000D7B332 /* OVNI.m in Sources */,
 				BEE0CCC416B432D700D7B332 /* OVNIManager.m in Sources */,
+				BE73961216B6111C009A0AE7 /* Joypad.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
