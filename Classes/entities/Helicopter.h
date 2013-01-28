@@ -12,11 +12,6 @@
 
 @class Missile;
 
-FMOD_EVENTGROUP *helicopterGroup;//global var
-FMOD_EVENT *helicopterEvent;
-FMOD_EVENT *altitudeEvent;
-FMOD_EVENT *gameOverEvent;
-
 @interface Helicopter : MobileObject
 {
     @public

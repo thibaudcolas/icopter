@@ -51,15 +51,6 @@ extern FMOD_EVENTGROUP *generalGroup;
         [animation addFrameWithImage:tmpImage delay:animationDelay];
     }
         
-    FMOD_EventProject_GetGroup(project, "helicopter", 1, &helicopterGroup);
-    FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter", FMOD_EVENT_DEFAULT, &helicopterEvent);
-    // trigger the event
-    FMOD_Event_Start(helicopterEvent);
-    
-    FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter_altitude_alert", FMOD_EVENT_DEFAULT, &altitudeEvent);
-    // trigger the event
-    FMOD_Event_Start(altitudeEvent);
-    FMOD_Event_SetPaused(altitudeEvent, 1);
     [spriteSheet release];
     return self;
 }
@@ -77,7 +68,8 @@ extern FMOD_EVENTGROUP *generalGroup;
     [animation updateWithDelta:aDelta];
     
     //altitude et crash:
-    FMOD_Event_SetPaused(altitudeEvent, self->yCoord<140?0:1);
+    if (self->yCoord<140) [sharedFmodSoundManager play:helicopterAltitudeAlert];
+    else [sharedFmodSoundManager pause:helicopterAltitudeAlert];
     if (self->yCoord<100) {NSLog(@"HELICOPTER CRASHED ON THE GROUND!");[self die];}
 }
 
@@ -96,15 +88,16 @@ extern FMOD_EVENTGROUP *generalGroup;
 
 - (void) die
 {
-    NSLog(@"GAME OVER.");
-    FMOD_Event_Stop(helicopterEvent, false);
-    FMOD_Event_Release(helicopterEvent, false,1);
-
+    [sharedFmodSoundManager stop:helicopterSound immediate:false];
+    [sharedFmodSoundManager release:helicopterSound immediate:false];
+    [sharedFmodSoundManager add:helicopterExplosion];
+    [sharedFmodSoundManager stop:helicopterExplosion immediate:false];
+    [sharedFmodSoundManager release:helicopterExplosion immediate:false];
+    [sharedFmodSoundManager add:gameOverSound];
+    [sharedFmodSoundManager stop:gameOverSound immediate:false];
+    [sharedFmodSoundManager release:gameOverSound immediate:false];
+    
     [sharedExplosionManager add:bAnimation_helicoAirDestroyed position:CGPointMake(xCoord, yCoord)];
-    FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter_explosion", FMOD_EVENT_DEFAULT, &gameOverEvent);
-    FMOD_Event_Start(gameOverEvent);
-    FMOD_Event_Release(gameOverEvent, false,1);
-
     //[super die];
     NSLog(@"GAME OVER.");
 }
