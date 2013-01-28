@@ -21,14 +21,6 @@
 			<integer>576</integer>
 			<key>height</key>
 			<integer>62</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>576</integer>
-			<key>originalHeight</key>
-			<integer>62</integer>
 		</dict>
 		<key>background-road</key>
 		<dict>
@@ -39,14 +31,6 @@
 			<key>width</key>
 			<integer>167</integer>
 			<key>height</key>
-			<integer>50</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>167</integer>
-			<key>originalHeight</key>
 			<integer>50</integer>
 		</dict>
 		<key>background-back</key>
@@ -59,14 +43,6 @@
 			<integer>432</integer>
 			<key>height</key>
 			<integer>57</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>432</integer>
-			<key>originalHeight</key>
-			<integer>57</integer>
 		</dict>
 		<key>background-towers</key>
 		<dict>
@@ -78,14 +54,6 @@
 			<integer>500</integer>
 			<key>height</key>
 			<integer>95</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>500</integer>
-			<key>originalHeight</key>
-			<integer>95</integer>
 		</dict>
 		<key>background-ruins</key>
 		<dict>
@@ -96,14 +64,6 @@
 			<key>width</key>
 			<integer>747</integer>
 			<key>height</key>
-			<integer>67</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>747</integer>
-			<key>originalHeight</key>
 			<integer>67</integer>
 		</dict>
 	</dict>

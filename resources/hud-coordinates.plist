@@ -11,6 +11,17 @@
 	</dict>
 	<key>frames</key>
 	<dict>
+		<key>hud-battery</key>
+		<dict>
+			<key>x</key>
+			<integer>365</integer>
+			<key>y</key>
+			<integer>48</integer>
+			<key>width</key>
+			<integer>132</integer>
+			<key>height</key>
+			<integer>25</integer>
+		</dict>
 		<key>hud-shootbutton</key>
 		<dict>
 			<key>x</key>
@@ -20,14 +31,6 @@
 			<key>width</key>
 			<integer>32</integer>
 			<key>height</key>
-			<integer>32</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>32</integer>
-			<key>originalHeight</key>
 			<integer>32</integer>
 		</dict>
 		<key>hud-pausebutton</key>
@@ -40,14 +43,6 @@
 			<integer>20</integer>
 			<key>height</key>
 			<integer>30</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>20</integer>
-			<key>originalHeight</key>
-			<integer>30</integer>
 		</dict>
 		<key>hud-pauselabel</key>
 		<dict>
@@ -58,14 +53,6 @@
 			<key>width</key>
 			<integer>131</integer>
 			<key>height</key>
-			<integer>25</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>131</integer>
-			<key>originalHeight</key>
 			<integer>25</integer>
 		</dict>
 		<key>hud-scorepanel</key>
@@ -78,14 +65,6 @@
 			<integer>100</integer>
 			<key>height</key>
 			<integer>30</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>100</integer>
-			<key>originalHeight</key>
-			<integer>30</integer>
 		</dict>
 		<key>hud-arrow</key>
 		<dict>
@@ -96,14 +75,6 @@
 			<key>width</key>
 			<integer>330</integer>
 			<key>height</key>
-			<integer>17</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>330</integer>
-			<key>originalHeight</key>
 			<integer>17</integer>
 		</dict>
 		<key>hud-go</key>
@@ -116,14 +87,6 @@
 			<integer>499</integer>
 			<key>height</key>
 			<integer>31</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>499</integer>
-			<key>originalHeight</key>
-			<integer>31</integer>
 		</dict>
 		<key>hud-joypad</key>
 		<dict>
@@ -134,14 +97,6 @@
 			<key>width</key>
 			<integer>80</integer>
 			<key>height</key>
-			<integer>80</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>80</integer>
-			<key>originalHeight</key>
 			<integer>80</integer>
 		</dict>
 	</dict>

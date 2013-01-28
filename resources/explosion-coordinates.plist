@@ -21,14 +21,6 @@
 			<integer>420</integer>
 			<key>height</key>
 			<integer>252</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>420</integer>
-			<key>originalHeight</key>
-			<integer>252</integer>
 		</dict>
 		<key>explosion-big-ground</key>
 		<dict>
@@ -40,14 +32,6 @@
 			<integer>492</integer>
 			<key>height</key>
 			<integer>351</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>492</integer>
-			<key>originalHeight</key>
-			<integer>351</integer>
 		</dict>
 		<key>explosion-small-ground</key>
 		<dict>
@@ -58,14 +42,6 @@
 			<key>width</key>
 			<integer>430</integer>
 			<key>height</key>
-			<integer>50</integer>
-			<key>offsetX</key>
-			<real>0</real>
-			<key>offsetY</key>
-			<real>0</real>
-			<key>originalWidth</key>
-			<integer>430</integer>
-			<key>originalHeight</key>
 			<integer>50</integer>
 		</dict>
 	</dict>
