@@ -19,12 +19,7 @@ extern FMOD_EVENTGROUP *generalGroup;
         
 		animation= anim;
         
-        goEvent = NULL;
-        // create an instance of the FMOD event
-       FMOD_EventGroup_GetEvent(generalGroup, "go_sound", FMOD_EVENT_DEFAULT, &goEvent);
-        // trigger the event
-        FMOD_Event_Start(goEvent);
-
+        [sharedFmodSoundManager add:goSound];
 	}
 	return self;
 	
@@ -47,7 +42,7 @@ extern FMOD_EVENTGROUP *generalGroup;
 - (void)dealloc
 {
     [animation release];
-    FMOD_Event_Stop(goEvent, false);
+    [sharedFmodSoundManager stop:goSound immediate:true];
     [super dealloc];
 }
 

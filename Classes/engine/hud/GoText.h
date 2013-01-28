@@ -4,16 +4,13 @@
 
 #import <Foundation/Foundation.h>
 #import "Animation.h"
+#import "FmodSoundManager.h"
 
 @interface GoText : NSObject
 {
-    
     CGPoint position;
     Animation *animation;
-    
-    //FMOD
-    FMOD_EVENT *goEvent;
-
+    FmodSoundManager *sharedFmodSoundManager;
 }
 
 @property(nonatomic)CGPoint position;
