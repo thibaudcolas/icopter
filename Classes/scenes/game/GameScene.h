@@ -10,7 +10,6 @@
 
 #import "Background.h"
 #import "ExplosionManager.h"
-#import "OVNIManager.h"
 #import "GameHUD.h"
 #import "Helicopter.h"
 #import "RocketLauncher.h"
@@ -23,7 +22,6 @@
 @class RocketLauncher;
 @class Background;
 @class ExplosionManager;
-@class OVNIManager;
 @class ImageRenderManager;
 @class SoundManager;
 @class GameController;
@@ -71,8 +69,7 @@ FMOD_EVENTGROUP *generalGroup;
     GameHUD* hud;
     
     ExplosionManager* sharedExplosionManager;
-    
-    OVNIManager* sharedOVNIManager;
+
     //============================================//
 
     //============= ROCKET LAUNCHER ==============//

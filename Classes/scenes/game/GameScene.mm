@@ -87,8 +87,6 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
         hud = [[GameHUD alloc] init];
         score = [[Score alloc] init];
         
-        sharedOVNIManager = [OVNIManager sharedOVNIManager];
-        
         sharedExplosionManager = [ExplosionManager sharedExplosionManager];
         //============================================//
 	
@@ -110,7 +108,7 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
         createUfoTimer= 0;
         
         ufos= [[NSMutableArray alloc] initWithObjects:nil];
-        //[ufos addObject:[[Ufo alloc] init]];//ajout d'un nouvel ufo dans le tableau
+        [ufos addObject:[[Ufo alloc] init]];//ajout d'un nouvel ufo dans le tableau
         //============================================//
 		
 		joypadDistance= 0;
@@ -247,7 +245,7 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
             [ufos addObject:[[Ufo alloc] init]];//ajout d'un nouvel Ufo dans le tableau
             createUfoTimer= 0;
         }
-        createUfoTimer+= 0;//aDelta;
+        createUfoTimer+= aDelta;
         bool collision;
         
         for(Ufo *ufo in ufos)
@@ -312,8 +310,6 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
             }
         }
         
-        [sharedOVNIManager update:aDelta];
-        
         [sharedExplosionManager update:aDelta];
         
         [background update:aDelta];
@@ -349,8 +345,6 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
 	[helicopter render];
     for(id missile in helicopter->missiles) [missile render];
     //============================================//
-
-    [sharedOVNIManager render];
     
     [sharedExplosionManager render];
     

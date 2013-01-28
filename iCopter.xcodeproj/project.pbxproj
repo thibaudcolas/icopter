@@ -103,9 +103,6 @@
 		BEAC4A3E16B4028B004E04EF /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3B16B4028B004E04EF /* Background.m */; };
 		BEAC4A3F16B4028B004E04EF /* BGLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3D16B4028B004E04EF /* BGLayer.m */; };
 		BEAC4A4216B402A1004E04EF /* Score.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A4116B402A1004E04EF /* Score.m */; };
-		BEE0CCBD16B41FEA00D7B332 /* MobileEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE0CCBC16B41FEA00D7B332 /* MobileEntity.m */; };
-		BEE0CCC116B4246000D7B332 /* OVNI.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE0CCC016B4246000D7B332 /* OVNI.m */; };
-		BEE0CCC416B432D700D7B332 /* OVNIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEE0CCC316B432D700D7B332 /* OVNIManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -257,12 +254,6 @@
 		BEAC4A3D16B4028B004E04EF /* BGLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGLayer.m; path = Classes/engine/background/BGLayer.m; sourceTree = "<group>"; };
 		BEAC4A4016B402A1004E04EF /* Score.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Score.h; path = Classes/engine/hud/Score.h; sourceTree = "<group>"; };
 		BEAC4A4116B402A1004E04EF /* Score.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Score.m; path = Classes/engine/hud/Score.m; sourceTree = "<group>"; };
-		BEE0CCBB16B41FEA00D7B332 /* MobileEntity.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobileEntity.h; path = Classes/entities/MobileEntity.h; sourceTree = "<group>"; };
-		BEE0CCBC16B41FEA00D7B332 /* MobileEntity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MobileEntity.m; path = Classes/entities/MobileEntity.m; sourceTree = "<group>"; };
-		BEE0CCBF16B4246000D7B332 /* OVNI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OVNI.h; path = Classes/entities/enemies/OVNI.h; sourceTree = "<group>"; };
-		BEE0CCC016B4246000D7B332 /* OVNI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OVNI.m; path = Classes/entities/enemies/OVNI.m; sourceTree = "<group>"; };
-		BEE0CCC216B432D700D7B332 /* OVNIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OVNIManager.h; path = Classes/entities/enemies/OVNIManager.h; sourceTree = "<group>"; };
-		BEE0CCC316B432D700D7B332 /* OVNIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OVNIManager.m; path = Classes/entities/enemies/OVNIManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -363,8 +354,6 @@
 				BE5E915216B3FAF400622DED /* Helicopter.m */,
 				BE5E915316B3FAF400622DED /* MobileObject.h */,
 				BE5E915416B3FAF400622DED /* MobileObject.m */,
-				BEE0CCBB16B41FEA00D7B332 /* MobileEntity.h */,
-				BEE0CCBC16B41FEA00D7B332 /* MobileEntity.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -657,10 +646,6 @@
 				BE5E915816B3FAFA00622DED /* Ennemies.m */,
 				BE5E915B16B3FAFA00622DED /* Ufo.h */,
 				BE5E915C16B3FAFA00622DED /* Ufo.m */,
-				BEE0CCBF16B4246000D7B332 /* OVNI.h */,
-				BEE0CCC016B4246000D7B332 /* OVNI.m */,
-				BEE0CCC216B432D700D7B332 /* OVNIManager.h */,
-				BEE0CCC316B432D700D7B332 /* OVNIManager.m */,
 			);
 			name = Enemies;
 			sourceTree = "<group>";
@@ -861,9 +846,6 @@
 				BEAC4A3E16B4028B004E04EF /* Background.m in Sources */,
 				BEAC4A3F16B4028B004E04EF /* BGLayer.m in Sources */,
 				BEAC4A4216B402A1004E04EF /* Score.m in Sources */,
-				BEE0CCBD16B41FEA00D7B332 /* MobileEntity.m in Sources */,
-				BEE0CCC116B4246000D7B332 /* OVNI.m in Sources */,
-				BEE0CCC416B432D700D7B332 /* OVNIManager.m in Sources */,
 				BE73961216B6111C009A0AE7 /* Joypad.m in Sources */,
 				BE88EFB716B61E9D00878249 /* Rocket.m in Sources */,
 				BE88EFBC16B61EB900878249 /* Enemy.m in Sources */,
