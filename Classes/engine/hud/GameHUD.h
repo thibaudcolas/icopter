@@ -7,14 +7,21 @@
 #import "Joypad.h"
 #import "BitmapFont.h"
 #import "Image.h"
+#import "Animation.h"
 
 @interface GameHUD : NSObject
 {    
     GoText *go;
     int scoreValue;
+    
 	BitmapFont *scoreDisplay;
+    
     Image *pauseLabel;
+    
     Image *scorePanel;
+    
+    Animation *scoreArrow;
+    
     Image *pauseButton;
     CGRect pauseButtonBounds;
     
@@ -27,7 +34,7 @@
 
 - (id)init;
 
-- (void)update:(float)delta score:(int)scoreValue;
+- (void)update:(float)delta score:(int)scoreValue kill:(bool)hasKilled;
 
 - (void)render:(uint)state;
 

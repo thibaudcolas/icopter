@@ -20,6 +20,8 @@
         scoreDisplay = [[BitmapFont alloc] initWithFontImageNamed:@"franklin16.png" controlFile:@"franklin16" scale:Scale2fMake(1.1f, 1.1f) filter:GL_LINEAR];
         scorePanel= [[Image alloc] initWithImageNamed:@"red-score-panel.png" filter:GL_LINEAR];
         
+        scoreArrow = [[Animation alloc] createFromImageNamed:@"score-arrow.png" frameSize:CGSizeMake(30, 17) spacing:0 margin:0 delay:0.1f state:kAnimationState_Stopped type:kAnimationType_Once length:11];
+        
         pauseLabel= [[Image alloc] initWithImageNamed:@"pause-label.png" filter:GL_LINEAR];
         pauseButton= [[Image alloc] initWithImageNamed:@"red-pause-button.png" filter:GL_LINEAR];
         // Il faut que les coordonnées soient inversées pour que la détection de touch fonctionne.
@@ -36,9 +38,21 @@
     return self;
 }
 
-- (void) update:(float)delta score:(int)value
+- (void) update:(float)delta score:(int)value kill:(bool)hasKilled
 {
     [go update:delta];
+    [scoreArrow updateWithDelta:delta];
+    
+    if (scoreArrow.state == kAnimationState_Stopped) {
+        if (hasKilled) {
+            scoreArrow.state = kAnimationState_Running;
+            scoreArrow.currentFrame = 0;
+        }
+        else {
+            scoreArrow.currentFrame = 0;
+        }
+    }
+    
     scoreValue = value;
 }
 
@@ -48,6 +62,8 @@
     [go render];
     [scorePanel renderAtPoint:CGPointMake(375, 285)];
     [scoreDisplay renderStringJustifiedInFrame:CGRectMake(385, 288, 80, 24) justification:BitmapFontJustification_MiddleRight text:[numberFormatter stringFromNumber:[NSNumber numberWithInt:scoreValue]]];
+    
+    if (scoreArrow.state == kAnimationState_Running) [scoreArrow renderAtPoint:CGPointMake(377, 292)];
     
     [pauseButton renderAtPoint:CGPointMake(340, 285)];
     

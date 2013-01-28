@@ -169,9 +169,9 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
         checkFMODError(FMOD_EventParameter_SetValue(timeParam, constrainedValueTime));
         checkFMODError(FMOD_EventParameter_SetValue(nbRocketLauncherParam, constrainedValueRocketLauncher));
         checkFMODError(FMOD_EventParameter_SetValue(nbUfoParam, constrainedValueUfo));
-        
+    
         //============================================//
-        
+        bool touched= false;
         //============= ROCKET LAUNCHERS =============//
         //Toutes les createRocketLauncherTimeout secondes on cree un nouveau rocketLauncher si le maxNumRocketLauncher n'est pas atteint
         if (createRocketLauncherTimer>= createRocketLauncherTimeout) if ([rocketLaunchers count]< maxNumRocketLauncher)
@@ -188,7 +188,6 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
         {
             RocketLauncher *rocketLauncher= [rocketLaunchers objectAtIndex:i];        
             
-            bool touched= false;
             for(Missile *missile in helicopter->missiles)
             {
                 if (   [missile getXCoord]>= [rocketLauncher getXCoord]-rocketLauncher->width/2
@@ -315,7 +314,7 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
         [background update:aDelta];
         
         [score update:aDelta kills:killedRocketLaunchers];
-        [hud update:aDelta score:[score getValue]];
+        [hud update:aDelta score:[score getValue] kill:touched];
         //============================================//
 	}
 }

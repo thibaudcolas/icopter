@@ -98,6 +98,7 @@
 		BE88EFE116B624B700878249 /* Projectile.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88EFE016B624B700878249 /* Projectile.m */; };
 		BE88EFE316B62D9200878249 /* explosion-atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFE216B62D9200878249 /* explosion-atlas.png */; };
 		BE88EFE516B62DA300878249 /* explosion-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFE416B62DA300878249 /* explosion-coordinates.plist */; };
+		BE88EFF216B6494400878249 /* score-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFF116B6494400878249 /* score-arrow.png */; };
 		BEAC4A3816B40278004E04EF /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3516B40278004E04EF /* Explosion.m */; };
 		BEAC4A3916B40278004E04EF /* ExplosionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3716B40278004E04EF /* ExplosionManager.m */; };
 		BEAC4A3E16B4028B004E04EF /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3B16B4028B004E04EF /* Background.m */; };
@@ -244,6 +245,7 @@
 		BE88EFE016B624B700878249 /* Projectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Projectile.m; path = Classes/entities/projectiles/Projectile.m; sourceTree = "<group>"; };
 		BE88EFE216B62D9200878249 /* explosion-atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "explosion-atlas.png"; path = "resources/images/entities/explosion-atlas.png"; sourceTree = SOURCE_ROOT; };
 		BE88EFE416B62DA300878249 /* explosion-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "explosion-coordinates.plist"; path = "resources/explosion-coordinates.plist"; sourceTree = "<group>"; };
+		BE88EFF116B6494400878249 /* score-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "score-arrow.png"; path = "resources/images/hud/score-arrow.png"; sourceTree = SOURCE_ROOT; };
 		BEAC4A3416B40278004E04EF /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = Classes/entities/explosions/Explosion.h; sourceTree = "<group>"; };
 		BEAC4A3516B40278004E04EF /* Explosion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Explosion.m; path = Classes/entities/explosions/Explosion.m; sourceTree = "<group>"; };
 		BEAC4A3616B40278004E04EF /* ExplosionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ExplosionManager.h; path = Classes/entities/explosions/ExplosionManager.h; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 		BE5E90BD16B3F74D00622DED /* HUD */ = {
 			isa = PBXGroup;
 			children = (
+				BE88EFF116B6494400878249 /* score-arrow.png */,
 				BE5E90E616B3F7E200622DED /* hud-go.png */,
 				BE5E90E716B3F7E200622DED /* joypad.png */,
 				BE5E90E816B3F7E200622DED /* pause-label.png */,
@@ -804,6 +807,7 @@
 				BE88EFCC16B622E500878249 /* sound_bank.fsb in Resources */,
 				BE88EFE316B62D9200878249 /* explosion-atlas.png in Resources */,
 				BE88EFE516B62DA300878249 /* explosion-coordinates.plist in Resources */,
+				BE88EFF216B6494400878249 /* score-arrow.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
