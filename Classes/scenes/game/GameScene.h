@@ -1,12 +1,13 @@
 #import "AbstractScene.h"
 #import "ImageRenderManager.h"
 #import "GameController.h"
-#import "SoundManager.h"
 #import "SpriteSheet.h"
 #import "PackedSpriteSheet.h"
 #import "Animation.h"
 #import "EAGLView.h"
 #import "Image.h"
+
+#import "FmodSoundManager.h"
 
 #import "Background.h"
 #import "ExplosionManager.h"
@@ -16,14 +17,12 @@
 #import "Ufo.h"
 #import "Score.h"
 
-#define MAX_FMOD_AUDIO_CHANNELS 10
-
 @class Image;
 @class RocketLauncher;
 @class Background;
 @class ExplosionManager;
 @class ImageRenderManager;
-@class SoundManager;
+@class FmodSoundManager;
 @class GameController;
 @class SpriteSheet;
 @class PackedSpriteSheet;
@@ -37,9 +36,6 @@
 
 Helicopter *helicopter;
 NSMutableArray *rocketLaunchers;
-FMOD_EVENTPROJECT *project;
-FMOD_EVENTGROUP *generalGroup;
-
 
 @interface GameScene : AbstractScene
 {
@@ -47,16 +43,7 @@ FMOD_EVENTGROUP *generalGroup;
 	GameController *sharedGameController;// Reference to the game controller
 	ImageRenderManager *sharedImageRenderManager;// Reference to the image render manager
     
-    SoundManager *sharedSoundManager;
-	FMOD_EVENTSYSTEM *eventSystem;
-    FMOD_EVENTPARAMETER *nbUfoParam,*nbRocketLauncherParam,*timeParam;// parameter of the event_music_game
-    
-    FMOD_EVENTCATEGORY *game;
-    FMOD_EVENT *generalEvent;
-    FMOD_EVENT *pauseEvent;
-
 	NSMutableDictionary *previousTouchTimestamps;
-    NSMutableDictionary *fmodEventsForTouches;
     
     float timeEllapsed;
     //NSTimeInterval secondsElapsed;
@@ -67,6 +54,8 @@ FMOD_EVENTGROUP *generalGroup;
     
     Score* score;    
     GameHUD* hud;
+    
+    FmodSoundManager* sharedFmodSoundManager;
     
     ExplosionManager* sharedExplosionManager;
 

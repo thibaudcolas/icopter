@@ -883,14 +883,13 @@
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/FMOD Libraries\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				INFOPLIST_FILE = "iCopter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/FMOD Libraries\"",
 					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
@@ -921,14 +920,13 @@
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/FMOD Libraries\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				INFOPLIST_FILE = "iCopter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/FMOD Libraries\"",
 					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;
@@ -974,14 +972,13 @@
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
-					"\"$(SRCROOT)/FMOD Libraries\"",
+					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				INFOPLIST_FILE = "iCopter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
-					"\"$(SRCROOT)/FMOD Libraries\"",
 					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				ONLY_ACTIVE_ARCH = YES;

@@ -1,12 +1,5 @@
 #import "GameScene.h"
 
-// Convenience macro/function for logging FMOD errors
-#define checkFMODError(e) _checkFMODError(__FILE__, __LINE__, e)
-void _checkFMODError(const char *sourceFile, int line, FMOD_RESULT errorCode);
-
-// Convenience function for constraining parameter values
-float constrainFloat(float value, float lowerLimit, float upperLimit);
-
 @implementation GameScene
 
 - (void)dealloc
@@ -25,45 +18,16 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
 		sharedImageRenderManager= [ImageRenderManager sharedImageRenderManager];
         
         //=================== SOUND ==================//
-        sharedSoundManager= [SoundManager sharedSoundManager];
-        fmodEventsForTouches = [[NSMutableDictionary alloc] init];
-		
-		// Initialize the FMOD event system
-		checkFMODError(FMOD_EventSystem_Create(&eventSystem));
-		checkFMODError(FMOD_EventSystem_Init(eventSystem, MAX_FMOD_AUDIO_CHANNELS, FMOD_INIT_NORMAL, NULL, FMOD_EVENT_INIT_NORMAL));
-		// Load the FEV file
-		NSString *fevPath = [[NSBundle mainBundle] pathForResource:@"iCopter" ofType:@"fev"];
-		checkFMODError(FMOD_EventSystem_Load(eventSystem, [fevPath UTF8String], FMOD_EVENT_INIT_NORMAL, &project));
+        sharedFmodSoundManager= [FmodSoundManager sharedFmodSoundManager];
         
-        game= NULL;
-        FMOD_EventCategory_GetCategory(game, "master", &game);
-		checkFMODError(FMOD_EventProject_GetGroup(project, "general", 1, &generalGroup));
-    
-        generalEvent= NULL;
-        // create an instance of the FMOD event
-		checkFMODError(FMOD_EventGroup_GetEvent(generalGroup, "game_music", FMOD_EVENT_DEFAULT, &generalEvent));
-		
-        float minTime, maxTime, minRocketLauncher, maxRocketLauncher,minUfo,maxUfo;
-        // get the value of parameter of the event
-        checkFMODError(FMOD_Event_GetParameter(generalEvent, "time", &timeParam));
-        checkFMODError(FMOD_Event_GetParameter(generalEvent, "rocketLauncher_count", &nbRocketLauncherParam));
-        checkFMODError(FMOD_Event_GetParameter(generalEvent, "ufo_count", &nbUfoParam));
-        // get the required range of the parameter and constrain the value
-		checkFMODError(FMOD_EventParameter_GetRange(timeParam, &minTime, &maxTime));
-		checkFMODError(FMOD_EventParameter_GetRange(nbRocketLauncherParam, &minRocketLauncher, &maxRocketLauncher));
-		checkFMODError(FMOD_EventParameter_GetRange(nbUfoParam, &minUfo, &maxUfo));
-        float constrainedValueTime = constrainFloat(0, minTime, maxTime);
-        float constrainedValueRocketLauncher = constrainFloat(0, minRocketLauncher, maxRocketLauncher);
-        float constrainedValueUfo = constrainFloat(0, minUfo, maxUfo);
-        // set the new value
-        checkFMODError(FMOD_EventParameter_SetValue(timeParam, constrainedValueTime));
-        checkFMODError(FMOD_EventParameter_SetValue(nbRocketLauncherParam, constrainedValueRocketLauncher));
-        checkFMODError(FMOD_EventParameter_SetValue(nbUfoParam, constrainedValueUfo));
-        
-        // trigger the event
-		checkFMODError(FMOD_Event_Start(generalEvent));
-        checkFMODError(FMOD_EventGroup_GetEvent(generalGroup, "pause_music", FMOD_EVENT_DEFAULT, &pauseEvent));
-        checkFMODError(FMOD_Event_Start(pauseEvent));FMOD_Event_SetPaused(pauseEvent, 1);
+        //declenche les sons
+        [sharedFmodSoundManager add:gameMusic];
+        [sharedFmodSoundManager add:helicopterSound];
+        [sharedFmodSoundManager add:helicopterAltitudeAlert immediate:false];
+        [sharedFmodSoundManager add:pauseMusic immediate:false];
+        [sharedFmodSoundManager add:gameOverSound immediate:false];
+        [sharedFmodSoundManager add:goSound];
+        [sharedFmodSoundManager initMusicParams];
         //============================================//
  		
         timeEllapsed= 0;
@@ -132,43 +96,29 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
 {
     if (state== kSceneState_Paused)
     {
-        FMOD_Event_SetPaused(generalEvent, 1);
-        FMOD_Event_SetPaused(helicopterEvent, 1);
-        FMOD_Event_SetPaused(rocketLauncherEvent, 1);
-        FMOD_Event_SetPaused(ufoEvent, 1);
-        FMOD_Event_SetPaused(gameOverEvent, 1);
-        FMOD_Event_SetPaused(pauseEvent, 0);
+        [sharedFmodSoundManager play:pauseMusic];
+        [sharedFmodSoundManager pause:gameMusic];
+        [sharedFmodSoundManager pause:helicopterSound];
+        [sharedFmodSoundManager pause:rocketLauncherSound];
+        [sharedFmodSoundManager pause:ufo];
+        [sharedFmodSoundManager pause:michou];
         
         //FMOD_EventCategory_SetPaused(game, 1);
     }
     else
     {
-        //FMOD_EventCategory_SetPaused(game, 0);
-        FMOD_Event_SetPaused(generalEvent, 0);
-        FMOD_Event_SetPaused(helicopterEvent, 0);
-        FMOD_Event_SetPaused(rocketLauncherEvent, 0);
-        FMOD_Event_SetPaused(ufoEvent, 0);
-        FMOD_Event_SetPaused(gameOverEvent, 0);
-        FMOD_Event_SetPaused(pauseEvent, 1);
+        [sharedFmodSoundManager pause:pauseMusic];
+        [sharedFmodSoundManager play:gameMusic];
+        [sharedFmodSoundManager play:gameOverSound];
+        [sharedFmodSoundManager play:helicopterSound];
+        [sharedFmodSoundManager play:rocketLauncherSound];
+        [sharedFmodSoundManager play:ufo];
+        [sharedFmodSoundManager play:michou];
+        
         timeEllapsed+= aDelta;
         
-        //==================== SOUND =================//
-        float minTime, maxTime, minRocketLauncher, maxRocketLauncher,minUfo,maxUfo;
-        // get the value of parameter of the event
-        checkFMODError(FMOD_Event_GetParameter(generalEvent, "time", &timeParam));
-        checkFMODError(FMOD_Event_GetParameter(generalEvent, "rocketLauncher_count", &nbRocketLauncherParam));
-        checkFMODError(FMOD_Event_GetParameter(generalEvent, "ufo_count", &nbUfoParam));
-        // get the required range of the parameter and constrain the value
-        checkFMODError(FMOD_EventParameter_GetRange(timeParam, &minTime, &maxTime));
-        checkFMODError(FMOD_EventParameter_GetRange(nbRocketLauncherParam, &minRocketLauncher, &maxRocketLauncher));
-        checkFMODError(FMOD_EventParameter_GetRange(nbUfoParam, &minUfo, &maxUfo));
-        float constrainedValueTime = constrainFloat(timeEllapsed/100, minTime, maxTime);
-        float constrainedValueRocketLauncher = constrainFloat([rocketLaunchers count], minRocketLauncher, maxRocketLauncher);
-        float constrainedValueUfo = constrainFloat([ufos count], minUfo, maxUfo);
-        // set the new value
-        checkFMODError(FMOD_EventParameter_SetValue(timeParam, constrainedValueTime));
-        checkFMODError(FMOD_EventParameter_SetValue(nbRocketLauncherParam, constrainedValueRocketLauncher));
-        checkFMODError(FMOD_EventParameter_SetValue(nbUfoParam, constrainedValueUfo));
+        [sharedFmodSoundManager updateMusicParams:timeEllapsed rocketLaunchersCount:[rocketLaunchers count] ufoCount:[ufos count]];
+        [sharedFmodSoundManager update];
     
         //============================================//
         bool touched= false;
@@ -385,12 +335,10 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
             if (state== kSceneState_Running)
             {
                 state= kSceneState_Paused;
-                [sharedSoundManager stopMusic];
             }
             else
             {
                 state= kSceneState_Running;
-                [sharedSoundManager resumeMusic];
             }
             
             // If the joypad was being tracked then reset it
@@ -409,10 +357,6 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
 
 - (void)touchesMoved:(NSSet*)touches withEvent:(UIEvent*)event view:(UIView*)aView
 {
-	// as this method will be called regulary, it is a good place to do the periodic update of the FMOD event system.
-	FMOD_EventSystem_Update(eventSystem);
-
-    
     // Loop through all the touches
 	for (UITouch *touch in touches)
     {
@@ -448,7 +392,6 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
 	for (UITouch *touch in touches)
     {
         [previousTouchTimestamps removeObjectForKey:[NSNumber numberWithInteger:[touch hash]]];
-		[fmodEventsForTouches removeObjectForKey:[NSNumber numberWithInteger:[touch hash]]];
 
 		// If the hash for the joypad has reported that its ended, then set the
 		// state as necessary
@@ -470,38 +413,10 @@ float constrainFloat(float value, float lowerLimit, float upperLimit);
 	for (UITouch *cancelledTouch in touches)
 	{
 		[previousTouchTimestamps removeObjectForKey:[NSNumber numberWithInteger:[cancelledTouch hash]]];
-		[fmodEventsForTouches removeObjectForKey:[NSNumber numberWithInteger:[cancelledTouch hash]]];
+        
 	}
 }
 
 @end
-
-
-
-
-void _checkFMODError(const char *sourceFile, int line, FMOD_RESULT errorCode)
-{
-	if (errorCode != FMOD_OK)
-	{
-		NSString *filename = [[NSString stringWithUTF8String:sourceFile] lastPathComponent];
-		NSLog(@"%@:%d FMOD Error %d:%s", filename, line, errorCode, FMOD_ErrorString(errorCode));
-	}
-}
-
-
-float constrainFloat(float value, float lowerLimit, float upperLimit)
-{
-	if (value < lowerLimit)
-	{
-		value = lowerLimit;
-	}
-	
-	if (value > upperLimit)
-	{
-		value = upperLimit;
-	}
-	
-	return value;
-}
 
 

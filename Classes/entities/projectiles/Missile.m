@@ -35,7 +35,7 @@
 	xCoord= xCoord + 2*0.2;
 	yCoord= yCoord + speed*deltat;
         
-    if (yCoord<80)
+    if (yCoord<70)
     {
         [self die];
         return false;
@@ -57,7 +57,6 @@
     [sharedFmodSoundManager release:helicopterMissileDetonates immediate:false];
     
     [sharedExplosionManager add:bAnimation_missileDetonates position:CGPointMake(xCoord, yCoord)];
-    [super die];
 }
 
 @end

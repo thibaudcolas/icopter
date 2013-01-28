@@ -96,8 +96,8 @@
 
 - (void) die//explosion de l'ufo (animation) et suppression de l'objet ufo
 {
-    [sharedFmodSoundManager stop:ufo immediate:false];
-    [sharedFmodSoundManager release:ufo immediate:false];
+    [sharedFmodSoundManager stop:kindOfUFO==1?ufo:michou immediate:false];
+    [sharedFmodSoundManager release:kindOfUFO==1?ufo:michou immediate:false];
 
     [super die];
 
