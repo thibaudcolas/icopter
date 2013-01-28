@@ -13,6 +13,7 @@
 {
 	self= [super init];
     sharedExplosionManager = [ExplosionManager sharedExplosionManager];
+    sharedFmodSoundManager = [FmodSoundManager sharedFmodSoundManager];
     screenBounds= [[UIScreen mainScreen] bounds];
     return self;
 }
