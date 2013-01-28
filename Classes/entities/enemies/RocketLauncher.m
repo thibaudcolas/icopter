@@ -23,7 +23,7 @@
     self->width= 75;
     self->height= 24;
     self->xCoord= (self->direction>0)?0-self->width/2:480+self->width/2;
-    self->yCoord= (self->direction>0)?75:100;
+    self->yCoord= (self->direction>0)?60:70;
     self->hitBox= CGRectMake(self->direction>0?self->xCoord-self->width:self->xCoord+self->width,
                              self->direction>0?self->yCoord-self->height:self->xCoord+self->width,
                              self->width,
@@ -136,7 +136,7 @@
 {
     NSLog(@"shoot tank");
     //ajout d'un nouvel rockets dans le tableau
-    [self->rockets addObject:[[Rocket alloc] init:(float)self->xCoord yCoord:(float)self->yCoord targetX:(float)targetX targetY:(float)targetY aDelta:(float)aDelta]];
+    [self->rockets addObject:[[Rocket alloc] init:xCoord - direction * 20 yCoord:yCoord + 5 targetX:(float)targetX targetY:(float)targetY aDelta:(float)aDelta]];
     self->shootTimer= self->shootTimeout;//reinitialise le timer au bout duquel le RocketLauncher tire
     self->readyToShoot= false;
     if (animationC.direction>0) animationC.direction= -1;
