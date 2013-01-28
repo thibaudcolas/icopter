@@ -1,10 +1,13 @@
 #import "AbstractScene.h"
 
+#import "Animation.h"
+
 @class ImageRenderManager;
 @class SoundManager;
 @class TextureManager;
 @class GameController;
 @class Image;
+@class Animation;
 @class BitmapFont;
 @class PackedSpriteSheet;
 @class Player;
@@ -22,6 +25,7 @@
 	SoundManager *sharedSoundManager;
 	TextureManager *sharedTextureManager;
 	
+    //Animation* background;
 	/////////////////// Sprite sheets and images
 	Image *background;					// Background image for the menu
 	Image *fadeImage;					// Full screen black image used to fade in and out

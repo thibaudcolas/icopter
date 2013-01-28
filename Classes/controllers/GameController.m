@@ -95,18 +95,18 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(GameController);
 	[scene release];
     
     
-//    scene = [[MenuScene alloc] init];
-//    [gameScenes setValue:scene forKey:@"menu"];
-//	[scene release];
-//	//Init game
-//	
-//    
-//    scene= [[SettingsScene alloc] init];
-//    [gameScenes setValue:scene forKey:@"settings"];
-//	[scene release];
+    scene = [[MenuScene alloc] init];
+    [gameScenes setValue:scene forKey:@"menu"];
+	[scene release];
+	//Init game
+	
+    
+    scene= [[SettingsScene alloc] init];
+    [gameScenes setValue:scene forKey:@"settings"];
+	[scene release];
 
     // Set the starting scene for the game
-    currentScene = [gameScenes objectForKey:@"game"];
+    currentScene = [gameScenes objectForKey:@"menu"];
     
 	// Initialize the accelerometer
 	[[UIAccelerometer sharedAccelerometer] setUpdateInterval:1.0 / 100.0];

@@ -49,6 +49,8 @@
 		// Create a packed spritesheet for the menu
 		pss = [PackedSpriteSheet packedSpriteSheetForImageNamed:@"menuAtlas.png" controlFile:@"menuCoords" imageFilter:GL_LINEAR];
 */
+        
+        //background = [[Animation alloc] createFromImage:[[Image alloc] initWithImageNamed:@"background-menu.jpg" filter:GL_LINEAR] frameSize:CGSizeMake(304, 144) spacing:0 margin:0 delay:0.15f state:kAnimationState_Running type:kAnimationType_Repeating columns:3 rows:2];
 		// Create images for the menu from packed spritesheet and also the fade image
         background= [[Image alloc] initWithImageNamed:@"GameOver.png" filter:GL_LINEAR];
         newGame=  [[Image alloc] initWithImageNamed:@"New-Game.png" filter:GL_LINEAR];
@@ -182,6 +184,7 @@
 			break;
 	}
  */
+    //[background updateWithDelta:aDelta];
 }
 
 - (void)transitionIn {
@@ -209,8 +212,10 @@
 
 - (void)renderScene {
 
+    glClear(GL_COLOR_BUFFER_BIT);
 	// Render the background
-	[background renderAtPoint:CGPointMake(0, 0)];
+	
+    [background renderAtPoint:CGPointMake(0, 0)];
 	[newGame renderAtPoint:CGPointMake(75, 235)];
     [scores renderAtPoint:CGPointMake(75, 178)];
     [settings renderAtPoint:CGPointMake(75, 120)];
