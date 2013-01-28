@@ -54,6 +54,10 @@
         
         settings =  [[Image alloc] initWithImageNamed:@"menu-settings.png" filter:GL_LINEAR];
         settingsButtonBounds = CGRectMake(445, 285, 30, 30);
+        
+        biker= [[Animation alloc] createFromImageNamed:@"biker.png" frameSize:CGSizeMake(46, 40) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:7 rows:1];
+        biker2= [[Animation alloc] createFromImageNamed:@"biker2.png" frameSize:CGSizeMake(45, 40) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:8 rows:1];
+        groundProjection= [[Animation alloc] createFromImageNamed:@"biker-ground-projection.png" frameSize:CGSizeMake(27, 14) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:8 rows:1];
 
 		// The allBack image is a single black pixel. This texture is stretched to fill the full
 		// screen my scaling the image
@@ -87,6 +91,22 @@
     helicoCoord.x += 1;
     
     [helicoRotor updateWithDelta:aDelta];
+    
+    if (bikerCoord.x + 46 / 2 < 0) {
+        bikerCoord.x= 480+46;
+        bikerCoord.y= 50;
+    }
+    bikerCoord.x -= 1;
+    [biker updateWithDelta:aDelta];
+    [groundProjection updateWithDelta:aDelta];
+    
+    if (biker2Coord.x + 45 / 2 < 0)
+    {
+        biker2Coord.x= 480+45+20;
+        biker2Coord.y= 47;
+    }
+    biker2Coord.x -= .8;
+    [biker2 updateWithDelta:aDelta];
 }
 
 - (void)transitionIn {
@@ -120,6 +140,10 @@
     
     [helicoBody renderCenteredAtPoint:helicoCoord];
     [helicoRotor renderCenteredAtPoint:CGPointMake(helicoCoord.x + 15, helicoCoord.y + 7)];
+    
+    [biker renderCenteredAtPoint:CGPointMake(bikerCoord.x,bikerCoord.y)];
+    [groundProjection renderCenteredAtPoint:CGPointMake(bikerCoord.x+12,bikerCoord.y-13)];
+    [biker2 renderCenteredAtPoint:CGPointMake(biker2Coord.x,biker2Coord.y)];
     
     [gameTitle renderCenteredAtPoint:CGPointMake(240, 280)];
     

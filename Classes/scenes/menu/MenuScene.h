@@ -40,6 +40,13 @@
     
     int sinModifier;
     Boolean sinModifierIncrease;
+    
+    Animation* biker;
+    CGPoint bikerCoord;
+    Animation* biker2;
+    CGPoint biker2Coord;
+    Animation* groundProjection;
+    CGPoint groundProjectionCoord;
 	
     //Animation* background;
 	/////////////////// Sprite sheets and images
