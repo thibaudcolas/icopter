@@ -69,7 +69,6 @@
 		BE5E914916B3F9D500622DED /* GoText.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E914516B3F9D500622DED /* GoText.m */; };
 		BE5E915516B3FAF400622DED /* Helicopter.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E915216B3FAF400622DED /* Helicopter.m */; };
 		BE5E915616B3FAF400622DED /* MobileObject.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E915416B3FAF400622DED /* MobileObject.m */; };
-		BE5E915D16B3FAFA00622DED /* Ennemies.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E915816B3FAFA00622DED /* Ennemies.m */; };
 		BE5E915F16B3FAFA00622DED /* Ufo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E915C16B3FAFA00622DED /* Ufo.m */; };
 		BE5E916616B3FB0100622DED /* Missile.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E916116B3FB0100622DED /* Missile.m */; };
 		BE5E917516B3FC4500622DED /* AbstractScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BE5E917416B3FC4500622DED /* AbstractScene.m */; };
@@ -201,8 +200,6 @@
 		BE5E915216B3FAF400622DED /* Helicopter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helicopter.m; path = Classes/entities/Helicopter.m; sourceTree = "<group>"; };
 		BE5E915316B3FAF400622DED /* MobileObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MobileObject.h; path = Classes/entities/MobileObject.h; sourceTree = "<group>"; };
 		BE5E915416B3FAF400622DED /* MobileObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MobileObject.m; path = Classes/entities/MobileObject.m; sourceTree = "<group>"; };
-		BE5E915716B3FAFA00622DED /* Ennemies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ennemies.h; path = Classes/entities/enemies/Ennemies.h; sourceTree = "<group>"; };
-		BE5E915816B3FAFA00622DED /* Ennemies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ennemies.m; path = Classes/entities/enemies/Ennemies.m; sourceTree = "<group>"; };
 		BE5E915B16B3FAFA00622DED /* Ufo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ufo.h; path = Classes/entities/enemies/Ufo.h; sourceTree = "<group>"; };
 		BE5E915C16B3FAFA00622DED /* Ufo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ufo.m; path = Classes/entities/enemies/Ufo.m; sourceTree = "<group>"; };
 		BE5E916016B3FB0100622DED /* Missile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Missile.h; path = Classes/entities/projectiles/Missile.h; sourceTree = "<group>"; };
@@ -656,8 +653,6 @@
 				BE88EFB916B61EB900878249 /* Enemy.m */,
 				BE88EFBA16B61EB900878249 /* RocketLauncher.h */,
 				BE88EFBB16B61EB900878249 /* RocketLauncher.m */,
-				BE5E915716B3FAFA00622DED /* Ennemies.h */,
-				BE5E915816B3FAFA00622DED /* Ennemies.m */,
 				BE5E915B16B3FAFA00622DED /* Ufo.h */,
 				BE5E915C16B3FAFA00622DED /* Ufo.m */,
 			);
@@ -854,7 +849,6 @@
 				BE5E914916B3F9D500622DED /* GoText.m in Sources */,
 				BE5E915516B3FAF400622DED /* Helicopter.m in Sources */,
 				BE5E915616B3FAF400622DED /* MobileObject.m in Sources */,
-				BE5E915D16B3FAFA00622DED /* Ennemies.m in Sources */,
 				BE5E915F16B3FAFA00622DED /* Ufo.m in Sources */,
 				BE5E916616B3FB0100622DED /* Missile.m in Sources */,
 				BE5E917516B3FC4500622DED /* AbstractScene.m in Sources */,
