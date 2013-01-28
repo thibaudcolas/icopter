@@ -2,6 +2,7 @@
 
 #import "Animation.h"
 #import "Background.h"
+#import "BitmapFont.h"
 
 @class ImageRenderManager;
 @class SoundManager;
@@ -9,6 +10,7 @@
 @class GameController;
 @class Image;
 @class Background;
+@class BitmapFont;
 @class Animation;
 @class BitmapFont;
 @class PackedSpriteSheet;
@@ -30,6 +32,8 @@
     Background* menuBackground;
     Image* gameTitle;
     
+    BitmapFont *credits;
+    
     Image* helicoBody;
     Animation* helicoRotor;
     CGPoint helicoCoord;
@@ -41,25 +45,15 @@
 	/////////////////// Sprite sheets and images
 	Image *background;					// Background image for the menu
 	Image *fadeImage;					// Full screen black image used to fade in and out
-	Image *newGame, *settings, *scores,*done;			// Menu and menu button images
-	
-	/////////////////// iVars used to control the cloud movement
-	CGPoint *cloudPositions;
-	float cloudSpeed;
-	
-	/////////////////// Sound iVar
-	GLfloat musicVolume;				// Music volume used to fade music in and out
+	Image *newGame, *settings, *scores;			// Menu and menu button images
 	
 	/////////////////// Button iVars
 	uint startWidth, resumeWidth;
 	uint xStart, xResume;
 	CGRect startButtonBounds;
 	CGRect scoreButtonBounds;
-	CGRect doneButtonBounds;
 	CGRect settingsButtonBounds;
 
-	/////////////////// Flags
-	BOOL isMusicFading;					// YES if the music is already fading during a transition
 	BOOL buttonPressed;					// YES if the player has pressed a button
 }
 

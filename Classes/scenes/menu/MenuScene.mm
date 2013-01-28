@@ -18,7 +18,6 @@
 	[fadeImage release];
 	[settings release];
 	[newGame release];
-	[done release];
 	[scores release];
 
 	[super dealloc];
@@ -36,6 +35,9 @@
 
 		// Set the name of this scene
 		self.name = @"menu";
+        
+        credits = [[BitmapFont alloc] initWithFontImageNamed:@"franklin16.png" controlFile:@"franklin16" scale:Scale2fMake(1.0f, 1.0f) filter:GL_LINEAR];
+        credits.fontColor = Color4fMake(0.95f, 0.7f, 0.3f, 1.0f);
 		
 		sharedImageRenderManager = [ImageRenderManager sharedImageRenderManager];
 		sharedGameController = [GameController sharedGameController];
@@ -66,9 +68,7 @@
         
         newGame=  [[Image alloc] initWithImageNamed:@"New-Game.png" filter:GL_LINEAR];
         scores=  [[Image alloc] initWithImageNamed:@"scores.png" filter:GL_LINEAR];
-        settings=  [[Image alloc] initWithImageNamed:@"settings.png" filter:GL_LINEAR];
-        done=  [[Image alloc] initWithImageNamed:@"exit.png" filter:GL_LINEAR];
-
+        settings=  [[Image alloc] initWithImageNamed:@"menu-settings.png" filter:GL_LINEAR];
 
 		// The allBack image is a single black pixel. This texture is stretched to fill the full
 		// screen my scaling the image
@@ -83,8 +83,7 @@
 		// Define the bounds for the buttons being used on the menu
 		startButtonBounds = CGRectMake(75, 235, 140, 47);
 		scoreButtonBounds = CGRectMake(75, 178, 140, 47);
-		settingsButtonBounds = CGRectMake(75, 120, 140, 47);
-		doneButtonBounds = CGRectMake(75, 63, 140, 47);
+		settingsButtonBounds = CGRectMake(445, 285, 30, 30);
 	/*	
 		// Set the default music volume for the menu.  Start at 0 as we are going to fade the sound up
 		musicVolume = 1.0f;
@@ -106,7 +105,7 @@
     
     if (helicoCoord.x - helicoBody.imageSize.width / 2 > 480) {
         helicoCoord.x = -50;
-        helicoCoord.y = arc4random()%(int)((300 - helicoBody.imageSize.height) / 2) + 340 / 2;
+        helicoCoord.y = arc4random()%(int)((120 - helicoBody.imageSize.height) / 2) + 200;
         
 	}	
     else {
@@ -152,33 +151,16 @@
     [helicoBody renderCenteredAtPoint:helicoCoord];
     [helicoRotor renderCenteredAtPoint:CGPointMake(helicoCoord.x+15,helicoCoord.y+7)];
     
-    [gameTitle renderCenteredAtPoint:CGPointMake(240,160)];
+    [gameTitle renderCenteredAtPoint:CGPointMake(240,240)];
+    
+    [credits renderStringJustifiedInFrame:CGRectMake(220, 70, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"(C) 2013 Patches"];
+    [credits renderStringJustifiedInFrame:CGRectMake(220, 50, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"Antoni ANDRE Eric AUBRY-LACHAINAYE Hatim CHAHDI"];
+    [credits renderStringJustifiedInFrame:CGRectMake(220, 30, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"Thibaud COLAS Romain JOURDES Baptiste VIEILLARD"];
 	
 	[newGame renderAtPoint:CGPointMake(75, 235)];
     [scores renderAtPoint:CGPointMake(75, 178)];
-    [settings renderAtPoint:CGPointMake(75, 120)];
-    [done renderAtPoint:CGPointMake(75, 63)];
-    
-    
+    [settings renderAtPoint:settingsButtonBounds.origin];
     /*
-	// Loop through the clounds and render them
-	for (int index=0; index < 7; index++) {
-		Image *cloud = [clouds objectAtIndex:index];
-		[cloud renderAtPoint:(CGPoint)cloudPositions[index]];
-	}
-	
-	// Render the cast ontop of the background and clouds
-	[castle renderAtPoint:CGPointMake(249, 0)];
-	
-	// Render the 71Squared logo
-	[logo renderAtPoint:CGPointMake(25, 0)];
-
-	// Render the gear image for settings
-	[settings renderAtPoint:CGPointMake(450, 0)];
-	
-	// Render the menu and add the options text
-	[menu renderAtPoint:CGPointMake(0, 0)];
-	
 	// Check with the game controller to see if a saved game is available
 	if ([sharedGameController resumedGameAvailable])
 		[menuButton renderAtPoint:CGPointMake(71, 60)];
@@ -235,11 +217,6 @@
             NSLog(@"Test Menu Settings dans if");
             return;
         }
-		if (CGRectContainsPoint(doneButtonBounds, touchLocation)) {
-            NSLog(@"Test Menu Done dans if");
-			exit(0);
-            return;
-		}
 		/*
 		// If the resume button is visible then check to see if the player touched 
 		// the resume button

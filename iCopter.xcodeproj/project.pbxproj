@@ -36,7 +36,6 @@
 		BE5E90E216B3F7C900622DED /* GameOver.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90DD16B3F7C900622DED /* GameOver.png */; };
 		BE5E90E316B3F7C900622DED /* New-Game.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90DE16B3F7C900622DED /* New-Game.png */; };
 		BE5E90E416B3F7C900622DED /* scores.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90DF16B3F7C900622DED /* scores.png */; };
-		BE5E90E516B3F7C900622DED /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90E016B3F7C900622DED /* settings.png */; };
 		BE5E90EC16B3F7E200622DED /* hud-go.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90E616B3F7E200622DED /* hud-go.png */; };
 		BE5E90ED16B3F7E200622DED /* joypad.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90E716B3F7E200622DED /* joypad.png */; };
 		BE5E90EE16B3F7E200622DED /* pause-label.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90E816B3F7E200622DED /* pause-label.png */; };
@@ -78,6 +77,7 @@
 		BE68A87016B6BE00003ED348 /* background-menu-sky.png in Resources */ = {isa = PBXBuildFile; fileRef = BE68A86E16B6BE00003ED348 /* background-menu-sky.png */; };
 		BE68A87216B6C3C8003ED348 /* background-menu-clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = BE68A87116B6C3C8003ED348 /* background-menu-clouds.png */; };
 		BE68A87416B6CE2C003ED348 /* menu-title.png in Resources */ = {isa = PBXBuildFile; fileRef = BE68A87316B6CE2C003ED348 /* menu-title.png */; };
+		BE68A87616B6DFF9003ED348 /* menu-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BE68A87516B6DFF9003ED348 /* menu-settings.png */; };
 		BE7395FC16B5F132009A0AE7 /* background-road.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7395FB16B5F132009A0AE7 /* background-road.png */; };
 		BE7395FF16B5F463009A0AE7 /* background-ruins.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7395FE16B5F463009A0AE7 /* background-ruins.png */; };
 		BE73960116B5F5CA009A0AE7 /* background-towers.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73960016B5F5CA009A0AE7 /* background-towers.png */; };
@@ -144,7 +144,6 @@
 		BE5E90DD16B3F7C900622DED /* GameOver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = GameOver.png; path = resources/images/menu/GameOver.png; sourceTree = SOURCE_ROOT; };
 		BE5E90DE16B3F7C900622DED /* New-Game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "New-Game.png"; path = "resources/images/menu/New-Game.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90DF16B3F7C900622DED /* scores.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = scores.png; path = resources/images/menu/scores.png; sourceTree = SOURCE_ROOT; };
-		BE5E90E016B3F7C900622DED /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = resources/images/menu/settings.png; sourceTree = SOURCE_ROOT; };
 		BE5E90E616B3F7E200622DED /* hud-go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hud-go.png"; path = "resources/images/hud/hud-go.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90E716B3F7E200622DED /* joypad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = joypad.png; path = resources/images/hud/joypad.png; sourceTree = SOURCE_ROOT; };
 		BE5E90E816B3F7E200622DED /* pause-label.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "pause-label.png"; path = "resources/images/hud/pause-label.png"; sourceTree = SOURCE_ROOT; };
@@ -217,6 +216,7 @@
 		BE68A86E16B6BE00003ED348 /* background-menu-sky.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-menu-sky.png"; path = "resources/images/menu/background-menu-sky.png"; sourceTree = SOURCE_ROOT; };
 		BE68A87116B6C3C8003ED348 /* background-menu-clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-menu-clouds.png"; path = "resources/images/menu/background-menu-clouds.png"; sourceTree = SOURCE_ROOT; };
 		BE68A87316B6CE2C003ED348 /* menu-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-title.png"; path = "resources/images/menu/menu-title.png"; sourceTree = SOURCE_ROOT; };
+		BE68A87516B6DFF9003ED348 /* menu-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-settings.png"; path = "resources/images/menu/menu-settings.png"; sourceTree = SOURCE_ROOT; };
 		BE7395FB16B5F132009A0AE7 /* background-road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-road.png"; path = "resources/images/bg/background-road.png"; sourceTree = SOURCE_ROOT; };
 		BE7395FE16B5F463009A0AE7 /* background-ruins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-ruins.png"; path = "resources/images/bg/background-ruins.png"; sourceTree = SOURCE_ROOT; };
 		BE73960016B5F5CA009A0AE7 /* background-towers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-towers.png"; path = "resources/images/bg/background-towers.png"; sourceTree = SOURCE_ROOT; };
@@ -555,6 +555,7 @@
 		BE5E90BF16B3F75A00622DED /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				BE68A87516B6DFF9003ED348 /* menu-settings.png */,
 				BE68A87316B6CE2C003ED348 /* menu-title.png */,
 				BE68A86D16B6BE00003ED348 /* background-menu-forest.png */,
 				BE68A86E16B6BE00003ED348 /* background-menu-sky.png */,
@@ -564,7 +565,6 @@
 				BE88EFB216B61E5800878249 /* GameOver.jpg */,
 				BE5E90DE16B3F7C900622DED /* New-Game.png */,
 				BE5E90DF16B3F7C900622DED /* scores.png */,
-				BE5E90E016B3F7C900622DED /* settings.png */,
 			);
 			name = Menu;
 			sourceTree = "<group>";
@@ -798,7 +798,6 @@
 				BE5E90E216B3F7C900622DED /* GameOver.png in Resources */,
 				BE5E90E316B3F7C900622DED /* New-Game.png in Resources */,
 				BE5E90E416B3F7C900622DED /* scores.png in Resources */,
-				BE5E90E516B3F7C900622DED /* settings.png in Resources */,
 				BE5E90EC16B3F7E200622DED /* hud-go.png in Resources */,
 				BE5E90ED16B3F7E200622DED /* joypad.png in Resources */,
 				BE5E90EE16B3F7E200622DED /* pause-label.png in Resources */,
@@ -832,6 +831,7 @@
 				BE68A87016B6BE00003ED348 /* background-menu-sky.png in Resources */,
 				BE68A87216B6C3C8003ED348 /* background-menu-clouds.png in Resources */,
 				BE68A87416B6CE2C003ED348 /* menu-title.png in Resources */,
+				BE68A87616B6DFF9003ED348 /* menu-settings.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
