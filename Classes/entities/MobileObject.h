@@ -4,6 +4,7 @@
 #import "Animation.h"
 #import "SpriteSheet.h"
 #import "ExplosionManager.h"
+#import "FmodSoundManager.h"
 
 
 
@@ -25,6 +26,7 @@
 	Animation *animation; //Animation
     
     ExplosionManager *sharedExplosionManager;
+    FmodSoundManager *sharedFmodSoundManager;
 }
 
 - (void) move;

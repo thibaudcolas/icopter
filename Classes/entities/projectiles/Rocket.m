@@ -8,9 +8,6 @@
 
 #import "Rocket.h"
 
-extern FMOD_EVENTPROJECT *project;
-extern FMOD_EVENTGROUP *rocketLauncherGroup;
-
 @implementation Rocket
 
 - (id) init:(float)x yCoord:(float)y targetX:(float)targetX targetY:(float)targetY aDelta:(float)aDelta
@@ -43,11 +40,8 @@ extern FMOD_EVENTGROUP *rocketLauncherGroup;
     Image *tmpImage= [spriteSheet spriteImageAtCoords:CGPointMake(frameNum, self->direction==1?0:1)];
     [animation addFrameWithImage:tmpImage delay:animationDelay];
 
-    // create an instance of the FMOD event
-    FMOD_EventGroup_GetEvent(rocketLauncherGroup, "rocketLauncher_shoot", FMOD_EVENT_DEFAULT, &rocketEvent);
-    // trigger the event
-    FMOD_Event_Start(rocketEvent);
-    [tmpImage release];
+    [sharedFmodSoundManager add:rocketLauncherShoot];
+    [spriteSheet release];
 	return self;
 }
 
@@ -76,8 +70,8 @@ extern FMOD_EVENTGROUP *rocketLauncherGroup;
 
 - (void) die
 {
-    FMOD_Event_Stop(rocketEvent, false);
-    FMOD_Event_Release(rocketEvent, false,1);
+    [sharedFmodSoundManager stop:rocketLauncherShoot immediate:false];
+    [sharedFmodSoundManager release:rocketLauncherShoot immediate:false];
     [super die];
     
 }

@@ -15,8 +15,6 @@
 {
 	float deltat;
 	float chute;//9.81
-    
-    FMOD_EVENT *missileEvent;
 }
 
 - (id) init:(float)xCoord yCoord:(float)yCoord;

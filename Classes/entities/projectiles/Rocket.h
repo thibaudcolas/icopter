@@ -18,8 +18,6 @@
 	float directionY;
     float launcherX;
     float launcherY;
-    
-    FMOD_EVENT *rocketEvent;
 }
 
 - (id) init:(float)xCoord yCoord:(float)yCoord targetX:(float)targetX targetY:(float)targetY aDelta:(float)aDelta;

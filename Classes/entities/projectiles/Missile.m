@@ -8,8 +8,6 @@
 
 #import "Missile.h"
 
-extern FMOD_EVENTGROUP *helicopterGroup;
-
 
 @implementation Missile
 
@@ -25,11 +23,8 @@ extern FMOD_EVENTGROUP *helicopterGroup;
 	self->yCoord= y-25;
 	self->skin= [[Image alloc] initWithImageNamed:path filter:GL_LINEAR];
 
-    // create an instance of the FMOD event
-    FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter_shoot", FMOD_EVENT_DEFAULT, &missileEvent);
-    // trigger the event
-    FMOD_Event_Start(missileEvent);
-
+    [sharedFmodSoundManager add:helicopterShoot];
+    
     return self;
 }
 
@@ -40,30 +35,29 @@ extern FMOD_EVENTGROUP *helicopterGroup;
 	xCoord= xCoord + 2*0.2;
 	yCoord= yCoord + speed*deltat;
         
-    return yCoord > 70;
-    //-10 pour etre sur que le missile est bien completement sorti de l'ecran (pour pas voir le missile disparaitre subitement)
+    if (yCoord<80)
+    {
+        [self die];
+        return false;
+    }
+    return true;
 }
 
 
 - (void) render
 {
-    //Render the sprite of the ROCKET
-	CGPoint missileLocation= CGPointMake(round(self->xCoord), round(self->yCoord));
-	//hitBox = CGRectMake(self->xCoord,self->yCoord,width,height);
-	//NSLog(@"hitbox %i",hitBox);
-	
-	[skin renderCenteredAtPoint:missileLocation];
+    [skin renderCenteredAtPoint:CGPointMake(round(self->xCoord), round(self->yCoord))];
 }
 
 - (void) die
 {
-    //FMOD_EventGroup_GetEvent(helicopterGroup, "helicopter_missile_detonates", FMOD_EVENT_DEFAULT, &missileExplosionEvent);
-    //FMOD_Event_Start(missileExplosionEvent);
-    //FMOD_Event_Release(missileExplosionEvent, false,1);
+    [sharedFmodSoundManager stop:helicopterShoot immediate:true];
+    [sharedFmodSoundManager release:helicopterShoot immediate:false];
+    [sharedFmodSoundManager add:helicopterMissileDetonates];
+    [sharedFmodSoundManager release:helicopterMissileDetonates immediate:false];
+    
     [sharedExplosionManager add:bAnimation_missileDetonates position:CGPointMake(xCoord, yCoord)];
-    FMOD_Event_Stop(missileEvent, false);
-    FMOD_Event_Release(missileEvent, false,1);
-    [self dealloc];
+    [super die];
 }
 
 @end
