@@ -216,7 +216,7 @@
                     state=kSceneState_GameOver;
                 } else {
                     [sharedFmodSoundManager add:helicopterExplosion];
-                    [sharedFmodSoundManager release:helicopterExplosion immediate:false];
+                    //[sharedFmodSoundManager release:helicopterExplosion immediate:false];
                     [sharedExplosionManager add:bAnimation_helicoDamaged position:CGPointMake([helicopter getXCoord], [helicopter getYCoord])];
                 }
                 collision= true;
@@ -253,7 +253,7 @@
                         state=kSceneState_GameOver;
                     } else {
                         [sharedFmodSoundManager add:helicopterExplosion];
-                        [sharedFmodSoundManager release:helicopterExplosion immediate:false];
+                        //[sharedFmodSoundManager release:helicopterExplosion immediate:false];
                         [sharedExplosionManager add:bAnimation_helicoDamaged position:CGPointMake([helicopter getXCoord], [helicopter getYCoord])];
                     }
                     collision= true;

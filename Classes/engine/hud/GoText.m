@@ -15,7 +15,7 @@ extern FMOD_EVENTGROUP *generalGroup;
     
 	if (self!= nil)
     {
-        position= CGPointMake(240, 300);
+        position= CGPointMake(240, 160);
         
 		animation= anim;
         

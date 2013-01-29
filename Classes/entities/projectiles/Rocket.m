@@ -70,8 +70,8 @@
 
 - (void) die
 {
-    [sharedFmodSoundManager stop:rocketLauncherShoot immediate:true];
-    [sharedFmodSoundManager release:rocketLauncherShoot immediate:true];
+    //[sharedFmodSoundManager stop:rocketLauncherShoot immediate:true];
+    //[sharedFmodSoundManager release:rocketLauncherShoot immediate:true];
     [super die];
     
 }

@@ -156,13 +156,13 @@
 {
     [rocketLaunchers removeObject: self];
     
-    [sharedFmodSoundManager stop:rocketLauncherSound immediate:true];
-    [sharedFmodSoundManager release:rocketLauncherSound immediate:true];
+    //[sharedFmodSoundManager stop:rocketLauncherSound immediate:true];
+    //[sharedFmodSoundManager release:rocketLauncherSound immediate:true];
     [sharedFmodSoundManager add:rocketLauncherExplosion];
     //[sharedFmodSoundManager stop:rocketLauncherExplosion immediate:false];
-    [sharedFmodSoundManager release:rocketLauncherExplosion immediate:false];
+    //[sharedFmodSoundManager release:rocketLauncherExplosion immediate:false];
     
-    [sharedExplosionManager add:bAnimation_rocketLauncherDestroyed position:CGPointMake(xCoord, yCoord)];
+    [sharedExplosionManager add:bAnimation_rocketLauncherDestroyed position:CGPointMake(xCoord, yCoord + 15)];
     [animationC release];
     [super die];
 }

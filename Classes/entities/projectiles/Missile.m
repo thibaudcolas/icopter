@@ -70,13 +70,13 @@
 
 - (void) die
 {
-    [sharedFmodSoundManager stop:helicopterShoot immediate:true];
-    [sharedFmodSoundManager release:helicopterShoot immediate:true];
+    //[sharedFmodSoundManager stop:helicopterShoot immediate:true];
+    //[sharedFmodSoundManager release:helicopterShoot immediate:true];
     [sharedFmodSoundManager newInstance:helicopterMissileDetonates];
-    [sharedFmodSoundManager stop:helicopterMissileDetonates immediate:false];
-    [sharedFmodSoundManager release:helicopterMissileDetonates immediate:false];
+    //[sharedFmodSoundManager stop:helicopterMissileDetonates immediate:false];
+    //[sharedFmodSoundManager release:helicopterMissileDetonates immediate:false];
 
-    [sharedExplosionManager add:bAnimation_missileDetonates position:CGPointMake(xCoord, yCoord)];
+    [sharedExplosionManager add:bAnimation_missileDetonates position:CGPointMake(xCoord, yCoord + 15)];
 }
 
 @end
