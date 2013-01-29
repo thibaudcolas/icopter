@@ -5,110 +5,44 @@
 	<key>texture</key>
 	<dict>
 		<key>width</key>
-		<integer>512</integer>
+		<integer>880</integer>
 		<key>height</key>
-		<integer>589</integer>
+		<integer>181</integer>
 	</dict>
 	<key>frames</key>
 	<dict>
-		<key>background-sky</key>
+		<key>entities-tank-base</key>
+		<dict>
+			<key>x</key>
+			<integer>400</integer>
+			<key>y</key>
+			<integer>102</integer>
+			<key>width</key>
+			<integer>478</integer>
+			<key>height</key>
+			<integer>42</integer>
+		</dict>
+		<key>entities-rocket</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>102</integer>
+			<key>width</key>
+			<integer>400</integer>
+			<key>height</key>
+			<integer>79</integer>
+		</dict>
+		<key>entities-tank-canon</key>
 		<dict>
 			<key>x</key>
 			<integer>0</integer>
 			<key>y</key>
 			<integer>0</integer>
 			<key>width</key>
-			<integer>512</integer>
+			<integer>845</integer>
 			<key>height</key>
-			<integer>210</integer>
-		</dict>
-		<key>background-trees</key>
-		<dict>
-			<key>x</key>
-			<integer>0</integer>
-			<key>y</key>
-			<integer>210</integer>
-			<key>width</key>
-			<integer>320</integer>
-			<key>height</key>
-			<integer>200</integer>
-		</dict>
-		<key>iCopter-text</key>
-		<dict>
-			<key>x</key>
-			<integer>321</integer>
-			<key>y</key>
-			<integer>211</integer>
-			<key>width</key>
-			<integer>182</integer>
-			<key>height</key>
-			<integer>30</integer>
-		</dict>
-		<key>exit</key>
-		<dict>
-			<key>x</key>
-			<integer>320</integer>
-			<key>y</key>
-			<integer>241</integer>
-			<key>width</key>
-			<integer>68</integer>
-			<key>height</key>
-			<integer>67</integer>
-		</dict>
-		<key>settings</key>
-		<dict>
-			<key>x</key>
-			<integer>387</integer>
-			<key>y</key>
-			<integer>244</integer>
-			<key>width</key>
-			<integer>30</integer>
-			<key>height</key>
-			<integer>30</integer>
-		</dict>
-		<key>clouds</key>
-		<dict>
-			<key>x</key>
-			<integer>0</integer>
-			<key>y</key>
-			<integer>433</integer>
-			<key>width</key>
-			<integer>387</integer>
-			<key>height</key>
-			<integer>77</integer>
-		</dict>
-		<key>ground-projection</key>
-		<dict>
-			<key>x</key>
-			<integer>0</integer>
-			<key>y</key>
-			<integer>412</integer>
-			<key>width</key>
-			<integer>216</integer>
-			<key>height</key>
-			<integer>14</integer>
-		</dict>
-		<key>biker</key>
-		<dict>
-			<key>x</key>
-			<integer>0</integer>
-			<key>y</key>
-			<integer>549</integer>
-			<key>width</key>
-			<integer>322</integer>
-			<key>height</key>
-			<integer>40</integer>
-		</dict>
-		<key>biker2</key>
-		<dict>
-			<key>x</key>
-			<integer>0</integer>
-			<key>y</key>
-			<integer>511</integer>
-			<key>width</key>
-			<integer>360</integer>
-			<key>height</key>
-			<integer>40</integer>
+			<integer>102</integer>
 		</dict>
 	</dict>
 </dict>

@@ -21,7 +21,7 @@
     //============================================//
 }
 
-- (void) move:(float)joypadDistance joypadDirection:(float)joypadDirection aDelta:(float)aDelta;
+- (bool) move:(float)joypadDistance joypadDirection:(float)joypadDirection aDelta:(float)aDelta;
 - (void) shoot;
 - (void) die;
 

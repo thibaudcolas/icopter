@@ -33,6 +33,8 @@
     
     [sharedFmodSoundManager add:rocketLauncherSound];
     
+//    PackedSpriteSheet *masterSpriteSheet = [PackedSpriteSheet packedSpriteSheetForImageNamed:@"menu-atlas.png" controlFile:@"menu-coordinates" imageFilter:GL_LINEAR];
+    
     //============== animations ==================//
     SpriteSheet *spriteSheet= [[SpriteSheet alloc] initWithImageNamed:@"rocket-launcher-base.png" spriteSize:CGSizeMake(60, 21) spacing:0
                                                   margin:self->direction==1?21:0 imageFilter:GL_LINEAR];

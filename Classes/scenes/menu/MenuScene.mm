@@ -4,7 +4,6 @@
 #import "GameController.h"
 #import "Image.h"
 #import "BitmapFont.h"
-#import "SoundManager.h"
 #import "TextureManager.h"
 #import "PackedSpriteSheet.h"
 #import "SpriteSheet.h"
@@ -30,8 +29,11 @@
 		
 		sharedImageRenderManager = [ImageRenderManager sharedImageRenderManager];
 		sharedGameController = [GameController sharedGameController];
-		sharedSoundManager = [SoundManager sharedSoundManager];
 		sharedTextureManager = [TextureManager sharedTextureManager];
+        
+        sharedFmodSoundManager = [FmodSoundManager sharedFmodSoundManager];
+        [sharedFmodSoundManager play:pauseMusic];
+        [sharedFmodSoundManager pause:gameMusic];
         
         PackedSpriteSheet *masterSpriteSheet = [PackedSpriteSheet packedSpriteSheetForImageNamed:@"menu-atlas.png" controlFile:@"menu-coordinates" imageFilter:GL_LINEAR];
         

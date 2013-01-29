@@ -97,6 +97,7 @@
 {
     if (state== kSceneState_GameOver)
     {
+        [sharedFmodSoundManager newInstance:gameOverSound];
         [sharedGameController transitionToSceneWithKey:@"gameover"];
         state= kSceneState_Running;
     }
@@ -212,6 +213,7 @@
                 nbLives--;
                 if (nbLives == 0) {
                     [helicopter die];
+                    state=kSceneState_GameOver;
                 } else {
                     [sharedFmodSoundManager add:helicopterExplosion];
                     [sharedFmodSoundManager release:helicopterExplosion immediate:false];
@@ -248,6 +250,11 @@
                     nbLives--;
                     if (nbLives == 0) {
                         [helicopter die];
+                        state=kSceneState_GameOver;
+                    } else {
+                        [sharedFmodSoundManager add:helicopterExplosion];
+                        [sharedFmodSoundManager release:helicopterExplosion immediate:false];
+                        [sharedExplosionManager add:bAnimation_helicoDamaged position:CGPointMake([helicopter getXCoord], [helicopter getYCoord])];
                     }
                     collision= true;
                     
@@ -255,7 +262,12 @@
                 }
             }
         }
-        if (!collision) [helicopter move:joypadDistance joypadDirection:(float)joypadDirection aDelta:(float)aDelta];
+        if (!collision) {
+            if(![helicopter move:joypadDistance joypadDirection:(float)joypadDirection aDelta:(float)aDelta]) {
+                [helicopter die];
+                state=kSceneState_GameOver;
+            }
+        }
         
         
         for(int i=0;i<[helicopter->missiles count];i++)
@@ -268,11 +280,6 @@
                 [helicopter->missiles removeObject: missile];
                 [missile die];
             }
-        }
-        
-        if(collision)
-        {
-            state=kSceneState_GameOver;
         }
         
         [sharedExplosionManager update:aDelta];

@@ -45,7 +45,7 @@
 }
 
 
-- (void) move:(float)joypadDistance joypadDirection:(float)joypadDirection aDelta:(float)aDelta
+- (bool) move:(float)joypadDistance joypadDirection:(float)joypadDirection aDelta:(float)aDelta
 {
 	self->xCoord-= (aDelta * (10 * joypadDistance)) * sinf(joypadDirection);
 	self->yCoord-= (aDelta * (10 * joypadDistance)) * cosf(joypadDirection);
@@ -63,8 +63,9 @@
     {
         NSLog(@"HELICOPTER CRASHED ON THE GROUND!");
         [sharedFmodSoundManager pause:helicopterAltitudeAlert];
-        [self die];
+        return false;
     }
+    return true;
 }
 
 - (void) shoot
@@ -84,7 +85,6 @@
 {
     [sharedFmodSoundManager stop:helicopterSound immediate:true];
     [sharedFmodSoundManager release:helicopterSound immediate:true];
-    [sharedFmodSoundManager newInstance:gameOverSound];
     
     [sharedFmodSoundManager add:helicopterExplosion];
     [sharedFmodSoundManager release:helicopterExplosion immediate:false];

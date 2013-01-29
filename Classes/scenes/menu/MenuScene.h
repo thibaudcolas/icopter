@@ -3,9 +3,9 @@
 #import "Animation.h"
 #import "Background.h"
 #import "BitmapFont.h"
+#import "FmodSoundManager.h"
 
 @class ImageRenderManager;
-@class SoundManager;
 @class TextureManager;
 @class GameController;
 @class Image;
@@ -14,7 +14,6 @@
 @class Animation;
 @class BitmapFont;
 @class PackedSpriteSheet;
-@class Player;
 
 // This class defines the menu scene that is displayed to the player when they first start 
 // the game.  It shows a main menu with an animated background.  It is able to display the
@@ -26,8 +25,9 @@
 	/////////////////// Singleton Managers
 	ImageRenderManager *sharedImageRenderManager;
 	GameController *sharedGameController;
-	SoundManager *sharedSoundManager;
 	TextureManager *sharedTextureManager;
+    
+    FmodSoundManager *sharedFmodSoundManager;
     
     Background* menuBackground;
     Image* gameTitle;
