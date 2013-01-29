@@ -55,6 +55,8 @@ NSMutableArray *rocketLaunchers;
     Score* score;    
     GameHUD* hud;
     
+    int nbLives;
+    
     FmodSoundManager* sharedFmodSoundManager;
     
     ExplosionManager* sharedExplosionManager;

@@ -8,10 +8,14 @@
 #import "BitmapFont.h"
 #import "Image.h"
 #import "Animation.h"
+#import "BatteryLevel.h"
 
 @interface GameHUD : NSObject
 {    
     GoText *go;
+    
+    BatteryLevel* life;
+    
     int scoreValue;
     
 	BitmapFont *scoreDisplay;
@@ -38,7 +42,7 @@
 
 - (id)init;
 
-- (void)update:(float)delta score:(int)scoreValue kill:(bool)hasKilled;
+- (void)update:(float)delta score:(int)scoreValue kill:(bool)hasKilled left:(int)batteriesLeft;
 
 - (void)render:(uint)state;
 

@@ -13,6 +13,7 @@
 	
 	if (self != nil)
     {
+        nbLives = 3;
 		// Grab an instance of the render manager
 		sharedGameController= [GameController sharedGameController];
 		sharedImageRenderManager= [ImageRenderManager sharedImageRenderManager];
@@ -213,7 +214,10 @@
                 [ufos removeObject: ufo];
                 [ufo die];
                 NSLog(@"CRASH UFO!");
-                [helicopter die];
+                nbLives--;
+                if (nbLives == 0) {
+                    [helicopter die];
+                }
                 collision= true;
                 break;
             }
@@ -242,7 +246,10 @@
                     [rocket die];
                     
                     NSLog(@"CRASH OBUS!");
-                    [helicopter die];
+                    nbLives--;
+                    if (nbLives == 0) {
+                        [helicopter die];
+                    }
                     collision= true;
                     
                     break;
@@ -274,7 +281,7 @@
         [background update:aDelta];
         
         [score update:aDelta kills:killedRocketLaunchers];
-        [hud update:aDelta score:[score getValue] kill:touched];
+        [hud update:aDelta score:[score getValue] kill:touched left:nbLives];
         //============================================//
 	}
 }

@@ -20,6 +20,9 @@
         PackedSpriteSheet *masterSpriteSheet = [PackedSpriteSheet packedSpriteSheetForImageNamed:@"hud-atlas.png" controlFile:@"hud-coordinates" imageFilter:GL_LINEAR];
 
         go = [[GoText alloc] init:[[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"hud-go"] retain] frameSize:CGSizeMake(33, 31) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Once columns:16 rows:1]];
+        
+        life = [[BatteryLevel alloc] init:[[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"hud-battery"] retain] frameSize:CGSizeMake(22, 25) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_PingPong columns:6 rows:1]];
+        
         scoreValue = 0;
         scoreDisplay = [[BitmapFont alloc] initWithFontImageNamed:@"franklin16.png" controlFile:@"franklin16" scale:Scale2fMake(1.1f, 1.1f) filter:GL_LINEAR];
         scorePanel = [[masterSpriteSheet imageForKey:@"hud-scorepanel"] retain];
@@ -49,9 +52,11 @@
     return self;
 }
 
-- (void) update:(float)delta score:(int)value kill:(bool)hasKilled
+- (void) update:(float)delta score:(int)value kill:(bool)hasKilled left:(int)batteriesLeft
 {
     [go update:delta];
+    [life update:delta left:batteriesLeft];
+    
     [scoreArrow updateWithDelta:delta];
     
     if (scoreArrow.state == kAnimationState_Stopped) {
@@ -71,6 +76,7 @@
 - (void) render:(uint)state
 {
     [go render];
+    [life render];
     [scorePanel renderAtPoint:CGPointMake(375, 285)];
     
     if (scoreArrow.state == kAnimationState_Running) {

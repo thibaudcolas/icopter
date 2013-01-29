@@ -85,11 +85,8 @@
     [sharedFmodSoundManager stop:helicopterSound immediate:true];
     [sharedFmodSoundManager release:helicopterSound immediate:true];
     [sharedFmodSoundManager add:helicopterExplosion];
-    //[sharedFmodSoundManager stop:helicopterExplosion immediate:false];
     [sharedFmodSoundManager release:helicopterExplosion immediate:false];
     [sharedFmodSoundManager newInstance:gameOverSound];
-    //[sharedFmodSoundManager stop:gameOverSound immediate:false];
-    //[sharedFmodSoundManager release:gameOverSound immediate:false];
     
     [sharedExplosionManager add:bAnimation_helicoAirDestroyed position:CGPointMake(xCoord, yCoord)];
     //[super die];
