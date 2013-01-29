@@ -19,5 +19,6 @@
 
 - (id) init:(float)xCoord yCoord:(float)yCoord;
 - (Boolean) move;
+- (void) update:(float)delta;
 - (void) die;
 @end

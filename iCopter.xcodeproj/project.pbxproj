@@ -78,6 +78,7 @@
 		BE6FFC3816B7626500C17A6D /* hud-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6FFC3416B7626500C17A6D /* hud-coordinates.plist */; };
 		BE6FFC3916B7626500C17A6D /* menu-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6FFC3516B7626500C17A6D /* menu-coordinates.plist */; };
 		BE6FFC3B16B7627700C17A6D /* entities-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6FFC3A16B7627700C17A6D /* entities-coordinates.plist */; };
+		BE6FFC3F16B76EB500C17A6D /* entities-atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BE6FFC3E16B76EB500C17A6D /* entities-atlas.png */; };
 		BE7395FC16B5F132009A0AE7 /* background-road.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7395FB16B5F132009A0AE7 /* background-road.png */; };
 		BE7395FF16B5F463009A0AE7 /* background-ruins.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7395FE16B5F463009A0AE7 /* background-ruins.png */; };
 		BE73960116B5F5CA009A0AE7 /* background-towers.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73960016B5F5CA009A0AE7 /* background-towers.png */; };
@@ -220,6 +221,7 @@
 		BE6FFC3416B7626500C17A6D /* hud-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "hud-coordinates.plist"; path = "resources/coordinates/hud-coordinates.plist"; sourceTree = "<group>"; };
 		BE6FFC3516B7626500C17A6D /* menu-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "menu-coordinates.plist"; path = "resources/coordinates/menu-coordinates.plist"; sourceTree = "<group>"; };
 		BE6FFC3A16B7627700C17A6D /* entities-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "entities-coordinates.plist"; path = "resources/coordinates/entities-coordinates.plist"; sourceTree = "<group>"; };
+		BE6FFC3E16B76EB500C17A6D /* entities-atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "entities-atlas.png"; path = "resources/images/entities/entities-atlas.png"; sourceTree = SOURCE_ROOT; };
 		BE7395FB16B5F132009A0AE7 /* background-road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-road.png"; path = "resources/images/bg/background-road.png"; sourceTree = SOURCE_ROOT; };
 		BE7395FE16B5F463009A0AE7 /* background-ruins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-ruins.png"; path = "resources/images/bg/background-ruins.png"; sourceTree = SOURCE_ROOT; };
 		BE73960016B5F5CA009A0AE7 /* background-towers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-towers.png"; path = "resources/images/bg/background-towers.png"; sourceTree = SOURCE_ROOT; };
@@ -543,6 +545,7 @@
 		BE5E90BE16B3F75300622DED /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				BE6FFC3E16B76EB500C17A6D /* entities-atlas.png */,
 				BE88EFE216B62D9200878249 /* explosion-atlas.png */,
 				BE5E917616B3FCF900622DED /* explosion-big-air.png */,
 				BE73961516B61692009A0AE7 /* explosion-small-ground.png */,
@@ -870,6 +873,7 @@
 				BE6FFC3816B7626500C17A6D /* hud-coordinates.plist in Resources */,
 				BE6FFC3916B7626500C17A6D /* menu-coordinates.plist in Resources */,
 				BE6FFC3B16B7627700C17A6D /* entities-coordinates.plist in Resources */,
+				BE6FFC3F16B76EB500C17A6D /* entities-atlas.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

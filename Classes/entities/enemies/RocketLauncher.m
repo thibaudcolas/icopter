@@ -32,9 +32,17 @@
     self->readyToShoot= false;
     
     [sharedFmodSoundManager add:rocketLauncherSound];
+
+//    if (self->direction==1) {
+//        animation = [[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"entities-launcher-base-right"] retain] frameSize:CGSizeMake(60, 21) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:8 rows:1];
+//        animationC = [[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"entities-launcher-canon-right"] retain] frameSize:CGSizeMake(53, 51) spacing:0 margin:0 delay:.05f state:kAnimationState_Stopped type:kAnimationType_PingPong columns:16 rows:1];
+//    }
+//    else {
+//        animation = [[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"entities-launcher-base-left"] retain] frameSize:CGSizeMake(60, 21) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:8 rows:1];
+//        animationC = [[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"entities-launcher-canon-left"] retain] frameSize:CGSizeMake(53, 51) spacing:0 margin:0 delay:.05f state:kAnimationState_Stopped type:kAnimationType_PingPong columns:16 rows:1]; 
+//    }
     
-//    PackedSpriteSheet *masterSpriteSheet = [PackedSpriteSheet packedSpriteSheetForImageNamed:@"menu-atlas.png" controlFile:@"menu-coordinates" imageFilter:GL_LINEAR];
-    
+ 
     //============== animations ==================//
     SpriteSheet *spriteSheet= [[SpriteSheet alloc] initWithImageNamed:@"rocket-launcher-base.png" spriteSize:CGSizeMake(60, 21) spacing:0
                                                   margin:self->direction==1?21:0 imageFilter:GL_LINEAR];

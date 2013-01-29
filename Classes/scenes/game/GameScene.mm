@@ -280,6 +280,7 @@
                 [helicopter->missiles removeObject: missile];
                 [missile die];
             }
+            else [missile update:aDelta];
         }
         
         [sharedExplosionManager update:aDelta];

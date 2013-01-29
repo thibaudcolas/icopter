@@ -11,7 +11,18 @@
 	</dict>
 	<key>frames</key>
 	<dict>
-		<key>entities-tank-base</key>
+		<key>entities-launcher-canon-left</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>51</integer>
+			<key>width</key>
+			<integer>845</integer>
+			<key>height</key>
+			<integer>51</integer>
+		</dict>
+		<key>entities-launcher-base-right</key>
 		<dict>
 			<key>x</key>
 			<integer>400</integer>
@@ -20,7 +31,18 @@
 			<key>width</key>
 			<integer>478</integer>
 			<key>height</key>
-			<integer>42</integer>
+			<integer>21</integer>
+		</dict>
+		<key>entities-launcher-base-left</key>
+		<dict>
+			<key>x</key>
+			<integer>400</integer>
+			<key>y</key>
+			<integer>123</integer>
+			<key>width</key>
+			<integer>478</integer>
+			<key>height</key>
+			<integer>21</integer>
 		</dict>
 		<key>entities-rocket</key>
 		<dict>
@@ -33,7 +55,7 @@
 			<key>height</key>
 			<integer>79</integer>
 		</dict>
-		<key>entities-tank-canon</key>
+		<key>entities-launcher-canon-right</key>
 		<dict>
 			<key>x</key>
 			<integer>0</integer>
@@ -42,7 +64,7 @@
 			<key>width</key>
 			<integer>845</integer>
 			<key>height</key>
-			<integer>102</integer>
+			<integer>51</integer>
 		</dict>
 	</dict>
 </dict>
