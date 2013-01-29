@@ -52,9 +52,11 @@
 	/////////////////// Sprite sheets and images
 	Image *background;					// Background image for the menu
 	Image *fadeImage;					// Full screen black image used to fade in and out
-	Image *settings;
+	Image *settingsButton;
+	Image *exitButton;
 	
 	CGRect settingsButtonBounds;
+	CGRect exitButtonBounds;
 
 		
 }

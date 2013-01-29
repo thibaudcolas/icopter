@@ -108,18 +108,13 @@
         [sharedFmodSoundManager pause:rocketLauncherSound];
         [sharedFmodSoundManager pause:ufo];
         [sharedFmodSoundManager pause:michou];
-        
-        //FMOD_EventCategory_SetPaused(game, 1);
+    
     }
     else
     {
         [sharedFmodSoundManager pause:pauseMusic];
         [sharedFmodSoundManager play:gameMusic];
-        [sharedFmodSoundManager play:gameOverSound];
         [sharedFmodSoundManager play:helicopterSound];
-        [sharedFmodSoundManager play:rocketLauncherSound];
-        [sharedFmodSoundManager play:ufo];
-        [sharedFmodSoundManager play:michou];
         
         timeEllapsed+= aDelta;
         
@@ -166,7 +161,7 @@
             {
                 [rocketLauncher update:aDelta];
                 [rocketLauncher move];
-                if (rocketLauncher->shootTimer<= 0)
+                if (rocketLauncher->shootTimer <= 0 && rocketLauncher->kindOfRocketLauncher)
                 {
                     if (rocketLauncher->readyToShoot)
                         [rocketLauncher shoot:(float)helicopter.getXCoord targetY:(float)helicopter.getYCoord aDelta:(float)aDelta];
@@ -174,7 +169,7 @@
                 }
                 rocketLauncher->shootTimer-= aDelta;
                 //================== Rocket ===================//
-                for(int j=0;j<[rocketLauncher->rockets count];j++)
+                if (rocketLauncher->kindOfRocketLauncher) for(int j=0;j<[rocketLauncher->rockets count];j++)
                     //iteration sur un nombre plutot que "for(Rocket *rocket in rocketLauncher->rockets)" pour eviter erreur liee a la suppression de l'rockets :
                     //"NSmutableArray was mutated while being iterated"
                 {
@@ -217,6 +212,10 @@
                 nbLives--;
                 if (nbLives == 0) {
                     [helicopter die];
+                } else {
+                    [sharedFmodSoundManager add:helicopterExplosion];
+                    [sharedFmodSoundManager release:helicopterExplosion immediate:false];
+                    [sharedExplosionManager add:bAnimation_helicoDamaged position:CGPointMake([helicopter getXCoord], [helicopter getYCoord])];
                 }
                 collision= true;
                 break;

@@ -84,10 +84,10 @@
 {
     [sharedFmodSoundManager stop:helicopterSound immediate:true];
     [sharedFmodSoundManager release:helicopterSound immediate:true];
-    [sharedFmodSoundManager add:helicopterExplosion];
-    [sharedFmodSoundManager release:helicopterExplosion immediate:false];
     [sharedFmodSoundManager newInstance:gameOverSound];
     
+    [sharedFmodSoundManager add:helicopterExplosion];
+    [sharedFmodSoundManager release:helicopterExplosion immediate:false];
     [sharedExplosionManager add:bAnimation_helicoAirDestroyed position:CGPointMake(xCoord, yCoord)];
     //[super die];
     NSLog(@"GAME OVER.");

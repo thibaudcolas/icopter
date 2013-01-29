@@ -29,7 +29,6 @@
 		BE5E90D616B3F7B500622DED /* helicopter-rotor.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90CF16B3F7B500622DED /* helicopter-rotor.png */; };
 		BE5E90D716B3F7B500622DED /* helicopter.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D016B3F7B500622DED /* helicopter.png */; };
 		BE5E90D816B3F7B500622DED /* missile.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D116B3F7B500622DED /* missile.png */; };
-		BE5E90D916B3F7B500622DED /* rocket-launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D216B3F7B500622DED /* rocket-launcher.png */; };
 		BE5E90DA16B3F7B500622DED /* rocket.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D316B3F7B500622DED /* rocket.png */; };
 		BE5E90DB16B3F7B500622DED /* ufo-classic.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90D416B3F7B500622DED /* ufo-classic.png */; };
 		BE5E90EC16B3F7E200622DED /* hud-go.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90E616B3F7E200622DED /* hud-go.png */; };
@@ -74,11 +73,15 @@
 		BE68A87216B6C3C8003ED348 /* background-menu-clouds.png in Resources */ = {isa = PBXBuildFile; fileRef = BE68A87116B6C3C8003ED348 /* background-menu-clouds.png */; };
 		BE68A87416B6CE2C003ED348 /* menu-title.png in Resources */ = {isa = PBXBuildFile; fileRef = BE68A87316B6CE2C003ED348 /* menu-title.png */; };
 		BE68A87616B6DFF9003ED348 /* menu-settings.png in Resources */ = {isa = PBXBuildFile; fileRef = BE68A87516B6DFF9003ED348 /* menu-settings.png */; };
+		BE6FFC3616B7626500C17A6D /* background-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6FFC3216B7626500C17A6D /* background-coordinates.plist */; };
+		BE6FFC3716B7626500C17A6D /* explosion-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6FFC3316B7626500C17A6D /* explosion-coordinates.plist */; };
+		BE6FFC3816B7626500C17A6D /* hud-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6FFC3416B7626500C17A6D /* hud-coordinates.plist */; };
+		BE6FFC3916B7626500C17A6D /* menu-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6FFC3516B7626500C17A6D /* menu-coordinates.plist */; };
+		BE6FFC3B16B7627700C17A6D /* entities-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE6FFC3A16B7627700C17A6D /* entities-coordinates.plist */; };
 		BE7395FC16B5F132009A0AE7 /* background-road.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7395FB16B5F132009A0AE7 /* background-road.png */; };
 		BE7395FF16B5F463009A0AE7 /* background-ruins.png in Resources */ = {isa = PBXBuildFile; fileRef = BE7395FE16B5F463009A0AE7 /* background-ruins.png */; };
 		BE73960116B5F5CA009A0AE7 /* background-towers.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73960016B5F5CA009A0AE7 /* background-towers.png */; };
 		BE73960316B5F76E009A0AE7 /* background-sky.jpg in Resources */ = {isa = PBXBuildFile; fileRef = BE73960216B5F76E009A0AE7 /* background-sky.jpg */; };
-		BE73960716B5FF0B009A0AE7 /* background-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE73960616B5FF0B009A0AE7 /* background-coordinates.plist */; };
 		BE73960916B60297009A0AE7 /* background-atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73960816B60297009A0AE7 /* background-atlas.png */; };
 		BE73961216B6111C009A0AE7 /* Joypad.m in Sources */ = {isa = PBXBuildFile; fileRef = BE73961116B6111C009A0AE7 /* Joypad.m */; };
 		BE73961616B61692009A0AE7 /* explosion-small-ground.png in Resources */ = {isa = PBXBuildFile; fileRef = BE73961516B61692009A0AE7 /* explosion-small-ground.png */; };
@@ -95,10 +98,8 @@
 		BE88EFDE16B622F200878249 /* libfmodex_iphonesimulator.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BE88EFDA16B622F200878249 /* libfmodex_iphonesimulator.a */; };
 		BE88EFE116B624B700878249 /* Projectile.m in Sources */ = {isa = PBXBuildFile; fileRef = BE88EFE016B624B700878249 /* Projectile.m */; };
 		BE88EFE316B62D9200878249 /* explosion-atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFE216B62D9200878249 /* explosion-atlas.png */; };
-		BE88EFE516B62DA300878249 /* explosion-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFE416B62DA300878249 /* explosion-coordinates.plist */; };
 		BE88EFF216B6494400878249 /* score-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFF116B6494400878249 /* score-arrow.png */; };
 		BE88EFF416B659E600878249 /* hud-atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFF316B659E600878249 /* hud-atlas.png */; };
-		BE88EFF616B65A6100878249 /* hud-coordinates.plist in Resources */ = {isa = PBXBuildFile; fileRef = BE88EFF516B65A6100878249 /* hud-coordinates.plist */; };
 		BE88F00516B6AECC00878249 /* FmodSoundManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = BE88F00416B6AECC00878249 /* FmodSoundManager.mm */; };
 		BEAC4A3816B40278004E04EF /* Explosion.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3516B40278004E04EF /* Explosion.m */; };
 		BEAC4A3916B40278004E04EF /* ExplosionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = BEAC4A3716B40278004E04EF /* ExplosionManager.m */; };
@@ -111,6 +112,7 @@
 		BED3EB8516B733D3003AD6C8 /* gameover.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB8416B733D3003AD6C8 /* gameover.png */; };
 		BED3EB8816B73407003AD6C8 /* GameOverScene.mm in Sources */ = {isa = PBXBuildFile; fileRef = BED3EB8716B73407003AD6C8 /* GameOverScene.mm */; };
 		BED3EB8C16B73EED003AD6C8 /* BatteryLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = BED3EB8B16B73EED003AD6C8 /* BatteryLevel.m */; };
+		BED3EB9016B754D1003AD6C8 /* menu-atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = BED3EB8F16B754D1003AD6C8 /* menu-atlas.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -138,7 +140,6 @@
 		BE5E90CF16B3F7B500622DED /* helicopter-rotor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "helicopter-rotor.png"; path = "resources/images/entities/helicopter-rotor.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90D016B3F7B500622DED /* helicopter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = helicopter.png; path = resources/images/entities/helicopter.png; sourceTree = SOURCE_ROOT; };
 		BE5E90D116B3F7B500622DED /* missile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = missile.png; path = resources/images/entities/missile.png; sourceTree = SOURCE_ROOT; };
-		BE5E90D216B3F7B500622DED /* rocket-launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "rocket-launcher.png"; path = "resources/images/entities/rocket-launcher.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90D316B3F7B500622DED /* rocket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rocket.png; path = resources/images/entities/rocket.png; sourceTree = SOURCE_ROOT; };
 		BE5E90D416B3F7B500622DED /* ufo-classic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ufo-classic.png"; path = "resources/images/entities/ufo-classic.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90E616B3F7E200622DED /* hud-go.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hud-go.png"; path = "resources/images/hud/hud-go.png"; sourceTree = SOURCE_ROOT; };
@@ -214,11 +215,15 @@
 		BE68A87116B6C3C8003ED348 /* background-menu-clouds.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-menu-clouds.png"; path = "resources/images/menu/background-menu-clouds.png"; sourceTree = SOURCE_ROOT; };
 		BE68A87316B6CE2C003ED348 /* menu-title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-title.png"; path = "resources/images/menu/menu-title.png"; sourceTree = SOURCE_ROOT; };
 		BE68A87516B6DFF9003ED348 /* menu-settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-settings.png"; path = "resources/images/menu/menu-settings.png"; sourceTree = SOURCE_ROOT; };
+		BE6FFC3216B7626500C17A6D /* background-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "background-coordinates.plist"; path = "resources/coordinates/background-coordinates.plist"; sourceTree = "<group>"; };
+		BE6FFC3316B7626500C17A6D /* explosion-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "explosion-coordinates.plist"; path = "resources/coordinates/explosion-coordinates.plist"; sourceTree = "<group>"; };
+		BE6FFC3416B7626500C17A6D /* hud-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "hud-coordinates.plist"; path = "resources/coordinates/hud-coordinates.plist"; sourceTree = "<group>"; };
+		BE6FFC3516B7626500C17A6D /* menu-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "menu-coordinates.plist"; path = "resources/coordinates/menu-coordinates.plist"; sourceTree = "<group>"; };
+		BE6FFC3A16B7627700C17A6D /* entities-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "entities-coordinates.plist"; path = "resources/coordinates/entities-coordinates.plist"; sourceTree = "<group>"; };
 		BE7395FB16B5F132009A0AE7 /* background-road.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-road.png"; path = "resources/images/bg/background-road.png"; sourceTree = SOURCE_ROOT; };
 		BE7395FE16B5F463009A0AE7 /* background-ruins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-ruins.png"; path = "resources/images/bg/background-ruins.png"; sourceTree = SOURCE_ROOT; };
 		BE73960016B5F5CA009A0AE7 /* background-towers.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-towers.png"; path = "resources/images/bg/background-towers.png"; sourceTree = SOURCE_ROOT; };
 		BE73960216B5F76E009A0AE7 /* background-sky.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background-sky.jpg"; path = "resources/images/bg/background-sky.jpg"; sourceTree = SOURCE_ROOT; };
-		BE73960616B5FF0B009A0AE7 /* background-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "background-coordinates.plist"; path = "resources/background-coordinates.plist"; sourceTree = "<group>"; };
 		BE73960816B60297009A0AE7 /* background-atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "background-atlas.png"; path = "resources/images/bg/background-atlas.png"; sourceTree = SOURCE_ROOT; };
 		BE73961016B6111C009A0AE7 /* Joypad.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Joypad.h; path = Classes/engine/hud/Joypad.h; sourceTree = "<group>"; };
 		BE73961116B6111C009A0AE7 /* Joypad.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Joypad.m; path = Classes/engine/hud/Joypad.m; sourceTree = "<group>"; };
@@ -248,10 +253,8 @@
 		BE88EFDF16B624B700878249 /* Projectile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Projectile.h; path = Classes/entities/projectiles/Projectile.h; sourceTree = "<group>"; };
 		BE88EFE016B624B700878249 /* Projectile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Projectile.m; path = Classes/entities/projectiles/Projectile.m; sourceTree = "<group>"; };
 		BE88EFE216B62D9200878249 /* explosion-atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "explosion-atlas.png"; path = "resources/images/entities/explosion-atlas.png"; sourceTree = SOURCE_ROOT; };
-		BE88EFE416B62DA300878249 /* explosion-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "explosion-coordinates.plist"; path = "resources/explosion-coordinates.plist"; sourceTree = "<group>"; };
 		BE88EFF116B6494400878249 /* score-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "score-arrow.png"; path = "resources/images/hud/score-arrow.png"; sourceTree = SOURCE_ROOT; };
 		BE88EFF316B659E600878249 /* hud-atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "hud-atlas.png"; path = "resources/images/hud/hud-atlas.png"; sourceTree = SOURCE_ROOT; };
-		BE88EFF516B65A6100878249 /* hud-coordinates.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "hud-coordinates.plist"; path = "resources/hud-coordinates.plist"; sourceTree = "<group>"; };
 		BE88F00316B6AECC00878249 /* FmodSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FmodSoundManager.h; path = Classes/engine/managers/FmodSoundManager.h; sourceTree = "<group>"; };
 		BE88F00416B6AECC00878249 /* FmodSoundManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = FmodSoundManager.mm; path = Classes/engine/managers/FmodSoundManager.mm; sourceTree = "<group>"; };
 		BEAC4A3416B40278004E04EF /* Explosion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Explosion.h; path = Classes/entities/explosions/Explosion.h; sourceTree = "<group>"; };
@@ -272,6 +275,7 @@
 		BED3EB8716B73407003AD6C8 /* GameOverScene.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GameOverScene.mm; path = Classes/scenes/gameover/GameOverScene.mm; sourceTree = "<group>"; };
 		BED3EB8A16B73EED003AD6C8 /* BatteryLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BatteryLevel.h; path = Classes/engine/hud/BatteryLevel.h; sourceTree = "<group>"; };
 		BED3EB8B16B73EED003AD6C8 /* BatteryLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BatteryLevel.m; path = Classes/engine/hud/BatteryLevel.m; sourceTree = "<group>"; };
+		BED3EB8F16B754D1003AD6C8 /* menu-atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "menu-atlas.png"; path = "resources/images/menu/menu-atlas.png"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -327,9 +331,7 @@
 		18B970D0103AA5CA00809077 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				BE88EFF516B65A6100878249 /* hud-coordinates.plist */,
-				BE88EFE416B62DA300878249 /* explosion-coordinates.plist */,
-				BE73960616B5FF0B009A0AE7 /* background-coordinates.plist */,
+				BE6FFC3116B7625B00C17A6D /* Coordinates */,
 				7821890F16B05EF30018B098 /* Images */,
 				7821893F16B05F2B0018B098 /* Fonts */,
 			);
@@ -549,7 +551,6 @@
 				BE5E90CF16B3F7B500622DED /* helicopter-rotor.png */,
 				BE5E90D016B3F7B500622DED /* helicopter.png */,
 				BE5E90D116B3F7B500622DED /* missile.png */,
-				BE5E90D216B3F7B500622DED /* rocket-launcher.png */,
 				BE73961716B619ED009A0AE7 /* rocket-launcher-base.png */,
 				BE73961816B619ED009A0AE7 /* rocket-launcher-canon.png */,
 				BE5E90D316B3F7B500622DED /* rocket.png */,
@@ -561,6 +562,7 @@
 		BE5E90BF16B3F75A00622DED /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				BED3EB8F16B754D1003AD6C8 /* menu-atlas.png */,
 				BED3EB7B16B72ACD003AD6C8 /* background-menu-clouds.png */,
 				BED3EB7C16B72ACD003AD6C8 /* biker.png */,
 				BED3EB7D16B72ACD003AD6C8 /* biker2.png */,
@@ -686,6 +688,18 @@
 				BEAC4A3716B40278004E04EF /* ExplosionManager.m */,
 			);
 			name = Explosions;
+			sourceTree = "<group>";
+		};
+		BE6FFC3116B7625B00C17A6D /* Coordinates */ = {
+			isa = PBXGroup;
+			children = (
+				BE6FFC3A16B7627700C17A6D /* entities-coordinates.plist */,
+				BE6FFC3216B7626500C17A6D /* background-coordinates.plist */,
+				BE6FFC3316B7626500C17A6D /* explosion-coordinates.plist */,
+				BE6FFC3416B7626500C17A6D /* hud-coordinates.plist */,
+				BE6FFC3516B7626500C17A6D /* menu-coordinates.plist */,
+			);
+			name = Coordinates;
 			sourceTree = "<group>";
 		};
 		BE88EFC616B622BD00878249 /* Sound */ = {
@@ -814,7 +828,6 @@
 				BE5E90D616B3F7B500622DED /* helicopter-rotor.png in Resources */,
 				BE5E90D716B3F7B500622DED /* helicopter.png in Resources */,
 				BE5E90D816B3F7B500622DED /* missile.png in Resources */,
-				BE5E90D916B3F7B500622DED /* rocket-launcher.png in Resources */,
 				BE5E90DA16B3F7B500622DED /* rocket.png in Resources */,
 				BE5E90DB16B3F7B500622DED /* ufo-classic.png in Resources */,
 				BE5E90EC16B3F7E200622DED /* hud-go.png in Resources */,
@@ -833,7 +846,6 @@
 				BE7395FF16B5F463009A0AE7 /* background-ruins.png in Resources */,
 				BE73960116B5F5CA009A0AE7 /* background-towers.png in Resources */,
 				BE73960316B5F76E009A0AE7 /* background-sky.jpg in Resources */,
-				BE73960716B5FF0B009A0AE7 /* background-coordinates.plist in Resources */,
 				BE73960916B60297009A0AE7 /* background-atlas.png in Resources */,
 				BE73961616B61692009A0AE7 /* explosion-small-ground.png in Resources */,
 				BE73961916B619ED009A0AE7 /* rocket-launcher-base.png in Resources */,
@@ -841,10 +853,8 @@
 				BE88EFCB16B622E500878249 /* iCopter.fev in Resources */,
 				BE88EFCC16B622E500878249 /* sound_bank.fsb in Resources */,
 				BE88EFE316B62D9200878249 /* explosion-atlas.png in Resources */,
-				BE88EFE516B62DA300878249 /* explosion-coordinates.plist in Resources */,
 				BE88EFF216B6494400878249 /* score-arrow.png in Resources */,
 				BE88EFF416B659E600878249 /* hud-atlas.png in Resources */,
-				BE88EFF616B65A6100878249 /* hud-coordinates.plist in Resources */,
 				BE68A86F16B6BE00003ED348 /* background-menu-forest.png in Resources */,
 				BE68A87016B6BE00003ED348 /* background-menu-sky.png in Resources */,
 				BE68A87216B6C3C8003ED348 /* background-menu-clouds.png in Resources */,
@@ -854,6 +864,12 @@
 				BED3EB7F16B72ACD003AD6C8 /* biker.png in Resources */,
 				BED3EB8016B72ACD003AD6C8 /* biker2.png in Resources */,
 				BED3EB8516B733D3003AD6C8 /* gameover.png in Resources */,
+				BED3EB9016B754D1003AD6C8 /* menu-atlas.png in Resources */,
+				BE6FFC3616B7626500C17A6D /* background-coordinates.plist in Resources */,
+				BE6FFC3716B7626500C17A6D /* explosion-coordinates.plist in Resources */,
+				BE6FFC3816B7626500C17A6D /* hud-coordinates.plist in Resources */,
+				BE6FFC3916B7626500C17A6D /* menu-coordinates.plist in Resources */,
+				BE6FFC3B16B7627700C17A6D /* entities-coordinates.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,7 +16,6 @@
 - (void)dealloc {
 	[background release];
 	[fadeImage release];
-	[settings release];
 
 	[super dealloc];
 }
@@ -33,14 +32,16 @@
 		sharedGameController = [GameController sharedGameController];
 		sharedSoundManager = [SoundManager sharedSoundManager];
 		sharedTextureManager = [TextureManager sharedTextureManager];
-
+        
+        PackedSpriteSheet *masterSpriteSheet = [PackedSpriteSheet packedSpriteSheetForImageNamed:@"menu-atlas.png" controlFile:@"menu-coordinates" imageFilter:GL_LINEAR];
+        
         menuBackground = [[Background alloc] init:1];
         
-        [menuBackground add:160 image:[[Image alloc] initWithImageNamed:@"background-menu-sky.png" filter:GL_LINEAR] inFront:false];
-        [menuBackground add:170 image:[[Image alloc] initWithImageNamed:@"background-menu-clouds.png" filter:GL_LINEAR] inFront:false];
-        [menuBackground add:0 image:[[Image alloc] initWithImageNamed:@"background-menu-forest.png" filter:GL_LINEAR] inFront:false];
+        [menuBackground add:160 image:[[masterSpriteSheet imageForKey:@"background-sky"] retain] inFront:false];
+        [menuBackground add:170 image:[[masterSpriteSheet imageForKey:@"clouds"] retain] inFront:false];
+        [menuBackground add:0 image:[[masterSpriteSheet imageForKey:@"background-trees"] retain] inFront:false];
         
-        gameTitle = [[Image alloc] initWithImageNamed:@"menu-title.png" filter:GL_LINEAR];
+        gameTitle= [[masterSpriteSheet imageForKey:@"iCopter-text"] retain];
         
         helicoBody = [[Image alloc] initWithImageNamed:@"helicopter.png" filter:GL_LINEAR];
         helicoRotor = [[Animation alloc] createFromImageNamed:@"helicopter-rotor.png" frameSize:CGSizeMake(80, 17) spacing:0 margin:0 delay:0.01f state:kAnimationState_Running type:kAnimationType_Repeating columns:10 rows:1];
@@ -52,23 +53,28 @@
         credits = [[BitmapFont alloc] initWithFontImageNamed:@"franklin16.png" controlFile:@"franklin16" scale:Scale2fMake(1.0f, 1.0f) filter:GL_LINEAR];
         credits.fontColor = Color4fMake(0.95f, 0.7f, 0.3f, 1.0f);
         
-        settings =  [[Image alloc] initWithImageNamed:@"menu-settings.png" filter:GL_LINEAR];
-        settingsButtonBounds = CGRectMake(445, 285, 30, 30);
+        settingsButton= [[masterSpriteSheet imageForKey:@"settings"] retain];
+        exitButton= [[masterSpriteSheet imageForKey:@"exit"] retain];
         
-        biker= [[Animation alloc] createFromImageNamed:@"biker.png" frameSize:CGSizeMake(46, 40) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:7 rows:1];
-        biker2= [[Animation alloc] createFromImageNamed:@"biker2.png" frameSize:CGSizeMake(45, 40) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:8 rows:1];
-        groundProjection= [[Animation alloc] createFromImageNamed:@"biker-ground-projection.png" frameSize:CGSizeMake(27, 14) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:8 rows:1];
-
-		// The allBack image is a single black pixel. This texture is stretched to fill the full
-		// screen my scaling the image
-		fadeImage = [[Image alloc] initWithImageNamed:@"allBlack.png" filter:GL_NEAREST];
-		fadeImage.color = Color4fMake(1.0, 1.0, 1.0, 1.0);
-		fadeImage.scale = Scale2fMake(480, 320);
-            
-		// Init the fadespeed and alpha for this scene
-		fadeSpeed = 1.0f;
-		alpha = 1.0f;
-		
+        biker= [[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"biker"] retain] frameSize:CGSizeMake(46, 40) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:7 rows:1];
+        biker2= [[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"biker2"] retain] frameSize:CGSizeMake(45, 40) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:8 rows:1];
+        groundProjection= [[Animation alloc] createFromImage:[[masterSpriteSheet imageForKey:@"ground-projection"] retain] frameSize:CGSizeMake(27, 14) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:8 rows:1];
+        
+        // The allBack image is a single black pixel. This texture is stretched to fill the full
+        // screen my scaling the image
+        fadeImage = [[Image alloc] initWithImageNamed:@"allBlack.png" filter:GL_NEAREST];
+        fadeImage.color = Color4fMake(1.0, 1.0, 1.0, 1.0);
+        fadeImage.scale = Scale2fMake(480, 320);
+        
+        // Init the fadespeed and alpha for this scene
+        fadeSpeed = 1.0f;
+        alpha = 1.0f;
+        
+        // Define the bounds for the buttons being used on the menu
+        settingsButtonBounds = CGRectMake(445, 285, 30, 30);
+        exitButtonBounds = CGRectMake(425, -15, 68, 67);
+        
+        [masterSpriteSheet release];
 	}
  return self;
 }
@@ -153,7 +159,8 @@
     [credits renderStringJustifiedInFrame:CGRectMake(230, 70, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"Antoni ANDRE Eric AUBRY-LACHAINAYE Hatim CHAHDI"];
     [credits renderStringJustifiedInFrame:CGRectMake(230, 50, 20, 50) justification:BitmapFontJustification_MiddleCentered text:@"Thibaud COLAS Romain JOURDES Baptiste VIEILLARD"];
 	
-    [settings renderAtPoint:settingsButtonBounds.origin];
+    [settingsButton renderAtPoint:settingsButtonBounds.origin];
+    [exitButton renderAtPoint:exitButtonBounds.origin];
 
 	[sharedImageRenderManager renderImages];
 

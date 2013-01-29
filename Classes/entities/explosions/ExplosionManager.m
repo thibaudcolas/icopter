@@ -43,6 +43,9 @@ SYNTHESIZE_SINGLETON_FOR_CLASS(ExplosionManager);
             case bAnimation_helicoAirDestroyed :
                 [explosions addObject:[[Explosion alloc] init:helicoAirDestroyed position:pos]];
                 break;
+            case bAnimation_helicoDamaged :
+                [explosions addObject:[[Explosion alloc] init:helicoAirDestroyed position:pos]];
+                break;
             case bAnimation_missileDetonates :
                 [explosions addObject:[[Explosion alloc] init:missileDetonates position:pos]];
                 break;
