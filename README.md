@@ -1,7 +1,7 @@
 iCopter
 =======
 
-iCopter, an iOS arcade game built with Open GL.
+iCopter, an iOS arcade game built with Open GL ES and FMOD Designer.
 
 
 Équipe Patches :
@@ -12,6 +12,5 @@ iCopter, an iOS arcade game built with Open GL.
 - Thibaud Colas
 - Romain Jourdes
 - Baptiste Vieillard
-- Michel Yu Ming Chuan
 
 © 2013 Patches team.
