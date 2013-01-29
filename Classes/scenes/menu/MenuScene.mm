@@ -182,6 +182,10 @@
     if (CGRectContainsPoint(settingsButtonBounds, touchLocation)) {
         [sharedGameController transitionToSceneWithKey:@"settings"];
     }
+    else if (CGRectContainsPoint(exitButtonBounds, touchLocation)) {
+        NSLog(@"Bye bye !");
+        exit(0);
+    }
     else {
         [sharedGameController transitionToSceneWithKey:@"game"];
     }
