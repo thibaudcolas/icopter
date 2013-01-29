@@ -19,7 +19,7 @@ extern FMOD_EVENTGROUP *generalGroup;
         
 		animation= anim;
         
-        [sharedFmodSoundManager add:goSound];
+        sharedFmodSoundManager= [FmodSoundManager sharedFmodSoundManager];
 	}
 	return self;
 	

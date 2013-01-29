@@ -73,7 +73,7 @@
         createUfoTimer= 0;
         
         ufos= [[NSMutableArray alloc] initWithObjects:nil];
-        [ufos addObject:[[Ufo alloc] init]];//ajout d'un nouvel ufo dans le tableau
+        //[ufos addObject:[[Ufo alloc] init]];//ajout d'un nouvel ufo dans le tableau
         //============================================//
 		
 		joypadDistance= 0;
@@ -439,6 +439,11 @@
 		[previousTouchTimestamps removeObjectForKey:[NSNumber numberWithInteger:[cancelledTouch hash]]];
         
 	}
+}
+
+- (void)transitionIn
+{
+    [sharedFmodSoundManager newInstance:goSound];
 }
 
 @end

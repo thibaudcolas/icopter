@@ -76,7 +76,7 @@
     //[sharedFmodSoundManager stop:helicopterMissileDetonates immediate:false];
     //[sharedFmodSoundManager release:helicopterMissileDetonates immediate:false];
 
-    [sharedExplosionManager add:bAnimation_missileDetonates position:CGPointMake(xCoord, yCoord + 15)];
+    [sharedExplosionManager add:bAnimation_missileDetonates position:CGPointMake(xCoord, yCoord + 5)];
 }
 
 @end
