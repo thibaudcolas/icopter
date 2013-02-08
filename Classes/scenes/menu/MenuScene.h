@@ -38,6 +38,8 @@
     Animation* helicoRotor;
     CGPoint helicoCoord;
     
+    Animation* pig;
+    
     int sinModifier;
     Boolean sinModifierIncrease;
     

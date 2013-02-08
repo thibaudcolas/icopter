@@ -22,6 +22,7 @@
 		78F17D4316A4715F00884770 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F17D4216A4715E00884770 /* MobileCoreServices.framework */; };
 		8F1E17E9111CBFE500984AC5 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F1E17DC111CBFE500984AC5 /* AudioToolbox.framework */; };
 		8F8569DC10C3E8F2008E53F8 /* dist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8F8569DB10C3E8F2008E53F8 /* dist.plist */; };
+		BE54FFDA16B97D5C00037110 /* pig.png in Resources */ = {isa = PBXBuildFile; fileRef = BE54FFD916B97D5C00037110 /* pig.png */; };
 		BE5E90C116B3F7A500622DED /* allBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90C016B3F7A500622DED /* allBlack.png */; };
 		BE5E90D516B3F7B500622DED /* flying-michou.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90CE16B3F7B500622DED /* flying-michou.png */; };
 		BE5E90D616B3F7B500622DED /* helicopter-rotor.png in Resources */ = {isa = PBXBuildFile; fileRef = BE5E90CF16B3F7B500622DED /* helicopter-rotor.png */; };
@@ -114,6 +115,7 @@
 		8D1107310486CEB800E47090 /* iCopter-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iCopter-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		8F1E17DC111CBFE500984AC5 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8F8569DB10C3E8F2008E53F8 /* dist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dist.plist; sourceTree = "<group>"; };
+		BE54FFD916B97D5C00037110 /* pig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pig.png; path = resources/images/entities/pig.png; sourceTree = SOURCE_ROOT; };
 		BE5E90C016B3F7A500622DED /* allBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = allBlack.png; path = resources/images/allBlack.png; sourceTree = SOURCE_ROOT; };
 		BE5E90CE16B3F7B500622DED /* flying-michou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flying-michou.png"; path = "resources/images/entities/flying-michou.png"; sourceTree = SOURCE_ROOT; };
 		BE5E90CF16B3F7B500622DED /* helicopter-rotor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "helicopter-rotor.png"; path = "resources/images/entities/helicopter-rotor.png"; sourceTree = SOURCE_ROOT; };
@@ -496,6 +498,7 @@
 		BE5E90BE16B3F75300622DED /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				BE54FFD916B97D5C00037110 /* pig.png */,
 				BE6FFC3E16B76EB500C17A6D /* entities-atlas.png */,
 				BE88EFE216B62D9200878249 /* explosion-atlas.png */,
 				BE5E90CE16B3F7B500622DED /* flying-michou.png */,
@@ -794,6 +797,7 @@
 				BEE630CA16B77E2600D7261C /* Default.png in Resources */,
 				BEE630CC16B789AA00D7261C /* iCopter-big.png in Resources */,
 				BEE630CE16B789DE00D7261C /* iCopter-small.png in Resources */,
+				BE54FFDA16B97D5C00037110 /* pig.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -854,6 +858,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_STYLE = Debug;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -866,7 +871,7 @@
 					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				INFOPLIST_FILE = "iCopter-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -884,6 +889,7 @@
 					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries/libfmodex_iphonesimulator.a\"",
 				);
 				PRODUCT_NAME = iCopter;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -894,6 +900,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_STYLE = Release;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iCopter_Prefix.pch;
@@ -903,7 +911,7 @@
 					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				INFOPLIST_FILE = "iCopter-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -916,6 +924,7 @@
 					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries/libfmodex_iphonesimulator.a\"",
 				);
 				PRODUCT_NAME = iCopter;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -927,15 +936,17 @@
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Release;
 				CODE_SIGN_ENTITLEMENTS = dist.plist;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Abdelkader Gouaich (6P87HMPMZQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "-gta";
 				PRODUCT_NAME = iCopter;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AC84A020-B181-4B97-833F-4D766BED8A0C";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -946,6 +957,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUILD_STYLE = Release;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iCopter_Prefix.pch;
@@ -955,7 +968,7 @@
 					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries\"",
 				);
 				INFOPLIST_FILE = "iCopter-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
@@ -968,6 +981,7 @@
 					"\"$(SRCROOT)/Classes/engine/sound/FMOD Libraries/libfmodex_iphonesimulator.a\"",
 				);
 				PRODUCT_NAME = iCopter;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -978,7 +992,8 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Debug;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_THUMB_SUPPORT = NO;
@@ -986,7 +1001,9 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "-gta";
 				PRODUCT_NAME = iCopter;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -997,15 +1014,17 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				BUILD_STYLE = Release;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Abdelkader Gouaich (6P87HMPMZQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.1;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CODE_SIGN_FLAGS = "-gta";
 				PRODUCT_NAME = iCopter;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "AC84A020-B181-4B97-833F-4D766BED8A0C";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 1;
 			};

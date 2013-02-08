@@ -49,6 +49,9 @@
         helicoRotor = [[Animation alloc] createFromImageNamed:@"helicopter-rotor.png" frameSize:CGSizeMake(80, 17) spacing:0 margin:0 delay:0.01f state:kAnimationState_Running type:kAnimationType_Repeating columns:10 rows:1];
         helicoCoord = CGPointMake(-50, 200);
         
+        pig = [[Animation alloc] createFromImageNamed:@"pig.png" frameSize:CGSizeMake(35, 30) spacing:0 margin:0 delay:0.1f state:kAnimationState_Running type:kAnimationType_Repeating columns:19 rows:1];
+        pig.bounceFrame = 19;
+        
         sinModifier = 0;
         sinModifierIncrease = true;
         
@@ -83,6 +86,8 @@
 
 - (void)updateSceneWithDelta:(float)aDelta {
     [menuBackground update:aDelta];
+    
+    [pig updateWithDelta:aDelta];
     
     
     if (helicoCoord.x - helicoBody.imageSize.width / 2 > 480) {
@@ -152,6 +157,8 @@
     [biker renderCenteredAtPoint:bikerCoord];
     [groundProjection renderCenteredAtPoint:CGPointMake(bikerCoord.x+12,bikerCoord.y-13)];
     [biker2 renderCenteredAtPoint:biker2Coord];
+    
+    [pig renderCenteredAtPoint:CGPointMake(177, 302)];
     
     [gameTitle renderCenteredAtPoint:CGPointMake(240, 280)];
     
