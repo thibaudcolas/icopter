@@ -1,17 +1,7 @@
-iCopter
-=======
+# iCopter
 
-iCopter, an iOS arcade game built with Open GL ES and FMOD Designer.
+> iCopter, an iOS arcade game built with [OpenGL ES](https://www.khronos.org/opengles/) and [FMOD](https://www.fmod.com/).
 
-https://www.youtube.com/watch?v=lR7QnU34BGs
+View it on YouTube: https://www.youtube.com/watch?v=lR7QnU34BGs
 
-Équipe Patches :
-
-- Antoni André
-- Éric Aubry
-- Hatim Chahdi
-- Thibaud Colas
-- Romain Jourdes
-- Baptiste Vieillard
-
-© 2013 Patches team.
+© 2013-present Patches team: Antoni André, Éric Aubry, Hatim Chahdi, Thibaud Colas, Romain Jourdes, Baptiste Vieillard
