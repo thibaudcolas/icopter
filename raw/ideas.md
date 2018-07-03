@@ -42,7 +42,8 @@
 * Comptage des kills
 * Comptage du temps
 
-** HUD
+## HUD
+
 * Vies
 * Score
 * Sons
